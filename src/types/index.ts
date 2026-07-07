@@ -58,3 +58,22 @@ export interface AuthUser {
   avatar: string;
   provider: OAuthProvider;
 }
+
+// ─── Interview Context ───────────────────────────────────────────
+export interface InterviewContext {
+  source: "jd" | "resume" | "role";
+  role?: string;
+  jd?: {
+    company?: string;
+    experience?: string;
+    requiredSkills: string[];
+    preferredSkills: string[];
+  };
+  resume?: {
+    name?: string;
+    skills: string[];
+    projects: string[];
+    education?: string;
+  };
+}
+

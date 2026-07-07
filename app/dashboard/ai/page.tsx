@@ -1,10 +1,10 @@
 "use client";
 
-import { JDUploadCard } from "@/src/components/JDUpload/JDUploadCard";
+import { InterviewConfiguration } from "@/src/components/Dashboard/InterviewConfiguration";
 
 export default function AIInterviewPage() {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-full mx-auto">
       <div className="mb-8">
         <h1 className="text-2xl font-semibold text-[#111111] tracking-tight">
           AI Interview Round
@@ -14,7 +14,7 @@ export default function AIInterviewPage() {
         </p>
       </div>
 
-      <JDUploadCard interviewType="ai" />
+      <InterviewConfiguration interviewType="ai" />
     </div>
   );
 }

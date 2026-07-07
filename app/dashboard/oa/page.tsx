@@ -1,6 +1,6 @@
 "use client";
 
-import { JDUploadCard } from "@/src/components/JDUpload/JDUploadCard";
+import { InterviewConfiguration } from "@/src/components/Dashboard/InterviewConfiguration";
 
 export default function OARoundPage() {
   return (
@@ -12,7 +12,7 @@ export default function OARoundPage() {
         </p>
       </div>
 
-      <JDUploadCard interviewType="oa" />
+      <InterviewConfiguration interviewType="oa" />
     </div>
   );
 }
