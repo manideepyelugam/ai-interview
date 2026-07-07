@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export function UpcomingInterviews() {
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 p-6">
+    <div className="bg-white rounded-lg border border-[#ECECEC] p-6 h-full">
       <div className="flex items-center justify-between mb-5">
-        <h3 className="text-lg font-bold text-gray-900">
+        <h3 className="text-[16px] font-medium text-[#111111]">
           Upcoming Interviews
         </h3>
-        <button className="text-xs font-medium text-gray-500 hover:text-gray-700 px-3 py-1.5 rounded-lg border border-gray-200 hover:border-gray-300 transition-all">
+        <button className="text-xs font-medium text-[#6B7280] hover:text-[#111111] px-3 py-1.5 rounded-lg border border-[#ECECEC] hover:border-[#D4D4D4] transition-all duration-150">
           View all
         </button>
       </div>
@@ -17,15 +17,15 @@ export function UpcomingInterviews() {
         <div className="relative w-48 h-32 mb-4">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="flex items-end gap-1">
-              <div className="w-6 h-12 bg-blue-100 rounded-lg" />
-              <div className="w-6 h-16 bg-blue-200 rounded-lg" />
-              <div className="w-6 h-20 bg-blue-300 rounded-lg" />
-              <div className="w-6 h-14 bg-blue-400 rounded-lg" />
+              <div className="w-6 h-12 bg-blue-50 rounded-lg" />
+              <div className="w-6 h-16 bg-blue-100 rounded-lg" />
+              <div className="w-6 h-20 bg-blue-200/80 rounded-lg" />
+              <div className="w-6 h-14 bg-blue-300/70 rounded-lg" />
               <div className="relative">
-                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center">
                   <svg
-                    width="20"
-                    height="20"
+                    width="18"
+                    height="18"
                     viewBox="0 0 24 24"
                     fill="none"
                   >
@@ -49,14 +49,14 @@ export function UpcomingInterviews() {
           </div>
         </div>
 
-        <h4 className="text-base font-bold text-gray-900 mb-1">
+        <h4 className="text-[14px] font-semibold text-[#111111] mb-1">
           You&apos;re all caught up!
         </h4>
-        <p className="text-sm text-gray-400 mb-5">
+        <p className="text-[13px] text-[#9CA3AF] mb-5">
           No upcoming interviews scheduled.
         </p>
 
-        <button className="px-5 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-xl hover:bg-blue-700 transition-all duration-200 shadow-sm hover:shadow-md shadow-blue-200">
+        <button className="px-5 py-2 bg-[#111111] text-white text-[13px] font-medium rounded-xl hover:bg-[#222222] transition-colors duration-150">
           Start a New Interview
         </button>
       </div>

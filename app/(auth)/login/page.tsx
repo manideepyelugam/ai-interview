@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+
 import { useAuth } from "@/src/components/providers/AuthProvider";
 import { LoginCard } from "@/src/components/Auth/LoginCard";
-import Image from "next/image";
 
 export default function LoginPage() {
   const { user, loading } = useAuth();
@@ -21,58 +22,78 @@ export default function LoginPage() {
     }
   }, [user, loading, router]);
 
-  // Show loading while checking auth or redirecting
   if (loading || !checked) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-white">
-        <div className="w-8 h-8 border-[3px] border-blue-600 border-t-transparent rounded-full animate-spin" />
+      <div className="flex min-h-screen items-center justify-center bg-white">
+        <div className="h-6 w-6 animate-spin rounded-full border-2 border-blue-400 border-t-transparent" />
       </div>
     );
   }
 
   return (
-    <div className="flex min-h-screen">
-      {/* Left Panel — Login Form */}
-      <div className="flex flex-1 flex-col justify-center px-8 sm:px-16 lg:px-24 bg-white">
-        <div className="mx-auto w-full max-w-md">
-          <LoginCard />
-        </div>
-
-        {/* Bottom Footer */}
-        <div className="mt-auto pt-8 pb-6 mx-auto w-full max-w-md">
-          <div className="flex items-center justify-between text-xs text-gray-400">
-            <span>© 2026 Intervue</span>
-            <div className="flex gap-4">
-              <span className="hover:text-gray-600 cursor-pointer transition-colors">
-                Privacy
-              </span>
-              <span className="hover:text-gray-600 cursor-pointer transition-colors">
-                Terms
-              </span>
+    <div className="flex min-h-screen bg-white font-sans">
+      {/* Left Panel */}
+      <div className="flex min-h-screen flex-1 flex-col bg-white">
+        {/* Header */}
+        <header className="flex items-center justify-between px-6 sm:px-10 py-6">
+          <div className="flex items-center gap-2">
+            <div className="flex h-7 w-7 items-center justify-center rounded-md bg-blue-600">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                  fill="white"
+                />
+              </svg>
             </div>
+
+            <span className="text-[15px] font-medium tracking-tight text-[#111111]">
+              intervue
+            </span>
           </div>
-        </div>
+
+          <button className="text-[13px] font-medium text-[#111111] transition-colors duration-150 hover:text-blue-500">
+            Sign in
+          </button>
+        </header>
+
+        <main className="flex flex-1 justify-center items-center px-6 py-12">
+          <div className="w-full flex items-center justify-center">
+            <LoginCard />
+          </div>
+        </main>
+
+        {/* Footer */}
+        <footer className="flex items-center justify-between px-6 sm:px-10 py-5">
+          <span className="text-xs text-[#9CA3AF]">
+            © 2026 intervue
+          </span>
+
+          <div className="flex gap-6">
+            <button className="text-xs text-[#9CA3AF] transition-colors duration-150 hover:text-[#6B7280]">
+              Privacy
+            </button>
+
+            <button className="text-xs text-[#9CA3AF] transition-colors duration-150 hover:text-[#6B7280]">
+              Terms
+            </button>
+          </div>
+        </footer>
       </div>
 
-      {/* Right Panel — Illustration */}
-      <div className="hidden lg:flex flex-1 items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 relative overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl" />
-        </div>
-
-        {/* Illustration Image */}
-        <div className="relative z-10 w-full max-w-2xl p-12">
-          <Image
-            src="/ChatGPT Image Jul 6, 2026, 02_59_22 PM.png"
-            alt="AI Interview Platform — Practice interviews with AI-powered feedback"
-            width={800}
-            height={800}
-            className="w-full h-auto object-contain drop-shadow-2xl"
-            priority
-          />
-        </div>
+      {/* Right Panel */}
+      <div className="relative  hidden m-4 rounded-lg w-1/2 overflow-hidden lg:block">
+        <Image
+          src="/interview.png"
+          alt="AI Interview Platform"
+          fill
+          priority
+          className="object-cover object-center"
+        />
       </div>
     </div>
   );

@@ -70,10 +70,10 @@ export function DropZone({ onFileSelect, disabled = false }: DropZoneProps) {
       onDrop={handleDrop}
       onClick={handleClick}
       className={cn(
-        "relative border-2 border-dashed rounded-2xl p-12 text-center cursor-pointer transition-all duration-300",
+        "relative border-2 border-dashed rounded-2xl p-6 sm:p-12 text-center cursor-pointer transition-all duration-150",
         isDragging
-          ? "border-blue-400 bg-blue-50/50 scale-[1.01]"
-          : "border-gray-200 hover:border-blue-300 hover:bg-blue-50/30",
+          ? "border-blue-300 bg-blue-50/30"
+          : "border-[#E5E5E5] hover:border-blue-200 hover:bg-[#F7F7F7]/50",
         disabled && "opacity-50 cursor-not-allowed"
       )}
     >
@@ -89,35 +89,35 @@ export function DropZone({ onFileSelect, disabled = false }: DropZoneProps) {
       <div className="flex flex-col items-center gap-4">
         <div
           className={cn(
-            "w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300",
-            isDragging ? "bg-blue-100 scale-110" : "bg-gray-50"
+            "w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-150",
+            isDragging ? "bg-blue-50" : "bg-[#F7F7F7]"
           )}
         >
           {isDragging ? (
-            <FileText className="w-7 h-7 text-blue-500" />
+            <FileText className="w-6 h-6 text-blue-400" />
           ) : (
-            <Upload className="w-7 h-7 text-gray-400" />
+            <Upload className="w-6 h-6 text-[#9CA3AF]" />
           )}
         </div>
 
         <div>
-          <p className="text-sm font-semibold text-gray-700">
+          <p className="text-[13px] font-medium text-[#6B7280]">
             {isDragging ? (
               "Drop your PDF here"
             ) : (
               <>
-                <span className="text-blue-600">Click to upload</span> or drag
+                <span className="text-blue-500">Click to upload</span> or drag
                 and drop
               </>
             )}
           </p>
-          <p className="text-xs text-gray-400 mt-1">PDF only • Max 20MB</p>
+          <p className="text-xs text-[#9CA3AF] mt-1">PDF only · Max 20MB</p>
         </div>
       </div>
 
       {/* Animated border effect when dragging */}
       {isDragging && (
-        <div className="absolute inset-0 rounded-2xl border-2 border-blue-400 animate-pulse pointer-events-none" />
+        <div className="absolute inset-0 rounded-2xl border-2 border-blue-300 animate-pulse pointer-events-none" />
       )}
     </div>
   );

@@ -34,20 +34,20 @@ export function JDUploadCard({ interviewType }: JDUploadCardProps) {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+      <div className="bg-white rounded-2xl border border-[#ECECEC] overflow-hidden">
         {/* Header */}
         <div className="px-8 pt-8 pb-6">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
-              <FileText className="w-5 h-5 text-blue-600" />
+            <div className="w-9 h-9 rounded-lg bg-blue-50/80 flex items-center justify-center">
+              <FileText className="w-4 h-4 text-blue-400" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-gray-900">
+              <h2 className="text-[15px] font-semibold text-[#111111]">
                 Upload Job Description
               </h2>
             </div>
           </div>
-          <p className="text-sm text-gray-500 leading-relaxed">
+          <p className="text-[13px] text-[#9CA3AF] leading-relaxed">
             Upload the Job Description PDF. Future interview questions will be
             generated based on this document.
           </p>

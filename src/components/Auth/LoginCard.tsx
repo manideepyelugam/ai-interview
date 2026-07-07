@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { loginWithGoogle, loginWithGithub } from "@/src/services/auth.service";
 import { Loader2 } from "lucide-react";
+import { loginWithGoogle, loginWithGithub } from "@/src/services/auth.service";
 
 export function LoginCard() {
   const [loadingProvider, setLoadingProvider] = useState<string | null>(null);
@@ -26,46 +26,26 @@ export function LoginCard() {
   };
 
   return (
-    <div className="w-full max-w-md space-y-8">
-      {/* Logo */}
-      <div className="space-y-2">
-        <div className="flex items-center gap-2 mb-8">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                fill="white"
-              />
-            </svg>
-          </div>
-          <span className="text-xl font-bold text-gray-900">Intervue</span>
-        </div>
-
-        <h1 className="text-3xl font-bold text-gray-900 tracking-tight">
-          Sign in to your account
-        </h1>
-        <p className="text-gray-500 text-base">
-          Welcome back! Choose a method to sign in.
-        </p>
-      </div>
+    <div className="w-full max-w-[500px]">
+      {/* Heading */}
+      <h1 className="mb-8 text-[32px] font-normal leading-tight tracking-[-0.02em] text-neutral-900">
+        Sign in to your
+        <br />
+        account
+      </h1>
 
       {/* OAuth Buttons */}
-      <div className="space-y-3">
+      <div className="flex flex-col gap-3">
+        {/* Google */}
         <button
           onClick={handleGoogleLogin}
           disabled={loadingProvider !== null}
-          className="group w-full flex items-center justify-center gap-3 px-6 py-3.5 bg-white border border-gray-200 rounded-xl text-gray-700 font-medium text-[15px] hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed shadow-sm hover:shadow"
+          className="flex w-full items-center justify-center gap-2.5 rounded-xl border border-[#ECECEC] bg-transparent px-5 py-2.5 text-[13px] font-medium text-[#111111] transition-all duration-150 hover:border-[#D4D4D4] hover:bg-[#F7F7F7] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {loadingProvider === "google" ? (
-            <Loader2 className="w-5 h-5 animate-spin" />
+            <Loader2 className="h-[18px] w-[18px] animate-spin" />
           ) : (
-            <svg width="20" height="20" viewBox="0 0 24 24">
+            <svg width="18" height="18" viewBox="0 0 24 24">
               <path
                 d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"
                 fill="#4285F4"
@@ -84,35 +64,42 @@ export function LoginCard() {
               />
             </svg>
           )}
-          Continue with Google
+
+          Sign in with Google
         </button>
 
+        {/* GitHub */}
         <button
           onClick={handleGithubLogin}
           disabled={loadingProvider !== null}
-          className="group w-full flex items-center justify-center gap-3 px-6 py-3.5 bg-gray-900 border border-gray-900 rounded-xl text-white font-medium text-[15px] hover:bg-gray-800 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed shadow-sm hover:shadow"
+          className="flex w-full items-center justify-center gap-2.5 rounded-xl border border-[#ECECEC] bg-transparent px-5 py-2.5 text-[13px] font-medium text-[#111111] transition-all duration-150 hover:border-[#D4D4D4] hover:bg-[#F7F7F7] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {loadingProvider === "github" ? (
-            <Loader2 className="w-5 h-5 animate-spin" />
+            <Loader2 className="h-[18px] w-[18px] animate-spin" />
           ) : (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#111">
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
             </svg>
           )}
-          Continue with GitHub
+
+          Sign in with GitHub
         </button>
       </div>
 
-      {/* Footer */}
-      <p className="text-center text-sm text-gray-400 pt-4">
-        By signing in, you agree to our{" "}
-        <span className="text-gray-600 font-medium cursor-pointer hover:underline">
+      {/* Divider */}
+      <div className="my-7 flex items-center gap-4">
+        <div className="h-px flex-1 bg-[#ECECEC]" />
+        <span className="text-[13px] text-[#9CA3AF]">or</span>
+        <div className="h-px flex-1 bg-[#ECECEC]" />
+      </div>
+
+      {/* Terms */}
+      <p className="text-[13px] leading-6 text-[#9CA3AF]">
+        By signing in you agree to our{" "}
+        <span className="cursor-pointer font-medium text-[#111111] hover:underline">
           Terms of Service
-        </span>{" "}
-        and{" "}
-        <span className="text-gray-600 font-medium cursor-pointer hover:underline">
-          Privacy Policy
         </span>
+        .
       </p>
     </div>
   );

@@ -30,10 +30,10 @@ export function StartNewInterview() {
   return (
     <div className="mt-8">
       <div className="mb-4">
-        <h3 className="text-lg font-bold text-gray-900">
+        <h3 className="text-[16px] font-medium text-[#111111]">
           Start a New Interview
         </h3>
-        <p className="text-sm text-gray-400 mt-0.5">
+        <p className="text-[13px] text-[#9CA3AF] mt-0.5">
           Choose the type of interview you want to practice.
         </p>
       </div>
@@ -46,20 +46,20 @@ export function StartNewInterview() {
             <Link
               key={type.href}
               href={type.href}
-              className="group bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-blue-100 transition-all duration-300"
+              className="group bg-white rounded-lg border border-[#ECECEC] p-5  transition-all duration-150"
             >
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors">
-                  <Icon className="w-5 h-5 text-blue-600" />
+                <div className="w-9 h-9 rounded-lg bg-blue-50/80 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors duration-150">
+                  <Icon className="w-4 h-4 text-blue-400" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
-                    <h4 className="text-sm font-bold text-gray-900">
+                    <h4 className="text-[13px] font-medium text-[#111111]">
                       {type.title}
                     </h4>
-                    <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-blue-500 group-hover:translate-x-0.5 transition-all" />
+                    <ChevronRight className="w-4 h-4 text-[#D4D4D4] group-hover:text-[#9CA3AF] group-hover:translate-x-0.5 transition-all duration-150" />
                   </div>
-                  <p className="text-xs text-gray-400 mt-1 leading-relaxed">
+                  <p className="text-xs text-[#9CA3AF] mt-1 leading-relaxed">
                     {type.description}
                   </p>
                 </div>

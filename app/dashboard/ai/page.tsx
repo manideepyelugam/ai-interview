@@ -6,10 +6,10 @@ export default function AIInterviewPage() {
   return (
     <div className="max-w-7xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900">
+        <h1 className="text-2xl font-semibold text-[#111111] tracking-tight">
           AI Interview Round
         </h1>
-        <p className="text-gray-500 mt-1 text-sm">
+        <p className="text-[#9CA3AF] mt-1 text-[13px]">
           AI-powered mock interviews with real-time feedback.
         </p>
       </div>

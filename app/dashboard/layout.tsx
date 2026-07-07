@@ -28,17 +28,17 @@ export default function DashboardLayout({
   // Show loading spinner while checking auth
   if (loading || !checked) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50/50">
+      <div className="flex items-center justify-center min-h-screen bg-[#FAFAFA]">
         <div className="flex flex-col items-center gap-3">
-          <div className="w-8 h-8 border-[3px] border-blue-600 border-t-transparent rounded-full animate-spin" />
-          <p className="text-sm text-gray-400">Loading...</p>
+          <div className="w-6 h-6 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" />
+          <p className="text-[13px] text-[#9CA3AF]">Loading...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="flex min-h-screen bg-gray-50/50">
+    <div className="flex min-h-screen bg-[#FAFAFA]">
       <Sidebar />
       <div className="flex-1 flex flex-col min-w-0">
         <Navbar />

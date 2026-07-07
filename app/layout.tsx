@@ -8,6 +8,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 

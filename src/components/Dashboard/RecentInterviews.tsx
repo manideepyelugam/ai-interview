@@ -33,19 +33,27 @@ const recentInterviews = [
     score: "60%",
     icon: Code2,
   },
+  {
+    title: "OA Round - Amazon",
+    date: "May 12, 2024",
+    duration: "90 mins",
+    status: "In Progress",
+    score: "60%",
+    icon: Code2,
+  },
 ];
 
 export function RecentInterviews() {
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 p-6">
+    <div className="bg-white rounded-lg border border-[#ECECEC] p-6 h-full">
       <div className="flex items-center justify-between mb-5">
-        <h3 className="text-lg font-bold text-gray-900">Recent Interviews</h3>
-        <button className="text-xs font-medium text-gray-500 hover:text-gray-700 px-3 py-1.5 rounded-lg border border-gray-200 hover:border-gray-300 transition-all">
+        <h3 className="text-[16px] font-medium text-[#111111]">Recent Interviews</h3>
+        <button className="text-xs font-medium text-[#6B7280] hover:text-[#111111] px-3 py-1.5 rounded-lg border border-[#ECECEC] hover:border-[#D4D4D4] transition-all duration-150">
           View all
         </button>
       </div>
 
-      <div className="space-y-1">
+      <div className="space-y-0.5">
         {recentInterviews.map((interview, index) => {
           const Icon = interview.icon;
           const isInProgress = interview.status === "In Progress";
@@ -53,33 +61,32 @@ export function RecentInterviews() {
           return (
             <div
               key={index}
-              className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer group"
+              className="flex items-center gap-4 p-3 rounded-lg hover:bg-[#F7F7F7] transition-colors duration-150 cursor-pointer group"
             >
-              <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
-                <Icon className="w-5 h-5 text-blue-600" />
+              <div className="w-9 h-9 rounded-lg bg-blue-50/80 flex items-center justify-center flex-shrink-0">
+                <Icon className="w-4 h-4 text-blue-400" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-gray-900 truncate">
+                <p className="text-[13px] font-medium text-[#111111] truncate">
                   {interview.title}
                 </p>
-                <p className="text-xs text-gray-400 mt-0.5">
-                  {interview.date} • {interview.duration}
+                <p className="text-xs text-[#9CA3AF] mt-0.5">
+                  {interview.date} · {interview.duration}
                 </p>
               </div>
               <div className="flex items-center gap-3">
                 <span
-                  className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
-                    isInProgress
-                      ? "bg-amber-50 text-amber-600"
-                      : "bg-green-50 text-green-600"
-                  }`}
+                  className={`text-xs font-medium px-2.5 py-1 rounded-full ${isInProgress
+                    ? "bg-amber-50 text-amber-600"
+                    : "bg-green-50 text-green-600"
+                    }`}
                 >
                   {interview.status}
                 </span>
-                <span className="text-sm font-bold text-gray-700">
+                <span className="text-[13px] font-semibold text-[#111111]">
                   {interview.score}
                 </span>
-                <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-gray-500 transition-colors" />
+                <ChevronRight className="w-4 h-4 text-[#D4D4D4] group-hover:text-[#9CA3AF] transition-colors duration-150" />
               </div>
             </div>
           );
