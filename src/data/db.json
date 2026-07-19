@@ -1606,6 +1606,4476 @@
       },
       "createdAt": "2026-07-13T08:28:39.845Z",
       "updatedAt": "2026-07-13T08:30:20.668Z"
+    },
+    "session-ijli3keg8": {
+      "id": "session-ijli3keg8",
+      "userId": "6a549333c82eb01b6c3f",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scaleable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "mcqStatus": "completed",
+      "codingStatus": "completed",
+      "aptitudeStatus": "completed",
+      "mcqQuestions": [
+        {
+          "id": "mcq-1",
+          "question": "Which of the following is NOT a feature of React?",
+          "options": [
+            "Virtual DOM",
+            "Two-way data binding",
+            "Component-based architecture",
+            "JSX syntax"
+          ],
+          "correctAnswer": "Two-way data binding",
+          "explanation": "React relies on one-way data binding. Frameworks like Angular support two-way data binding natively.",
+          "skill": "React",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "mcq-2",
+          "question": "Regarding Next.js, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Next.js uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Next.js, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Next.js",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-3",
+          "question": "Regarding TypeScript, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: TypeScript uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using TypeScript, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "TypeScript",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-4",
+          "question": "Regarding Tailwind CSS, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Tailwind CSS uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Tailwind CSS, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Tailwind CSS",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-5",
+          "question": "Regarding Node.js, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Node.js uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Node.js, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Node.js",
+          "difficulty": "Easy",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-6",
+          "question": "Regarding Express, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Express uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Express, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Express",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-7",
+          "question": "Regarding React, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: React uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using React, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "React",
+          "difficulty": "Easy",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-8",
+          "question": "Regarding Next.js, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Next.js uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Next.js, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Next.js",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-9",
+          "question": "Regarding TypeScript, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: TypeScript uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using TypeScript, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "TypeScript",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-10",
+          "question": "Regarding Tailwind CSS, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Tailwind CSS uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Tailwind CSS, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Tailwind CSS",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-11",
+          "question": "Regarding Node.js, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Node.js uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Node.js, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Node.js",
+          "difficulty": "Easy",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-12",
+          "question": "Regarding Express, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Express uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Express, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Express",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-13",
+          "question": "Regarding React, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: React uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using React, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "React",
+          "difficulty": "Easy",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-14",
+          "question": "Regarding Next.js, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Next.js uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Next.js, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Next.js",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-15",
+          "question": "Regarding TypeScript, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: TypeScript uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using TypeScript, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "TypeScript",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        }
+      ],
+      "codingQuestions": [
+        {
+          "id": "cod-1",
+          "title": "Two Sum",
+          "difficulty": "Easy",
+          "problemStatement": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.",
+          "constraints": [
+            "2 <= nums.length <= 10^4",
+            "-10^9 <= nums[i] <= 10^9",
+            "-10^9 <= target <= 10^9"
+          ],
+          "inputFormat": "First line contains target. Second line contains comma-separated array numbers.",
+          "outputFormat": "Two indices as comma-separated values, e.g. '0,1'.",
+          "examples": [
+            {
+              "input": "9\n2,7,11,15",
+              "output": "0,1",
+              "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+            }
+          ],
+          "testCases": [
+            {
+              "input": "9\n2,7,11,15",
+              "output": "0,1",
+              "isHidden": false
+            },
+            {
+              "input": "6\n3,2,4",
+              "output": "1,2",
+              "isHidden": false
+            },
+            {
+              "input": "6\n3,3",
+              "output": "0,1",
+              "isHidden": true
+            },
+            {
+              "input": "10\n1,5,5,9",
+              "output": "1,2",
+              "isHidden": true
+            },
+            {
+              "input": "8\n4,1,2,4",
+              "output": "0,3",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Try using a hash map to look up targets in O(1) time.",
+            "Ensure you don't use the same element index twice."
+          ]
+        },
+        {
+          "id": "cod-2",
+          "title": "Valid Parentheses",
+          "difficulty": "Easy",
+          "problemStatement": "Given a string `s` containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.\n\nAn input string is valid if:\n1. Open brackets must be closed by the same type of brackets.\n2. Open brackets must be closed in the correct order.\n3. Every close bracket has a corresponding open bracket of the same type.",
+          "constraints": [
+            "1 <= s.length <= 10^4",
+            "s consists of parentheses only '()[]{}'"
+          ],
+          "inputFormat": "A single line containing the parenthesis string.",
+          "outputFormat": "true or false",
+          "examples": [
+            {
+              "input": "()",
+              "output": "true"
+            },
+            {
+              "input": "()[]{}",
+              "output": "true"
+            },
+            {
+              "input": "(]",
+              "output": "false"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "()",
+              "output": "true",
+              "isHidden": false
+            },
+            {
+              "input": "()[]{}",
+              "output": "true",
+              "isHidden": false
+            },
+            {
+              "input": "(]",
+              "output": "false",
+              "isHidden": true
+            },
+            {
+              "input": "([)]",
+              "output": "false",
+              "isHidden": true
+            },
+            {
+              "input": "{[]}",
+              "output": "true",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use a stack to keep track of the opening brackets.",
+            "When you see a closing bracket, check if it matches the top of the stack."
+          ]
+        },
+        {
+          "id": "cod-3",
+          "title": "Longest Substring Without Repeating Characters",
+          "difficulty": "Medium",
+          "problemStatement": "Given a string `s`, find the length of the longest substring without repeating characters.",
+          "constraints": [
+            "0 <= s.length <= 5 * 10^4",
+            "s consists of English letters, digits, symbols and spaces."
+          ],
+          "inputFormat": "A single line containing the string.",
+          "outputFormat": "An integer representing the length.",
+          "examples": [
+            {
+              "input": "abcabcbb",
+              "output": "3",
+              "explanation": "The answer is 'abc', with the length of 3."
+            },
+            {
+              "input": "bbbbb",
+              "output": "1",
+              "explanation": "The answer is 'b', with the length of 1."
+            }
+          ],
+          "testCases": [
+            {
+              "input": "abcabcbb",
+              "output": "3",
+              "isHidden": false
+            },
+            {
+              "input": "bbbbb",
+              "output": "1",
+              "isHidden": false
+            },
+            {
+              "input": "pwwkew",
+              "output": "3",
+              "isHidden": true
+            },
+            {
+              "input": "",
+              "output": "0",
+              "isHidden": true
+            },
+            {
+              "input": "dvdf",
+              "output": "3",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use a sliding window technique with two pointers.",
+            "Keep track of the last seen index of each character using a hash map."
+          ]
+        },
+        {
+          "id": "cod-4",
+          "title": "Binary Tree Level Order Traversal",
+          "difficulty": "Medium",
+          "problemStatement": "Given the root of a binary tree represented as a flat comma-separated array of values (Breadth-First Search order, where 'null' represents missing child nodes), return the level order traversal of its nodes' values as a stringified list of levels.",
+          "constraints": [
+            "The number of nodes in the tree is in the range [0, 2000].",
+            "-1000 <= Node.val <= 1000"
+          ],
+          "inputFormat": "Comma-separated representation of binary tree, e.g., '3,9,20,null,null,15,7'",
+          "outputFormat": "Stringified representation of levels, e.g., '[[3],[9,20],[15,7]]'",
+          "examples": [
+            {
+              "input": "3,9,20,null,null,15,7",
+              "output": "[[3],[9,20],[15,7]]"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "3,9,20,null,null,15,7",
+              "output": "[[3],[9,20],[15,7]]",
+              "isHidden": false
+            },
+            {
+              "input": "1",
+              "output": "[[1]]",
+              "isHidden": false
+            },
+            {
+              "input": "",
+              "output": "[]",
+              "isHidden": true
+            },
+            {
+              "input": "1,2,null,3,null,4,null,5",
+              "output": "[[1],[2],[3],[4],[5]]",
+              "isHidden": true
+            },
+            {
+              "input": "1,2,3,4,null,null,5",
+              "output": "[[1],[2,3],[4,5]]",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use a queue to run a Breadth-First Search (BFS) level by level.",
+            "Keep track of the number of nodes at each level during traversal."
+          ]
+        },
+        {
+          "id": "cod-5",
+          "title": "Merge k Sorted Lists",
+          "difficulty": "Hard",
+          "problemStatement": "You are given an array of `k` linked-lists `lists`, each linked-list is sorted in ascending order.\n\nMerge all the linked-lists into one sorted linked-list and return it.",
+          "constraints": [
+            "k == lists.length",
+            "0 <= k <= 10^4",
+            "0 <= lists[i].length <= 500",
+            "-10^4 <= lists[i][j] <= 10^4",
+            "lists[i] is sorted in ascending order."
+          ],
+          "inputFormat": "Each list represented as a comma-separated line. Lists are separated by pipe (|) symbol.",
+          "outputFormat": "Comma-separated merged list.",
+          "examples": [
+            {
+              "input": "1,4,5|1,3,4|2,6",
+              "output": "1,1,2,3,4,4,5,6"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "1,4,5|1,3,4|2,6",
+              "output": "1,1,2,3,4,4,5,6",
+              "isHidden": false
+            },
+            {
+              "input": "",
+              "output": "",
+              "isHidden": false
+            },
+            {
+              "input": "|",
+              "output": "",
+              "isHidden": true
+            },
+            {
+              "input": "2|1|3",
+              "output": "1,2,3",
+              "isHidden": true
+            },
+            {
+              "input": "1,8,9|2,7|3,4,5,6",
+              "output": "1,2,3,4,5,6,7,8,9",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "You can use a min-heap to keep track of the smallest node among all current lists.",
+            "Alternatively, divide and conquer by repeatedly merging pairs of lists."
+          ]
+        }
+      ],
+      "aptitudeQuestions": [
+        {
+          "id": "apt-1",
+          "question": "A train 150 meters long is running at a speed of 54 km/hr. How much time will it take to cross a pole?",
+          "options": [
+            "8 seconds",
+            "9 seconds",
+            "10 seconds",
+            "12 seconds"
+          ],
+          "correctAnswer": "10 seconds",
+          "explanation": "Speed in m/s = 54 * (5/18) = 15 m/s. Time to cross pole = Length of train / Speed = 150 / 15 = 10 seconds.",
+          "category": "Numerical Ability",
+          "difficulty": "Easy"
+        },
+        {
+          "id": "apt-2",
+          "question": "Find the missing number in the series: 3, 7, 15, 31, 63, ...",
+          "options": [
+            "95",
+            "111",
+            "127",
+            "131"
+          ],
+          "correctAnswer": "127",
+          "explanation": "The pattern is: next number = (current number * 2) + 1. So, (63 * 2) + 1 = 126 + 1 = 127.",
+          "category": "Logical Reasoning",
+          "difficulty": "Easy"
+        },
+        {
+          "id": "apt-3",
+          "question": "A and B can complete a work together in 8 days. A alone can do it in 12 days. How long will B alone take to complete the work?",
+          "options": [
+            "16 days",
+            "18 days",
+            "20 days",
+            "24 days"
+          ],
+          "correctAnswer": "24 days",
+          "explanation": "Work rate of (A+B) = 1/8. Work rate of A = 1/12. Work rate of B = 1/8 - 1/12 = (3-2)/24 = 1/24. Thus, B alone takes 24 days.",
+          "category": "Numerical Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "apt-4",
+          "question": "Pointing to a photograph, a man said, 'I have no brother or sister, but that man's father is my father's son.' Whose photograph was it?",
+          "options": [
+            "His father's",
+            "His son's",
+            "His own",
+            "His nephew's"
+          ],
+          "correctAnswer": "His son's",
+          "explanation": "Since the man has no brother or sister, 'my father's son' is himself. So 'that man's father is myself'. Therefore, it is his son's photograph.",
+          "category": "Logical Reasoning",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "apt-5",
+          "question": "Complete the analogy: LION : PRIDE :: WOLF : ?",
+          "options": [
+            "PACK",
+            "FLOCK",
+            "HERD",
+            "SWARM"
+          ],
+          "correctAnswer": "PACK",
+          "explanation": "A group of lions is called a Pride, and a group of wolves is called a Pack.",
+          "category": "Verbal Ability",
+          "difficulty": "Easy"
+        },
+        {
+          "id": "apt-6",
+          "question": "If SCOOTER is coded as TDNNSDQ, how is MOTORCYCLE coded?",
+          "options": [
+            "NPSNSBXBKD",
+            "NNUPQDXBKB",
+            "NLSPQCYBKB",
+            "NNSQPDBYKC"
+          ],
+          "correctAnswer": "NNUPQDXBKB",
+          "explanation": "The coding shifts alternating characters by +1 and -1. S+1=T, C-1=D, O-1=N, O+1=N, T-1=S, E+1=D, R-1=Q. Following motorcyle gives NNUPQDXBKB.",
+          "category": "Logical Reasoning",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "apt-7",
+          "question": "A box contains 5 red, 8 blue, and 3 green marbles. If two marbles are drawn at random without replacement, what is the probability that both are red?",
+          "options": [
+            "5/12",
+            "1/12",
+            "5/24",
+            "7/24"
+          ],
+          "correctAnswer": "1/12",
+          "explanation": "Total marbles = 16. Red marbles = 5. Probability of first red = 5/16. Probability of second red = 4/15. Overall probability = (5/16) * (4/15) = 20/240 = 1/12.",
+          "category": "Numerical Ability",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "apt-8",
+          "question": "Choose the word closest in meaning to 'OBDURATE'.",
+          "options": [
+            "Stubborn",
+            "Flexible",
+            "Honest",
+            "Mischievous"
+          ],
+          "correctAnswer": "Stubborn",
+          "explanation": "Obdurate means stubbornly refusing to change one's opinion or course of action.",
+          "category": "Verbal Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "apt-9",
+          "question": "Five people (P, Q, R, S, T) sit in a row. S is next to R, who sits on the extreme left. T is not next to S. Who sits next to T?",
+          "options": [
+            "P only",
+            "Q only",
+            "P and Q",
+            "S and P"
+          ],
+          "correctAnswer": "P and Q",
+          "explanation": "R sits at index 0. S sits next to R, so index 1. Sitting arrangement is R, S, P, T, Q or R, S, Q, T, P. In either case, T sits between P and Q, so next to P and Q.",
+          "category": "Analytical Reasoning",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "apt-10",
+          "question": "Find the odd one out: 27, 64, 125, 144, 216",
+          "options": [
+            "27",
+            "64",
+            "125",
+            "144"
+          ],
+          "correctAnswer": "144",
+          "explanation": "27 is 3^3, 64 is 4^3, 125 is 5^3, 216 is 6^3. 144 is 12^2 (a square, not a cube).",
+          "category": "Analytical Reasoning",
+          "difficulty": "Easy"
+        }
+      ],
+      "mcqAnswers": {
+        "mcq-1": "Component-based architecture",
+        "mcq-2": "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+        "mcq-3": "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+        "mcq-4": "Option A: Tailwind CSS uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced."
+      },
+      "codingAnswers": {
+        "cod-1": {
+          "code": "",
+          "language": "javascript",
+          "passedCount": 0,
+          "totalCount": 5,
+          "status": "Runtime Error",
+          "feedback": {
+            "complexity": "Time: O(N^2), Space: O(1)",
+            "codeQuality": "Code has basic formatting, matching standard logic structures.",
+            "optimization": "Review variable assignments and eliminate redundant nested loops.",
+            "suggestions": "- Add error boundary validation for input structures.\n- Use modern variable scoping (const/let)."
+          }
+        }
+      },
+      "aptitudeAnswers": {
+        "apt-1": "8 seconds",
+        "apt-2": "127",
+        "apt-3": "24 days"
+      },
+      "violations": [
+        {
+          "type": "Tab Switch / Focus Loss",
+          "timestamp": "2026-07-13T17:09:27.077Z"
+        }
+      ],
+      "evaluation": {
+        "mcqScore": 0,
+        "codingScore": 0,
+        "aptitudeScore": 20,
+        "overallScore": 4,
+        "percentage": 4,
+        "passed": false,
+        "timeTaken": 78,
+        "accuracy": 25,
+        "mcqStats": {
+          "correct": 0,
+          "wrong": 4,
+          "skipped": 11,
+          "accuracy": 0
+        },
+        "codingStats": {
+          "problemsAttempted": 1,
+          "passed": 0,
+          "failed": 25,
+          "compilationStatus": "Failed cases"
+        },
+        "aptitudeStats": {
+          "correct": 2,
+          "wrong": 1,
+          "skipped": 7,
+          "accuracy": 67
+        }
+      },
+      "report": {
+        "candidateSummary": {
+          "name": "Candidate",
+          "role": "MERN Stack Developer",
+          "experience": "2 Years (Junior)",
+          "difficulty": "Medium",
+          "duration": "78 Mins",
+          "overallScore": 4
+        },
+        "technicalPerformance": {
+          "Problem Solving": 0,
+          "Logical Aptitude": 20,
+          "Core Technical MCQs": 0,
+          "Code Complexity Analysis": 0
+        },
+        "codingPerformance": {
+          "problemsAttempted": 1,
+          "passed": 0,
+          "failed": 25,
+          "codeQuality": "Clear variable naming and modular decomposition of tasks. Standard code structures are maintained.",
+          "optimization": "Successfully avoided unnecessary runtime memory leaks. Big-O time complexity is close to optimal.",
+          "suggestions": "Consider adding explicit null boundary checks and practicing advanced graph algorithms."
+        },
+        "aptitudePerformance": {
+          "logical": 20,
+          "numerical": 18,
+          "verbal": 22,
+          "analytical": 19
+        },
+        "strongAreas": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Logical Deduction"
+        ],
+        "weakAreas": [
+          "Dynamic Programming Optimization",
+          "Permutations Probability Calculations"
+        ],
+        "personalizedLearningPath": [
+          "Study optimal sub-structures and practice DP problems (Knapsack, LCS) on LeetCode.",
+          "Strengthen probability distributions and permutations mathematics.",
+          "Learn memory profiling in Chrome DevTools to analyze performance bottlenecks."
+        ],
+        "interviewReadiness": "Ready for Junior Roles",
+        "finalRecommendation": "Retry OA Assessment"
+      },
+      "createdAt": "2026-07-13T17:08:01.184Z",
+      "updatedAt": "2026-07-13T17:16:33.307Z"
+    },
+    "session-35e3nairi": {
+      "id": "session-35e3nairi",
+      "userId": "6a4ca2be4c0f65e63ca9",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scaleable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "mcqStatus": "completed",
+      "codingStatus": "completed",
+      "aptitudeStatus": "completed",
+      "mcqQuestions": [
+        {
+          "id": "mcq-1",
+          "question": "Which of the following is NOT a feature of React?",
+          "options": [
+            "Virtual DOM",
+            "Two-way data binding",
+            "Component-based architecture",
+            "JSX syntax"
+          ],
+          "correctAnswer": "Two-way data binding",
+          "explanation": "React relies on one-way data binding. Frameworks like Angular support two-way data binding natively.",
+          "skill": "React",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "mcq-2",
+          "question": "Regarding Next.js, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Next.js uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Next.js, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Next.js",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-3",
+          "question": "Regarding TypeScript, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: TypeScript uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using TypeScript, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "TypeScript",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-4",
+          "question": "Regarding Tailwind CSS, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Tailwind CSS uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Tailwind CSS, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Tailwind CSS",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-5",
+          "question": "Regarding Node.js, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Node.js uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Node.js, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Node.js",
+          "difficulty": "Easy",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-6",
+          "question": "Regarding Express, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Express uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Express, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Express",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-7",
+          "question": "Regarding React, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: React uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using React, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "React",
+          "difficulty": "Easy",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-8",
+          "question": "Regarding Next.js, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Next.js uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Next.js, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Next.js",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-9",
+          "question": "Regarding TypeScript, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: TypeScript uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using TypeScript, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "TypeScript",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-10",
+          "question": "Regarding Tailwind CSS, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Tailwind CSS uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Tailwind CSS, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Tailwind CSS",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-11",
+          "question": "Regarding Node.js, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Node.js uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Node.js, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Node.js",
+          "difficulty": "Easy",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-12",
+          "question": "Regarding Express, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Express uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Express, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Express",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-13",
+          "question": "Regarding React, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: React uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using React, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "React",
+          "difficulty": "Easy",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-14",
+          "question": "Regarding Next.js, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Next.js uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Next.js, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Next.js",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-15",
+          "question": "Regarding TypeScript, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: TypeScript uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using TypeScript, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "TypeScript",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        }
+      ],
+      "codingQuestions": [
+        {
+          "id": "cod-1",
+          "title": "Two Sum",
+          "difficulty": "Easy",
+          "problemStatement": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.",
+          "constraints": [
+            "2 <= nums.length <= 10^4",
+            "-10^9 <= nums[i] <= 10^9",
+            "-10^9 <= target <= 10^9"
+          ],
+          "inputFormat": "First line contains target. Second line contains comma-separated array numbers.",
+          "outputFormat": "Two indices as comma-separated values, e.g. '0,1'.",
+          "examples": [
+            {
+              "input": "9\n2,7,11,15",
+              "output": "0,1",
+              "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+            }
+          ],
+          "testCases": [
+            {
+              "input": "9\n2,7,11,15",
+              "output": "0,1",
+              "isHidden": false
+            },
+            {
+              "input": "6\n3,2,4",
+              "output": "1,2",
+              "isHidden": false
+            },
+            {
+              "input": "6\n3,3",
+              "output": "0,1",
+              "isHidden": true
+            },
+            {
+              "input": "10\n1,5,5,9",
+              "output": "1,2",
+              "isHidden": true
+            },
+            {
+              "input": "8\n4,1,2,4",
+              "output": "0,3",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Try using a hash map to look up targets in O(1) time.",
+            "Ensure you don't use the same element index twice."
+          ]
+        },
+        {
+          "id": "cod-2",
+          "title": "Valid Parentheses",
+          "difficulty": "Easy",
+          "problemStatement": "Given a string `s` containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.\n\nAn input string is valid if:\n1. Open brackets must be closed by the same type of brackets.\n2. Open brackets must be closed in the correct order.\n3. Every close bracket has a corresponding open bracket of the same type.",
+          "constraints": [
+            "1 <= s.length <= 10^4",
+            "s consists of parentheses only '()[]{}'"
+          ],
+          "inputFormat": "A single line containing the parenthesis string.",
+          "outputFormat": "true or false",
+          "examples": [
+            {
+              "input": "()",
+              "output": "true"
+            },
+            {
+              "input": "()[]{}",
+              "output": "true"
+            },
+            {
+              "input": "(]",
+              "output": "false"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "()",
+              "output": "true",
+              "isHidden": false
+            },
+            {
+              "input": "()[]{}",
+              "output": "true",
+              "isHidden": false
+            },
+            {
+              "input": "(]",
+              "output": "false",
+              "isHidden": true
+            },
+            {
+              "input": "([)]",
+              "output": "false",
+              "isHidden": true
+            },
+            {
+              "input": "{[]}",
+              "output": "true",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use a stack to keep track of the opening brackets.",
+            "When you see a closing bracket, check if it matches the top of the stack."
+          ]
+        },
+        {
+          "id": "cod-3",
+          "title": "Longest Substring Without Repeating Characters",
+          "difficulty": "Medium",
+          "problemStatement": "Given a string `s`, find the length of the longest substring without repeating characters.",
+          "constraints": [
+            "0 <= s.length <= 5 * 10^4",
+            "s consists of English letters, digits, symbols and spaces."
+          ],
+          "inputFormat": "A single line containing the string.",
+          "outputFormat": "An integer representing the length.",
+          "examples": [
+            {
+              "input": "abcabcbb",
+              "output": "3",
+              "explanation": "The answer is 'abc', with the length of 3."
+            },
+            {
+              "input": "bbbbb",
+              "output": "1",
+              "explanation": "The answer is 'b', with the length of 1."
+            }
+          ],
+          "testCases": [
+            {
+              "input": "abcabcbb",
+              "output": "3",
+              "isHidden": false
+            },
+            {
+              "input": "bbbbb",
+              "output": "1",
+              "isHidden": false
+            },
+            {
+              "input": "pwwkew",
+              "output": "3",
+              "isHidden": true
+            },
+            {
+              "input": "",
+              "output": "0",
+              "isHidden": true
+            },
+            {
+              "input": "dvdf",
+              "output": "3",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use a sliding window technique with two pointers.",
+            "Keep track of the last seen index of each character using a hash map."
+          ]
+        },
+        {
+          "id": "cod-4",
+          "title": "Binary Tree Level Order Traversal",
+          "difficulty": "Medium",
+          "problemStatement": "Given the root of a binary tree represented as a flat comma-separated array of values (Breadth-First Search order, where 'null' represents missing child nodes), return the level order traversal of its nodes' values as a stringified list of levels.",
+          "constraints": [
+            "The number of nodes in the tree is in the range [0, 2000].",
+            "-1000 <= Node.val <= 1000"
+          ],
+          "inputFormat": "Comma-separated representation of binary tree, e.g., '3,9,20,null,null,15,7'",
+          "outputFormat": "Stringified representation of levels, e.g., '[[3],[9,20],[15,7]]'",
+          "examples": [
+            {
+              "input": "3,9,20,null,null,15,7",
+              "output": "[[3],[9,20],[15,7]]"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "3,9,20,null,null,15,7",
+              "output": "[[3],[9,20],[15,7]]",
+              "isHidden": false
+            },
+            {
+              "input": "1",
+              "output": "[[1]]",
+              "isHidden": false
+            },
+            {
+              "input": "",
+              "output": "[]",
+              "isHidden": true
+            },
+            {
+              "input": "1,2,null,3,null,4,null,5",
+              "output": "[[1],[2],[3],[4],[5]]",
+              "isHidden": true
+            },
+            {
+              "input": "1,2,3,4,null,null,5",
+              "output": "[[1],[2,3],[4,5]]",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use a queue to run a Breadth-First Search (BFS) level by level.",
+            "Keep track of the number of nodes at each level during traversal."
+          ]
+        },
+        {
+          "id": "cod-5",
+          "title": "Merge k Sorted Lists",
+          "difficulty": "Hard",
+          "problemStatement": "You are given an array of `k` linked-lists `lists`, each linked-list is sorted in ascending order.\n\nMerge all the linked-lists into one sorted linked-list and return it.",
+          "constraints": [
+            "k == lists.length",
+            "0 <= k <= 10^4",
+            "0 <= lists[i].length <= 500",
+            "-10^4 <= lists[i][j] <= 10^4",
+            "lists[i] is sorted in ascending order."
+          ],
+          "inputFormat": "Each list represented as a comma-separated line. Lists are separated by pipe (|) symbol.",
+          "outputFormat": "Comma-separated merged list.",
+          "examples": [
+            {
+              "input": "1,4,5|1,3,4|2,6",
+              "output": "1,1,2,3,4,4,5,6"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "1,4,5|1,3,4|2,6",
+              "output": "1,1,2,3,4,4,5,6",
+              "isHidden": false
+            },
+            {
+              "input": "",
+              "output": "",
+              "isHidden": false
+            },
+            {
+              "input": "|",
+              "output": "",
+              "isHidden": true
+            },
+            {
+              "input": "2|1|3",
+              "output": "1,2,3",
+              "isHidden": true
+            },
+            {
+              "input": "1,8,9|2,7|3,4,5,6",
+              "output": "1,2,3,4,5,6,7,8,9",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "You can use a min-heap to keep track of the smallest node among all current lists.",
+            "Alternatively, divide and conquer by repeatedly merging pairs of lists."
+          ]
+        }
+      ],
+      "aptitudeQuestions": [
+        {
+          "id": "apt-1",
+          "question": "A train 150 meters long is running at a speed of 54 km/hr. How much time will it take to cross a pole?",
+          "options": [
+            "8 seconds",
+            "9 seconds",
+            "10 seconds",
+            "12 seconds"
+          ],
+          "correctAnswer": "10 seconds",
+          "explanation": "Speed in m/s = 54 * (5/18) = 15 m/s. Time to cross pole = Length of train / Speed = 150 / 15 = 10 seconds.",
+          "category": "Numerical Ability",
+          "difficulty": "Easy"
+        },
+        {
+          "id": "apt-2",
+          "question": "Find the missing number in the series: 3, 7, 15, 31, 63, ...",
+          "options": [
+            "95",
+            "111",
+            "127",
+            "131"
+          ],
+          "correctAnswer": "127",
+          "explanation": "The pattern is: next number = (current number * 2) + 1. So, (63 * 2) + 1 = 126 + 1 = 127.",
+          "category": "Logical Reasoning",
+          "difficulty": "Easy"
+        },
+        {
+          "id": "apt-3",
+          "question": "A and B can complete a work together in 8 days. A alone can do it in 12 days. How long will B alone take to complete the work?",
+          "options": [
+            "16 days",
+            "18 days",
+            "20 days",
+            "24 days"
+          ],
+          "correctAnswer": "24 days",
+          "explanation": "Work rate of (A+B) = 1/8. Work rate of A = 1/12. Work rate of B = 1/8 - 1/12 = (3-2)/24 = 1/24. Thus, B alone takes 24 days.",
+          "category": "Numerical Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "apt-4",
+          "question": "Pointing to a photograph, a man said, 'I have no brother or sister, but that man's father is my father's son.' Whose photograph was it?",
+          "options": [
+            "His father's",
+            "His son's",
+            "His own",
+            "His nephew's"
+          ],
+          "correctAnswer": "His son's",
+          "explanation": "Since the man has no brother or sister, 'my father's son' is himself. So 'that man's father is myself'. Therefore, it is his son's photograph.",
+          "category": "Logical Reasoning",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "apt-5",
+          "question": "Complete the analogy: LION : PRIDE :: WOLF : ?",
+          "options": [
+            "PACK",
+            "FLOCK",
+            "HERD",
+            "SWARM"
+          ],
+          "correctAnswer": "PACK",
+          "explanation": "A group of lions is called a Pride, and a group of wolves is called a Pack.",
+          "category": "Verbal Ability",
+          "difficulty": "Easy"
+        },
+        {
+          "id": "apt-6",
+          "question": "If SCOOTER is coded as TDNNSDQ, how is MOTORCYCLE coded?",
+          "options": [
+            "NPSNSBXBKD",
+            "NNUPQDXBKB",
+            "NLSPQCYBKB",
+            "NNSQPDBYKC"
+          ],
+          "correctAnswer": "NNUPQDXBKB",
+          "explanation": "The coding shifts alternating characters by +1 and -1. S+1=T, C-1=D, O-1=N, O+1=N, T-1=S, E+1=D, R-1=Q. Following motorcyle gives NNUPQDXBKB.",
+          "category": "Logical Reasoning",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "apt-7",
+          "question": "A box contains 5 red, 8 blue, and 3 green marbles. If two marbles are drawn at random without replacement, what is the probability that both are red?",
+          "options": [
+            "5/12",
+            "1/12",
+            "5/24",
+            "7/24"
+          ],
+          "correctAnswer": "1/12",
+          "explanation": "Total marbles = 16. Red marbles = 5. Probability of first red = 5/16. Probability of second red = 4/15. Overall probability = (5/16) * (4/15) = 20/240 = 1/12.",
+          "category": "Numerical Ability",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "apt-8",
+          "question": "Choose the word closest in meaning to 'OBDURATE'.",
+          "options": [
+            "Stubborn",
+            "Flexible",
+            "Honest",
+            "Mischievous"
+          ],
+          "correctAnswer": "Stubborn",
+          "explanation": "Obdurate means stubbornly refusing to change one's opinion or course of action.",
+          "category": "Verbal Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "apt-9",
+          "question": "Five people (P, Q, R, S, T) sit in a row. S is next to R, who sits on the extreme left. T is not next to S. Who sits next to T?",
+          "options": [
+            "P only",
+            "Q only",
+            "P and Q",
+            "S and P"
+          ],
+          "correctAnswer": "P and Q",
+          "explanation": "R sits at index 0. S sits next to R, so index 1. Sitting arrangement is R, S, P, T, Q or R, S, Q, T, P. In either case, T sits between P and Q, so next to P and Q.",
+          "category": "Analytical Reasoning",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "apt-10",
+          "question": "Find the odd one out: 27, 64, 125, 144, 216",
+          "options": [
+            "27",
+            "64",
+            "125",
+            "144"
+          ],
+          "correctAnswer": "144",
+          "explanation": "27 is 3^3, 64 is 4^3, 125 is 5^3, 216 is 6^3. 144 is 12^2 (a square, not a cube).",
+          "category": "Analytical Reasoning",
+          "difficulty": "Easy"
+        }
+      ],
+      "mcqAnswers": {
+        "mcq-1": "Two-way data binding",
+        "mcq-2": "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+      },
+      "codingAnswers": {
+        "cod-1": {
+          "code": "",
+          "language": "javascript",
+          "passedCount": 0,
+          "totalCount": 5,
+          "status": "Runtime Error",
+          "feedback": {
+            "complexity": "Time: O(N^2), Space: O(1)",
+            "codeQuality": "Code has basic formatting, matching standard logic structures.",
+            "optimization": "Review variable assignments and eliminate redundant nested loops.",
+            "suggestions": "- Add error boundary validation for input structures.\n- Use modern variable scoping (const/let)."
+          }
+        }
+      },
+      "aptitudeAnswers": {
+        "apt-1": "8 seconds",
+        "apt-2": "131",
+        "apt-8": "Honest",
+        "apt-9": "P and Q"
+      },
+      "violations": [
+        {
+          "type": "Tab Switch / Focus Loss",
+          "timestamp": "2026-07-17T16:49:05.939Z"
+        },
+        {
+          "type": "Tab Switch / Focus Loss",
+          "timestamp": "2026-07-17T16:50:13.520Z"
+        }
+      ],
+      "evaluation": {
+        "mcqScore": 7,
+        "codingScore": 0,
+        "aptitudeScore": 10,
+        "overallScore": 4,
+        "percentage": 4,
+        "passed": false,
+        "timeTaken": 78,
+        "accuracy": 29,
+        "mcqStats": {
+          "correct": 1,
+          "wrong": 1,
+          "skipped": 13,
+          "accuracy": 50
+        },
+        "codingStats": {
+          "problemsAttempted": 1,
+          "passed": 0,
+          "failed": 25,
+          "compilationStatus": "Failed cases"
+        },
+        "aptitudeStats": {
+          "correct": 1,
+          "wrong": 3,
+          "skipped": 6,
+          "accuracy": 25
+        }
+      },
+      "report": {
+        "candidateSummary": {
+          "name": "Candidate",
+          "role": "MERN Stack Developer",
+          "experience": "2 Years (Junior)",
+          "difficulty": "Medium",
+          "duration": "78 Mins",
+          "overallScore": 4
+        },
+        "technicalPerformance": {
+          "Problem Solving": 0,
+          "Logical Aptitude": 10,
+          "Core Technical MCQs": 7,
+          "Code Complexity Analysis": 0
+        },
+        "codingPerformance": {
+          "problemsAttempted": 1,
+          "passed": 0,
+          "failed": 25,
+          "codeQuality": "Clear variable naming and modular decomposition of tasks. Standard code structures are maintained.",
+          "optimization": "Successfully avoided unnecessary runtime memory leaks. Big-O time complexity is close to optimal.",
+          "suggestions": "Consider adding explicit null boundary checks and practicing advanced graph algorithms."
+        },
+        "aptitudePerformance": {
+          "logical": 10,
+          "numerical": 9,
+          "verbal": 11,
+          "analytical": 10
+        },
+        "strongAreas": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Logical Deduction"
+        ],
+        "weakAreas": [
+          "Dynamic Programming Optimization",
+          "Permutations Probability Calculations"
+        ],
+        "personalizedLearningPath": [
+          "Study optimal sub-structures and practice DP problems (Knapsack, LCS) on LeetCode.",
+          "Strengthen probability distributions and permutations mathematics.",
+          "Learn memory profiling in Chrome DevTools to analyze performance bottlenecks."
+        ],
+        "interviewReadiness": "Ready for Junior Roles",
+        "finalRecommendation": "Retry OA Assessment"
+      },
+      "createdAt": "2026-07-17T16:47:43.829Z",
+      "updatedAt": "2026-07-17T16:50:45.060Z"
+    },
+    "session-07eup9yam": {
+      "id": "session-07eup9yam",
+      "userId": "6a4ca2be4c0f65e63ca9",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "Frontend/Full-stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "TypeScript",
+          "Node.js",
+          "AWS",
+          "Docker"
+        ],
+        "frameworks": [
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "Express",
+          "GraphQL"
+        ],
+        "databases": [
+          "Appwrite"
+        ],
+        "projects": [],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "mcqStatus": "completed",
+      "codingStatus": "completed",
+      "aptitudeStatus": "completed",
+      "mcqQuestions": [
+        {
+          "id": "q1",
+          "question": "In React, which hook is best suited for performing side effects like fetching data from an API or manually changing the DOM?",
+          "options": [
+            "useMemo",
+            "useEffect",
+            "useCallback",
+            "useReducer"
+          ],
+          "correctAnswer": "useEffect",
+          "explanation": "useEffect is designed for side effects in functional components. useMemo and useCallback are for performance optimization, and useReducer is for state management.",
+          "skill": "React",
+          "difficulty": "Medium",
+          "expectedTime": 45
+        },
+        {
+          "id": "q2",
+          "question": "What is the primary purpose of 'strict mode' in TypeScript?",
+          "options": [
+            "To increase execution speed at runtime",
+            "To enforce stronger type checking and safer code patterns",
+            "To allow the use of experimental ECMAScript features",
+            "To bundle files into a single output"
+          ],
+          "correctAnswer": "To enforce stronger type checking and safer code patterns",
+          "explanation": "Strict mode enables a wide range of type-checking behavior that results in stronger guarantees of program correctness, such as noImplicitAny.",
+          "skill": "TypeScript",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "q3",
+          "question": "In a Node.js Express application, what is the correct way to handle errors in an asynchronous route handler?",
+          "options": [
+            "Using a try-catch block and calling the next(err) function",
+            "Simply throwing the error and letting Node crash",
+            "Using a global variable for errors",
+            "Ignoring the error as Express handles it automatically"
+          ],
+          "correctAnswer": "Using a try-catch block and calling the next(err) function",
+          "explanation": "In Express, asynchronous errors must be explicitly caught and passed to the next() function to reach the error-handling middleware.",
+          "skill": "Node.js",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "q4",
+          "question": "What happens when you run a 'docker build' command without a specified tag?",
+          "options": [
+            "The build fails",
+            "It is tagged as 'latest' automatically",
+            "It is tagged with the current timestamp",
+            "It remains untagged with a <none> repository"
+          ],
+          "correctAnswer": "It remains untagged with a <none> repository",
+          "explanation": "By default, Docker assigns a <none> tag to images that aren't explicitly named or tagged during the build process.",
+          "skill": "Docker",
+          "difficulty": "Medium",
+          "expectedTime": 45
+        },
+        {
+          "id": "q5",
+          "question": "Which Next.js feature allows for static site generation (SSG) of pages at build time?",
+          "options": [
+            "getServerSideProps",
+            "getStaticProps",
+            "getInitialProps",
+            "useEffect"
+          ],
+          "correctAnswer": "getStaticProps",
+          "explanation": "getStaticProps is the function used in Next.js to fetch data and generate HTML at build time for Static Site Generation.",
+          "skill": "Next.js",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "q6",
+          "question": "What is the benefit of using GraphQL fragments in a large-scale application?",
+          "options": [
+            "They allow you to cache data on the server",
+            "They enable you to reuse parts of a query across multiple components",
+            "They provide a way to encrypt sensitive data",
+            "They automatically resolve database conflicts"
+          ],
+          "correctAnswer": "They enable you to reuse parts of a query across multiple components",
+          "explanation": "Fragments allow you to define common fields once and reuse them in different queries, keeping your schema consumption DRY.",
+          "skill": "GraphQL",
+          "difficulty": "Medium",
+          "expectedTime": 75
+        },
+        {
+          "id": "q7",
+          "question": "When using Appwrite as a backend, what is the primary purpose of the 'Execution' logs?",
+          "options": [
+            "Monitoring database connection latency",
+            "Reviewing logs from Cloud Function executions",
+            "Debugging user session timeouts",
+            "Managing AWS Lambda configurations"
+          ],
+          "correctAnswer": "Reviewing logs from Cloud Function executions",
+          "explanation": "Appwrite executions allow developers to inspect the output, logs, and status of serverless cloud functions.",
+          "skill": "Appwrite",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "q8",
+          "question": "If you are using Tailwind CSS, which utility class would be used to apply a flex container?",
+          "options": [
+            "display-flex",
+            "flex-container",
+            "flex",
+            "d-flex"
+          ],
+          "correctAnswer": "flex",
+          "explanation": "Tailwind CSS uses the 'flex' class to set 'display: flex' on an element.",
+          "skill": "Tailwind CSS",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "q9",
+          "question": "When using AWS ECS, what is the difference between Fargate and EC2 launch types?",
+          "options": [
+            "Fargate is serverless; EC2 requires you to manage the underlying instances",
+            "Fargate is cheaper for long-running processes",
+            "EC2 supports more regions than Fargate",
+            "Fargate only works with Node.js applications"
+          ],
+          "correctAnswer": "Fargate is serverless; EC2 requires you to manage the underlying instances",
+          "explanation": "Fargate abstracts the infrastructure management, whereas EC2 launch type allows you to control the EC2 instances directly.",
+          "skill": "AWS",
+          "difficulty": "Medium",
+          "expectedTime": 90
+        },
+        {
+          "id": "q10",
+          "question": "How do you ensure a shared state across multiple microservices in a distributed architecture?",
+          "options": [
+            "Store everything in the local memory of the Express server",
+            "Use an externalized database or distributed cache like Redis",
+            "Pass all state through URL parameters",
+            "Use a global React context provider"
+          ],
+          "correctAnswer": "Use an externalized database or distributed cache like Redis",
+          "explanation": "Microservices are stateless; shared state must be persisted in external stores like databases or Redis, not local memory or client-side storage.",
+          "skill": "Conceptual",
+          "difficulty": "Medium",
+          "expectedTime": 90
+        },
+        {
+          "id": "q11",
+          "question": "In the context of the event loop, why is it considered a bad practice to run heavy synchronous CPU-bound tasks in Node.js?",
+          "options": [
+            "It makes the application consume more RAM",
+            "It blocks the main thread, preventing other events from being processed",
+            "It violates security best practices",
+            "It prevents the use of TypeScript"
+          ],
+          "correctAnswer": "It blocks the main thread, preventing other events from being processed",
+          "explanation": "Node.js runs on a single-threaded event loop. Blocking this thread stops all other I/O operations and event callbacks.",
+          "skill": "Conceptual",
+          "difficulty": "Medium",
+          "expectedTime": 75
+        },
+        {
+          "id": "q12",
+          "question": "What is the purpose of the 'package-lock.json' file in a Node.js project?",
+          "options": [
+            "To store environment variables",
+            "To lock down the exact versions of dependencies for consistent installs",
+            "To execute build scripts for production",
+            "To store user credentials for the database"
+          ],
+          "correctAnswer": "To lock down the exact versions of dependencies for consistent installs",
+          "explanation": "It ensures that every person working on the project installs the exact same dependency versions, avoiding 'it works on my machine' issues.",
+          "skill": "Node.js",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "q13",
+          "question": "What is the role of a React 'key' prop when rendering lists?",
+          "options": [
+            "It styles the list items",
+            "It helps React identify which items have changed, been added, or removed",
+            "It is used for accessibility purposes only",
+            "It defines the data type of the list items"
+          ],
+          "correctAnswer": "It helps React identify which items have changed, been added, or removed",
+          "explanation": "Keys are crucial for React's reconciliation algorithm to efficiently update the DOM by tracking identity.",
+          "skill": "React",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "q14",
+          "question": "Scenario: Your React application is re-rendering too frequently, causing performance issues. What is the most effective debugging step?",
+          "options": [
+            "Using console.log in the root component",
+            "Using the React DevTools Profiler to identify which component is triggering renders",
+            "Reinstalling all dependencies",
+            "Increasing the server memory"
+          ],
+          "correctAnswer": "Using the React DevTools Profiler to identify which component is triggering renders",
+          "explanation": "The React Profiler is the standard industry tool for recording performance metrics and identifying unnecessary re-renders.",
+          "skill": "Scenario-Based",
+          "difficulty": "Hard",
+          "expectedTime": 90
+        },
+        {
+          "id": "q15",
+          "question": "Scenario: You have a Docker container that connects to a local database on your host machine. What is the recommended way to connect to 'localhost' from inside the container?",
+          "options": [
+            "Use 'localhost' exactly as you would on the host",
+            "Use 'host.docker.internal' to reference the host machine",
+            "Use the public IP address of your router",
+            "Containers cannot connect to the host machine"
+          ],
+          "correctAnswer": "Use 'host.docker.internal' to reference the host machine",
+          "explanation": "Within Docker, 'localhost' refers to the container itself. 'host.docker.internal' is a special DNS name configured to resolve to the host machine.",
+          "skill": "Scenario-Based",
+          "difficulty": "Medium",
+          "expectedTime": 75
+        }
+      ],
+      "codingQuestions": [
+        {
+          "id": "q1",
+          "title": "Log Timestamp Validator",
+          "difficulty": "Easy",
+          "problemStatement": "Given an array of log strings formatted as 'YYYY-MM-DD HH:MM:SS', return the count of logs that occurred in the year 2023.",
+          "constraints": [
+            "1 <= logs.length <= 1000",
+            "Log format is strictly 'YYYY-MM-DD HH:MM:SS'"
+          ],
+          "inputFormat": "An array of strings.",
+          "outputFormat": "An integer representing the count.",
+          "examples": [
+            {
+              "input": "[\"2023-01-01 10:00:00\", \"2022-12-31 23:59:59\"]",
+              "output": "1"
+            },
+            {
+              "input": "[\"2023-05-10 12:00:00\", \"2023-06-15 08:30:00\"]",
+              "output": "2"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "[\"2023-01-01 00:00:00\"]",
+              "output": "1",
+              "isHidden": false
+            },
+            {
+              "input": "[\"2021-01-01 00:00:00\", \"2022-01-01 00:00:00\"]",
+              "output": "0",
+              "isHidden": false
+            },
+            {
+              "input": "[\"2023-12-31 23:59:59\", \"2024-01-01 00:00:00\"]",
+              "output": "1",
+              "isHidden": true
+            },
+            {
+              "input": "[\"2023-02-28 12:00:00\", \"2023-03-01 12:00:00\", \"2023-04-01 12:00:00\"]",
+              "output": "3",
+              "isHidden": true
+            },
+            {
+              "input": "[]",
+              "output": "0",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "String slicing is sufficient to check the year.",
+            "The year is always the first 4 characters."
+          ]
+        },
+        {
+          "id": "q2",
+          "title": "Docker Image Tag Sort",
+          "difficulty": "Easy",
+          "problemStatement": "Given a list of Docker image version strings (e.g., 'v1.0.1', 'v1.2.0', 'v1.0.0'), return the list sorted in ascending order.",
+          "constraints": [
+            "1 <= versions.length <= 100",
+            "Versions follow the format 'vX.Y.Z'"
+          ],
+          "inputFormat": "An array of strings.",
+          "outputFormat": "An array of sorted strings.",
+          "examples": [
+            {
+              "input": "[\"v1.2.0\", \"v1.0.1\"]",
+              "output": "[\"v1.0.1\", \"v1.2.0\"]"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "[\"v1.1.0\", \"v1.0.9\"]",
+              "output": "[\"v1.0.9\", \"v1.1.0\"]",
+              "isHidden": false
+            },
+            {
+              "input": "[\"v2.0.0\", \"v1.9.9\", \"v1.0.0\"]",
+              "output": "[\"v1.0.0\", \"v1.9.9\", \"v2.0.0\"]",
+              "isHidden": false
+            },
+            {
+              "input": "[\"v0.1.1\", \"v0.1.2\", \"v0.1.0\"]",
+              "output": "[\"v0.1.0\", \"v0.1.1\", \"v0.1.2\"]",
+              "isHidden": true
+            },
+            {
+              "input": "[\"v3.3.3\"]",
+              "output": "[\"v3.3.3\"]",
+              "isHidden": true
+            },
+            {
+              "input": "[\"v1.0.0\", \"v1.0.0\"]",
+              "output": "[\"v1.0.0\", \"v1.0.0\"]",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Split the strings by '.' and remove the 'v' prefix.",
+            "Convert string parts to numbers before comparing."
+          ]
+        },
+        {
+          "id": "q3",
+          "title": "AWS Resource Load Balancer",
+          "difficulty": "Medium",
+          "problemStatement": "You are given an array of integers representing the CPU load of various AWS Lambda instances. Find the contiguous sub-array with the maximum sum of load, but the sub-array must have a minimum length of 2.",
+          "constraints": [
+            "2 <= loads.length <= 10^5",
+            "-1000 <= loads[i] <= 1000"
+          ],
+          "inputFormat": "An array of integers.",
+          "outputFormat": "An integer representing the maximum sum.",
+          "examples": [
+            {
+              "input": "[1, -2, 3, 4, -1]",
+              "output": "7",
+              "explanation": "Sub-array [3, 4] has the max sum."
+            }
+          ],
+          "testCases": [
+            {
+              "input": "[1, 2, 3]",
+              "output": "6",
+              "isHidden": false
+            },
+            {
+              "input": "[-1, -2, -3, -4]",
+              "output": "-3",
+              "isHidden": false
+            },
+            {
+              "input": "[5, -1, 5]",
+              "output": "9",
+              "isHidden": true
+            },
+            {
+              "input": "[10, -20, 30]",
+              "output": "30",
+              "isHidden": true
+            },
+            {
+              "input": "[-5, 10, -5, 10]",
+              "output": "15",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Consider a modification of Kadane's algorithm.",
+            "Track the running sum and handle the minimum length constraint."
+          ]
+        },
+        {
+          "id": "q4",
+          "title": "Endpoint Request Rate Limiter",
+          "difficulty": "Medium",
+          "problemStatement": "Given a sequence of request timestamps for a specific API endpoint, return the maximum number of requests that occurred within any sliding 5-second window.",
+          "constraints": [
+            "1 <= timestamps.length <= 10^5",
+            "Timestamps are sorted in ascending order"
+          ],
+          "inputFormat": "An array of integers (seconds).",
+          "outputFormat": "An integer.",
+          "examples": [
+            {
+              "input": "[1, 2, 3, 6, 7]",
+              "output": "4",
+              "explanation": "At time 6, window [2, 6] has 4 requests."
+            }
+          ],
+          "testCases": [
+            {
+              "input": "[1, 2, 3, 4, 5]",
+              "output": "5",
+              "isHidden": false
+            },
+            {
+              "input": "[1, 10, 20]",
+              "output": "1",
+              "isHidden": false
+            },
+            {
+              "input": "[1, 2, 5, 6, 7, 8, 9]",
+              "output": "5",
+              "isHidden": true
+            },
+            {
+              "input": "[1, 1, 1, 1]",
+              "output": "4",
+              "isHidden": true
+            },
+            {
+              "input": "[1, 6, 11]",
+              "output": "1",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use two pointers to maintain the window.",
+            "Since timestamps are sorted, a sliding window is efficient."
+          ]
+        },
+        {
+          "id": "q5",
+          "title": "Dependency Graph Cycle Detector",
+          "difficulty": "Hard",
+          "problemStatement": "Given a list of dependencies as 'A depends on B', determine if there is a circular dependency (e.g., A -> B, B -> A or A -> B, B -> C, C -> A).",
+          "constraints": [
+            "1 <= dependencies.length <= 10^4",
+            "Nodes are identified by string names"
+          ],
+          "inputFormat": "Array of pairs [source, destination].",
+          "outputFormat": "Boolean.",
+          "examples": [
+            {
+              "input": "[[\"A\", \"B\"], [\"B\", \"C\"], [\"C\", \"A\"]]",
+              "output": "true"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "[[\"A\", \"B\"], [\"B\", \"C\"]]",
+              "output": "false",
+              "isHidden": false
+            },
+            {
+              "input": "[[\"A\", \"A\"]]",
+              "output": "true",
+              "isHidden": false
+            },
+            {
+              "input": "[[\"A\", \"B\"], [\"C\", \"D\"], [\"B\", \"A\"]]",
+              "output": "true",
+              "isHidden": true
+            },
+            {
+              "input": "[[\"A\", \"B\"], [\"B\", \"C\"], [\"C\", \"D\"]]",
+              "output": "false",
+              "isHidden": true
+            },
+            {
+              "input": "[]",
+              "output": "false",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Represent the dependencies as an adjacency list.",
+            "Perform a Depth First Search (DFS) while keeping track of the recursion stack to detect cycles."
+          ]
+        }
+      ],
+      "aptitudeQuestions": [
+        {
+          "id": "LR001",
+          "question": "A coding scheme translates 'FRONTEND' as 'GSPUFOEF'. How is 'BACKEND' coded in this scheme?",
+          "options": [
+            "CBELFOE",
+            "CBELFDE",
+            "CBELFE",
+            "CBELGE"
+          ],
+          "correctAnswer": "CBELFDE",
+          "explanation": "Each letter in the word is shifted forward by one position in the alphabet. F->G, R->S, O->P, N->O, T->U, E->F, N->O, D->E. Applying this to BACKEND: B->C, A->B, C->D, K->L, E->F, N->O, D->E.",
+          "category": "Logical Reasoning",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "NA002",
+          "question": "If 6 developers can complete a feature module in 12 days, how many days will 9 developers take to complete the same module, assuming equal efficiency?",
+          "options": [
+            "6",
+            "8",
+            "10",
+            "9"
+          ],
+          "correctAnswer": "8",
+          "explanation": "This is an inverse proportion problem. Total work = 6 * 12 = 72 man-days. If 9 developers are working, time = 72 / 9 = 8 days.",
+          "category": "Numerical Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "VA003",
+          "question": "Identify the word that is most nearly opposite in meaning to 'Rigorous'.",
+          "options": [
+            "Strict",
+            "Lax",
+            "Precise",
+            "Thorough"
+          ],
+          "correctAnswer": "Lax",
+          "explanation": "Rigorous means strict, thorough, or precise. Lax means not sufficiently strict, severe, or careful, making it the antonym.",
+          "category": "Verbal Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "AR004",
+          "question": "Five developers A, B, C, D, and E are sitting in a row. A is to the right of B. E is to the left of B. C is to the right of A. D is to the left of E. Who is sitting in the middle?",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Based on the statements: D < E < B < A < C. The order is D, E, B, A, C. B is in the middle.",
+          "category": "Analytical Reasoning",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "NA005",
+          "question": "A bag contains 5 red balls and 7 blue balls. What is the probability of drawing two blue balls in two consecutive draws without replacement?",
+          "options": [
+            "7/22",
+            "49/144",
+            "7/33",
+            "5/12"
+          ],
+          "correctAnswer": "7/22",
+          "explanation": "Probability of first blue ball = 7/12. Probability of second blue ball = 6/11. Total probability = (7/12) * (6/11) = 42/132 = 7/22.",
+          "category": "Numerical Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "LR006",
+          "question": "Look at the series: 2, 6, 12, 20, 30, ?. What number should come next?",
+          "options": [
+            "40",
+            "42",
+            "44",
+            "46"
+          ],
+          "correctAnswer": "42",
+          "explanation": "The pattern involves adding consecutive even numbers: 2+4=6, 6+6=12, 12+8=20, 20+10=30, 30+12=42.",
+          "category": "Logical Reasoning",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "VA007",
+          "question": "Select the correct sentence: 'The team of developers have decided to refactor the code because it were legacy.'",
+          "options": [
+            "The team of developers has decided to refactor the code because it was legacy.",
+            "The team of developers have decided to refactor the code because it was legacy.",
+            "The team of developers has decided to refactor the code because they were legacy.",
+            "The team of developers have decided to refactor the code because they are legacy."
+          ],
+          "correctAnswer": "The team of developers has decided to refactor the code because it was legacy.",
+          "explanation": "The subject 'team' is singular and requires 'has'. 'Code' is singular and requires 'it was'.",
+          "category": "Verbal Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "AR008",
+          "question": "Is the number X prime? Statement 1: X is greater than 2. Statement 2: X is an even number.",
+          "options": [
+            "Statement 1 alone is sufficient",
+            "Statement 2 alone is sufficient",
+            "Both statements together are sufficient",
+            "Neither statement is sufficient"
+          ],
+          "correctAnswer": "Both statements together are sufficient",
+          "explanation": "Even numbers greater than 2 are never prime (they are divisible by 2). Combining both statements identifies that X is not prime.",
+          "category": "Analytical Reasoning",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "NA009",
+          "question": "A server processes 150 requests in 5 minutes. At this rate, how many requests are processed in 2 hours?",
+          "options": [
+            "3000",
+            "3600",
+            "4000",
+            "4200"
+          ],
+          "correctAnswer": "3600",
+          "explanation": "Rate = 150 requests / 5 minutes = 30 requests per minute. 2 hours = 120 minutes. 30 * 120 = 3600 requests.",
+          "category": "Numerical Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "LR010",
+          "question": "Find the odd one out: JavaScript, Python, HTML, Ruby.",
+          "options": [
+            "JavaScript",
+            "Python",
+            "HTML",
+            "Ruby"
+          ],
+          "correctAnswer": "HTML",
+          "explanation": "JavaScript, Python, and Ruby are programming languages, while HTML is a markup language.",
+          "category": "Logical Reasoning",
+          "difficulty": "Easy"
+        }
+      ],
+      "mcqAnswers": {},
+      "codingAnswers": {
+        "q1": {
+          "code": "",
+          "language": "javascript",
+          "passedCount": 0,
+          "totalCount": 5,
+          "status": "Runtime Error",
+          "feedback": {
+            "complexity": "Time: N/A, Space: N/A",
+            "codeQuality": "The submission is empty. No logic was provided for evaluation.",
+            "optimization": "The candidate needs to implement a solution. An optimal approach would involve iterating through the array and checking if the string starts with '2023'.",
+            "suggestions": "- Implement a function that iterates through the array using filter or reduce.\n- Use string slicing (str.startsWith('2023') or str.slice(0, 4) === '2023') to efficiently identify the year.\n- Ensure edge cases such as empty arrays or invalid date formats are handled gracefully."
+          }
+        }
+      },
+      "aptitudeAnswers": {},
+      "violations": [
+        {
+          "type": "Tab Switch / Focus Loss",
+          "timestamp": "2026-07-17T17:36:53.573Z"
+        }
+      ],
+      "evaluation": {
+        "mcqScore": 0,
+        "codingScore": 0,
+        "aptitudeScore": 0,
+        "overallScore": 0,
+        "percentage": 0,
+        "passed": false,
+        "timeTaken": 78,
+        "accuracy": 0,
+        "mcqStats": {
+          "correct": 0,
+          "wrong": 0,
+          "skipped": 15,
+          "accuracy": 0
+        },
+        "codingStats": {
+          "problemsAttempted": 1,
+          "passed": 0,
+          "failed": 25,
+          "compilationStatus": "Failed cases"
+        },
+        "aptitudeStats": {
+          "correct": 0,
+          "wrong": 0,
+          "skipped": 10,
+          "accuracy": 0
+        }
+      },
+      "report": {
+        "candidateSummary": {
+          "name": "Candidate",
+          "role": "Frontend/Full-stack Developer",
+          "experience": "2 years",
+          "difficulty": "Intermediate",
+          "duration": "78 minutes",
+          "overallScore": 0
+        },
+        "technicalPerformance": {
+          "TypeScript": 0,
+          "Node.js": 0,
+          "AWS": 0,
+          "Docker": 0,
+          "JavaScript Fundamentals": 0
+        },
+        "codingPerformance": {
+          "problemsAttempted": 1,
+          "passed": 0,
+          "failed": 25,
+          "codeQuality": "The submission was empty with no logic provided, resulting in a runtime error and failure to execute.",
+          "optimization": "Not applicable as no solution was implemented. An optimal approach requires O(n) traversal using filter methods or string pattern matching.",
+          "suggestions": "Practice implementing core data structure traversal and string manipulation functions. Focus on utilizing array methods like .filter() and .reduce()."
+        },
+        "aptitudePerformance": {
+          "logical": 0,
+          "numerical": 0,
+          "verbal": 0,
+          "analytical": 0
+        },
+        "strongAreas": [],
+        "weakAreas": [
+          "Technical Problem Solving",
+          "JavaScript Syntax and Logic",
+          "Algorithmic Thinking",
+          "Aptitude Reasoning",
+          "Assessment Discipline"
+        ],
+        "personalizedLearningPath": [
+          "Master JavaScript Array methods (.filter, .map, .reduce)",
+          "Review basic string manipulation in TypeScript",
+          "Practice coding challenges on platforms like LeetCode or HackerRank",
+          "Study time and space complexity (Big O notation)",
+          "Complete foundational logical and numerical reasoning drills"
+        ],
+        "interviewReadiness": "Needs More Practice",
+        "finalRecommendation": "Retry OA Assessment"
+      },
+      "createdAt": "2026-07-17T17:18:27.090Z",
+      "updatedAt": "2026-07-17T17:37:21.491Z"
+    },
+    "session-ki2my2frl": {
+      "id": "session-ki2my2frl",
+      "userId": "6a4ca2be4c0f65e63ca9",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "Frontend/Full-Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "JavaScript",
+          "TypeScript",
+          "Node.js",
+          "AWS",
+          "Docker"
+        ],
+        "frameworks": [
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "Express",
+          "GraphQL"
+        ],
+        "databases": [
+          "Appwrite"
+        ],
+        "projects": [],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "mcqStatus": "completed",
+      "codingStatus": "completed",
+      "aptitudeStatus": "completed",
+      "mcqQuestions": [
+        {
+          "id": "Q-001",
+          "question": "In React, which hook is primarily used to perform side effects such as data fetching or subscriptions in functional components?",
+          "options": [
+            "useMemo",
+            "useEffect",
+            "useCallback",
+            "useReducer"
+          ],
+          "correctAnswer": "useEffect",
+          "explanation": "useEffect is designed for handling side effects. useMemo and useCallback are for performance optimization, and useReducer is for state management.",
+          "skill": "React",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "Q-002",
+          "question": "What is the primary benefit of using TypeScript's 'interface' over 'type' when defining object shapes?",
+          "options": [
+            "Interfaces are always faster at runtime",
+            "Interfaces support declaration merging",
+            "Types cannot represent objects",
+            "Interfaces are exclusive to React components"
+          ],
+          "correctAnswer": "Interfaces support declaration merging",
+          "explanation": "Declaration merging allows interfaces to be extended by re-declaring them, which is a unique feature compared to type aliases.",
+          "skill": "TypeScript",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "Q-003",
+          "question": "In Express.js, what is the correct way to handle a path parameter named 'id' in a route?",
+          "options": [
+            "app.get('/user/:id', (req, res) => { const id = req.query.id; })",
+            "app.get('/user/:id', (req, res) => { const id = req.params.id; })",
+            "app.get('/user', (req, res) => { const id = req.body.id; })",
+            "app.get('/user/:id', (req, res) => { const id = req.headers.id; })"
+          ],
+          "correctAnswer": "app.get('/user/:id', (req, res) => { const id = req.params.id; })",
+          "explanation": "Express uses req.params to access route parameters defined with a colon prefix.",
+          "skill": "Node.js",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "Q-004",
+          "question": "When using GraphQL, what is the purpose of a 'Resolver'?",
+          "options": [
+            "To define the schema structure",
+            "To fetch data for a specific field",
+            "To handle client-side caching",
+            "To convert JSON to XML"
+          ],
+          "correctAnswer": "To fetch data for a specific field",
+          "explanation": "Resolvers are functions responsible for populating the data for a single field in the schema.",
+          "skill": "GraphQL",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "Q-005",
+          "question": "In Next.js, which function is used to fetch data at build time for static site generation?",
+          "options": [
+            "getServerSideProps",
+            "getStaticProps",
+            "useEffect",
+            "getInitialProps"
+          ],
+          "correctAnswer": "getStaticProps",
+          "explanation": "getStaticProps allows Next.js to pre-render the page at build time, making it ideal for static sites.",
+          "skill": "Next.js",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "Q-006",
+          "question": "What is the function of the 'docker-compose.yml' file?",
+          "options": [
+            "To compile TypeScript code",
+            "To define and run multi-container Docker applications",
+            "To manage AWS infrastructure",
+            "To define Appwrite database schemas"
+          ],
+          "correctAnswer": "To define and run multi-container Docker applications",
+          "explanation": "Docker Compose is a tool for defining and running complex applications with multiple containers.",
+          "skill": "Docker",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "Q-007",
+          "question": "When using Appwrite as a backend, which service would you use to handle user authentication?",
+          "options": [
+            "Database",
+            "Storage",
+            "Account",
+            "Functions"
+          ],
+          "correctAnswer": "Account",
+          "explanation": "The Account service in Appwrite provides methods for user registration, login, and session management.",
+          "skill": "Appwrite",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "Q-008",
+          "question": "In Tailwind CSS, what happens if you apply 'flex' and 'items-center' to a div?",
+          "options": [
+            "The div becomes a flex container and aligns children along the cross-axis",
+            "The div disappears",
+            "The div becomes a grid container",
+            "The div is hidden from mobile devices"
+          ],
+          "correctAnswer": "The div becomes a flex container and aligns children along the cross-axis",
+          "explanation": "flex sets display: flex, and items-center sets align-items: center.",
+          "skill": "Tailwind CSS",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "Q-009",
+          "question": "How does Appwrite's 'Database' service handle relations between documents?",
+          "options": [
+            "By using SQL JOINs directly",
+            "By using document IDs as references in attribute fields",
+            "It does not support relations",
+            "By embedding the entire document inside another"
+          ],
+          "correctAnswer": "By using document IDs as references in attribute fields",
+          "explanation": "Appwrite models relationships primarily through document IDs stored as reference attributes.",
+          "skill": "Appwrite",
+          "difficulty": "Medium",
+          "expectedTime": 75
+        },
+        {
+          "id": "Q-010",
+          "question": "What is the role of an AWS Lambda function in a serverless architecture?",
+          "options": [
+            "To host static HTML files",
+            "To execute code in response to events without managing servers",
+            "To act as a persistent database server",
+            "To store high-resolution media files"
+          ],
+          "correctAnswer": "To execute code in response to events without managing servers",
+          "explanation": "Lambda is a compute service that lets you run code without provisioning or managing servers.",
+          "skill": "AWS",
+          "difficulty": "Medium",
+          "expectedTime": 75
+        },
+        {
+          "id": "Q-011",
+          "question": "What does the 'Event Loop' in Node.js manage?",
+          "options": [
+            "CSS animations",
+            "The rendering of the DOM",
+            "Execution of asynchronous callbacks and tasks",
+            "The database connection pool"
+          ],
+          "correctAnswer": "Execution of asynchronous callbacks and tasks",
+          "explanation": "The event loop allows Node.js to perform non-blocking I/O operations despite being single-threaded.",
+          "skill": "JavaScript",
+          "difficulty": "Hard",
+          "expectedTime": 90
+        },
+        {
+          "id": "Q-012",
+          "question": "What is the difference between 'debouncing' and 'throttling'?",
+          "options": [
+            "Debouncing executes the function after a delay; throttling executes it at most once per timeframe",
+            "Throttling is used for React state; Debouncing is for CSS",
+            "They are identical",
+            "Debouncing is faster than throttling"
+          ],
+          "correctAnswer": "Debouncing executes the function after a delay; throttling executes it at most once per timeframe",
+          "explanation": "Debouncing resets the timer on each call, throttling ensures fixed-interval execution.",
+          "skill": "JavaScript",
+          "difficulty": "Hard",
+          "expectedTime": 90
+        },
+        {
+          "id": "Q-013",
+          "question": "What is 'Prototypal Inheritance' in JavaScript?",
+          "options": [
+            "A way to use Java classes",
+            "Objects inheriting properties directly from other objects via the prototype chain",
+            "A type of CSS styling",
+            "A method for memory allocation"
+          ],
+          "correctAnswer": "Objects inheriting properties directly from other objects via the prototype chain",
+          "explanation": "JavaScript is a prototype-based language where objects inherit directly from other objects.",
+          "skill": "JavaScript",
+          "difficulty": "Hard",
+          "expectedTime": 90
+        },
+        {
+          "id": "Q-014",
+          "question": "You are debugging a slow API request in Express. You suspect middleware order is the issue. What is the correct behavior of middleware?",
+          "options": [
+            "Middleware always runs in parallel",
+            "Middleware executes sequentially in the order it is defined",
+            "Middleware only runs if the response is successful",
+            "Middleware is executed only by the browser"
+          ],
+          "correctAnswer": "Middleware executes sequentially in the order it is defined",
+          "explanation": "Express middleware processes requests sequentially, stopping at the first one that ends the request-response cycle.",
+          "skill": "Node.js",
+          "difficulty": "Medium",
+          "expectedTime": 75
+        },
+        {
+          "id": "Q-015",
+          "question": "Your React application is re-rendering too often. Which tool would you use to prevent unnecessary re-renders?",
+          "options": [
+            "React.memo",
+            "useEffect",
+            "useContext",
+            "useReducer"
+          ],
+          "correctAnswer": "React.memo",
+          "explanation": "React.memo is a higher-order component that memoizes components to prevent re-renders if props haven't changed.",
+          "skill": "React",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        }
+      ],
+      "codingQuestions": [
+        {
+          "id": "fe-001",
+          "title": "Flatten Nested Array",
+          "difficulty": "Easy",
+          "problemStatement": "Write a function that takes a multi-dimensional array and returns a one-dimensional array containing all elements. Do not use the built-in Array.prototype.flat method.",
+          "constraints": [
+            "1 <= array.length <= 1000",
+            "Maximum nesting depth is 50"
+          ],
+          "inputFormat": "A nested array of integers.",
+          "outputFormat": "A flat array of integers.",
+          "examples": [
+            {
+              "input": "[1, [2, 3], [4, [5]]]",
+              "output": "[1, 2, 3, 4, 5]"
+            },
+            {
+              "input": "[[[1]], 2]",
+              "output": "[1, 2]"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "[1, [2, [3]]]",
+              "output": "[1, 2, 3]",
+              "isHidden": false
+            },
+            {
+              "input": "[[], [1]]",
+              "output": "[1]",
+              "isHidden": false
+            },
+            {
+              "input": "[1, 2, 3]",
+              "output": "[1, 2, 3]",
+              "isHidden": true
+            },
+            {
+              "input": "[1, [2, [3, [4, [5]]]]]",
+              "output": "[1, 2, 3, 4, 5]",
+              "isHidden": true
+            },
+            {
+              "input": "[[[[1]]]]",
+              "output": "[1]",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Consider using recursion to traverse the array.",
+            "You can use Array.isArray() to check if an element is a sub-array."
+          ]
+        },
+        {
+          "id": "fe-002",
+          "title": "Debounce Function",
+          "difficulty": "Easy",
+          "problemStatement": "Implement a debounce function that returns a new function that delays the invocation of the provided function until after 'wait' milliseconds have elapsed since the last time the debounced function was invoked.",
+          "constraints": [
+            "0 <= wait <= 5000"
+          ],
+          "inputFormat": "A function (callback) and a number (wait time in ms).",
+          "outputFormat": "A debounced function.",
+          "examples": [
+            {
+              "input": "func = () => console.log('Hi'), wait = 100",
+              "output": "Delayed execution"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "func, 100",
+              "output": "success",
+              "isHidden": false
+            },
+            {
+              "input": "func, 0",
+              "output": "success",
+              "isHidden": false
+            },
+            {
+              "input": "func, 500",
+              "output": "success",
+              "isHidden": true
+            },
+            {
+              "input": "func, 200",
+              "output": "success",
+              "isHidden": true
+            },
+            {
+              "input": "func, 1000",
+              "output": "success",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use setTimeout to schedule the execution.",
+            "Clear the timeout if the debounced function is called again before the timer expires."
+          ]
+        },
+        {
+          "id": "fe-003",
+          "title": "LRU Cache",
+          "difficulty": "Medium",
+          "problemStatement": "Design a data structure for a Least Recently Used (LRU) cache. It should support get and put operations with O(1) average time complexity.",
+          "constraints": [
+            "1 <= capacity <= 1000",
+            "0 <= key <= 10^5"
+          ],
+          "inputFormat": "Operation sequence and arguments.",
+          "outputFormat": "Result of get operations or null.",
+          "examples": [
+            {
+              "input": "LRUCache(2); put(1, 1); put(2, 2); get(1);",
+              "output": "1"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "put(1,1), put(2,2), get(1)",
+              "output": "1",
+              "isHidden": false
+            },
+            {
+              "input": "put(1,1), put(2,2), put(3,3), get(1)",
+              "output": "-1",
+              "isHidden": false
+            },
+            {
+              "input": "put(1,1), get(1), put(2,2), get(2)",
+              "output": "2",
+              "isHidden": true
+            },
+            {
+              "input": "put(1,1), put(1,2), get(1)",
+              "output": "2",
+              "isHidden": true
+            },
+            {
+              "input": "put(1,1), put(2,2), put(3,3), get(2), get(3)",
+              "output": "3",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use a Map object in JavaScript; it preserves insertion order.",
+            "When an element is accessed, delete it and re-insert it to mark as most recently used."
+          ]
+        },
+        {
+          "id": "fe-004",
+          "title": "Async Task Runner",
+          "difficulty": "Medium",
+          "problemStatement": "Implement a function that runs an array of asynchronous tasks with a concurrency limit. Only 'n' tasks should run at any given time.",
+          "constraints": [
+            "1 <= tasks.length <= 100",
+            "1 <= concurrency <= 10"
+          ],
+          "inputFormat": "Array of functions returning promises, number concurrency.",
+          "outputFormat": "Array of resolved values.",
+          "examples": [
+            {
+              "input": "tasks = [t1, t2, t3], concurrency = 2",
+              "output": "[v1, v2, v3]"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "[f1, f2], 1",
+              "output": "[1, 2]",
+              "isHidden": false
+            },
+            {
+              "input": "[f1, f2, f3], 2",
+              "output": "[1, 2, 3]",
+              "isHidden": false
+            },
+            {
+              "input": "[f1], 1",
+              "output": "[1]",
+              "isHidden": true
+            },
+            {
+              "input": "[f1, f2, f3, f4], 2",
+              "output": "[1, 2, 3, 4]",
+              "isHidden": true
+            },
+            {
+              "input": "[f1, f2], 5",
+              "output": "[1, 2]",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Maintain a queue of tasks and a counter of currently running tasks.",
+            "When a task completes, start the next one in the queue."
+          ]
+        },
+        {
+          "id": "fe-005",
+          "title": "Deep Object Diff",
+          "difficulty": "Hard",
+          "problemStatement": "Write a function that compares two objects and returns an object representing the differences. Only return keys that have changed, were added, or were removed.",
+          "constraints": [
+            "Object depth <= 10",
+            "Keys per object <= 100"
+          ],
+          "inputFormat": "Two objects (obj1, obj2).",
+          "outputFormat": "An object containing the delta.",
+          "examples": [
+            {
+              "input": "{a: 1, b: 2}, {a: 1, b: 3}",
+              "output": "{b: 3}"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "{a:1}, {a:2}",
+              "output": "{a:2}",
+              "isHidden": false
+            },
+            {
+              "input": "{a:1}, {a:1, b:2}",
+              "output": "{b:2}",
+              "isHidden": false
+            },
+            {
+              "input": "{a:{b:1}}, {a:{b:2}}",
+              "output": "{a:{b:2}}",
+              "isHidden": true
+            },
+            {
+              "input": "{a:1}, {}",
+              "output": "{a:undefined}",
+              "isHidden": true
+            },
+            {
+              "input": "{a:1, b:{c:1}}, {a:1, b:{c:2}}",
+              "output": "{b:{c:2}}",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use recursion to handle nested objects.",
+            "Remember to handle the 'undefined' case for deleted keys."
+          ]
+        }
+      ],
+      "aptitudeQuestions": [
+        {
+          "id": "LR001",
+          "question": "In a certain code language, 'FRONT' is written as 'GSPOU'. How is 'STACK' written in that same code?",
+          "options": [
+            "TUBDL",
+            "RUSBJ",
+            "TUBEK",
+            "SUABJ"
+          ],
+          "correctAnswer": "TUBDL",
+          "explanation": "Each letter is shifted by one position in the alphabet: F+1=G, R+1=S, O+1=P, N+1=O, T+1=U. Applying the same logic to STACK: S+1=T, T+1=U, A+1=B, C+1=D, K+1=L.",
+          "category": "Logical Reasoning",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "NA002",
+          "question": "A developer can complete a project in 10 days, and a designer can complete it in 15 days. How long will it take if they work together?",
+          "options": [
+            "5 days",
+            "6 days",
+            "7.5 days",
+            "8 days"
+          ],
+          "correctAnswer": "6 days",
+          "explanation": "The developer's daily work is 1/10 and the designer's is 1/15. Combined work per day = 1/10 + 1/15 = 3/30 + 2/30 = 5/30 = 1/6. Thus, they take 6 days.",
+          "category": "Numerical Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "VA003",
+          "question": "Choose the word that is most nearly opposite in meaning to the word 'Ephemeral'.",
+          "options": [
+            "Fleeting",
+            "Permanent",
+            "Transient",
+            "Momentary"
+          ],
+          "correctAnswer": "Permanent",
+          "explanation": "Ephemeral means lasting for a very short time. Permanent means lasting or intended to last or remain unchanged indefinitely.",
+          "category": "Verbal Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "AR004",
+          "question": "Five friends (A, B, C, D, E) are sitting in a row. A is to the immediate right of B. E is to the left of C. D is between A and C. Who is sitting in the middle?",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "correctAnswer": "A",
+          "explanation": "Ordering: B is left of A (BA). D is between A and C (ADC). E is left of C. Combined: B, A, D, C, E. A is in the middle of the sequence.",
+          "category": "Analytical Reasoning",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "LR005",
+          "question": "Find the missing number in the sequence: 2, 6, 12, 20, 30, ?",
+          "options": [
+            "36",
+            "40",
+            "42",
+            "44"
+          ],
+          "correctAnswer": "42",
+          "explanation": "The difference between consecutive numbers increases by 2: 6-2=4, 12-6=6, 20-12=8, 30-20=10. The next difference should be 12. 30+12=42.",
+          "category": "Logical Reasoning",
+          "difficulty": "Easy"
+        },
+        {
+          "id": "NA006",
+          "question": "A box contains 5 red balls and 3 blue balls. If two balls are drawn at random, what is the probability that both are red?",
+          "options": [
+            "5/14",
+            "10/21",
+            "2/7",
+            "5/8"
+          ],
+          "correctAnswer": "5/14",
+          "explanation": "Total ways to choose 2 from 8 is 8C2 = 28. Ways to choose 2 red from 5 is 5C2 = 10. Probability = 10/28 = 5/14.",
+          "category": "Numerical Ability",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "VA007",
+          "question": "Identify the sentence with the correct grammar.",
+          "options": [
+            "Neither the manager nor the developers was present.",
+            "Neither the manager nor the developers were present.",
+            "Neither the manager nor the developers is present.",
+            "Neither the manager or the developers was present."
+          ],
+          "correctAnswer": "Neither the manager nor the developers were present.",
+          "explanation": "In 'neither/nor' constructions, the verb must agree with the closest noun. Since 'developers' is plural, the verb must be 'were'.",
+          "category": "Verbal Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "AR008",
+          "question": "Data Sufficiency: Is X an even number? Statement 1: X+1 is an odd number. Statement 2: X is a multiple of 2.",
+          "options": [
+            "Only Statement 1 is sufficient",
+            "Only Statement 2 is sufficient",
+            "Both statements together are sufficient",
+            "Each statement alone is sufficient"
+          ],
+          "correctAnswer": "Each statement alone is sufficient",
+          "explanation": "Statement 1: If X+1 is odd, X must be even. Statement 2: Any multiple of 2 is an even number. Both are independently sufficient.",
+          "category": "Analytical Reasoning",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "LR009",
+          "question": "If 'Blue' is 'Red', 'Red' is 'Green', 'Green' is 'Yellow', and 'Yellow' is 'Black', what is the color of clear sky?",
+          "options": [
+            "Blue",
+            "Red",
+            "Green",
+            "Yellow"
+          ],
+          "correctAnswer": "Red",
+          "explanation": "The actual color of the clear sky is Blue. According to the code, Blue is Red.",
+          "category": "Logical Reasoning",
+          "difficulty": "Easy"
+        },
+        {
+          "id": "NA010",
+          "question": "A train 150m long is running at 54 km/hr. How long will it take to cross a platform 100m long?",
+          "options": [
+            "12 seconds",
+            "15 seconds",
+            "16.67 seconds",
+            "20 seconds"
+          ],
+          "correctAnswer": "16.67 seconds",
+          "explanation": "Total distance = 150+100 = 250m. Speed = 54 * (5/18) = 15 m/s. Time = Distance/Speed = 250/15 = 16.666... seconds.",
+          "category": "Numerical Ability",
+          "difficulty": "Medium"
+        }
+      ],
+      "mcqAnswers": {
+        "Q-001": "useEffect"
+      },
+      "codingAnswers": {
+        "fe-001": {
+          "code": "",
+          "language": "javascript",
+          "passedCount": 0,
+          "totalCount": 5,
+          "status": "Runtime Error",
+          "feedback": {
+            "complexity": "Time: N/A, Space: N/A",
+            "codeQuality": "The submission is empty. No logic, structure, or implementation was provided for evaluation.",
+            "optimization": "N/A",
+            "suggestions": "- Implement a recursive approach using Array.isArray() to check for nested arrays. - Consider an iterative approach using a stack to avoid potential stack overflow issues with deeply nested arrays. - Ensure the function correctly handles empty arrays and non-array inputs."
+          }
+        }
+      },
+      "aptitudeAnswers": {},
+      "violations": [],
+      "evaluation": {
+        "mcqScore": 7,
+        "codingScore": 0,
+        "aptitudeScore": 0,
+        "overallScore": 2,
+        "percentage": 2,
+        "passed": false,
+        "timeTaken": 78,
+        "accuracy": 50,
+        "mcqStats": {
+          "correct": 1,
+          "wrong": 0,
+          "skipped": 14,
+          "accuracy": 100
+        },
+        "codingStats": {
+          "problemsAttempted": 1,
+          "passed": 0,
+          "failed": 25,
+          "compilationStatus": "Failed cases"
+        },
+        "aptitudeStats": {
+          "correct": 0,
+          "wrong": 0,
+          "skipped": 10,
+          "accuracy": 0
+        }
+      },
+      "report": {
+        "candidateSummary": {
+          "name": "Candidate",
+          "role": "Frontend/Full-Stack Developer",
+          "experience": "2 years",
+          "difficulty": "Standard Junior",
+          "duration": "78 minutes",
+          "overallScore": 2
+        },
+        "technicalPerformance": {
+          "JavaScript": 7,
+          "TypeScript": 0,
+          "Node.js": 0,
+          "Algorithms": 0,
+          "AWS": 0,
+          "Docker": 0
+        },
+        "codingPerformance": {
+          "problemsAttempted": 1,
+          "passed": 0,
+          "failed": 25,
+          "codeQuality": "Poor: Submission was empty with no implementation provided.",
+          "optimization": "Not applicable as no logic was presented.",
+          "suggestions": "Review basic array manipulation, recursive patterns, and iterative stack-based approaches."
+        },
+        "aptitudePerformance": {
+          "logical": 0,
+          "numerical": 0,
+          "verbal": 0,
+          "analytical": 0
+        },
+        "strongAreas": [
+          "Basic JavaScript Syntax (limited)"
+        ],
+        "weakAreas": [
+          "Algorithmic Problem Solving",
+          "Technical MCQs",
+          "Aptitude/Logical Reasoning",
+          "Systematic Debugging",
+          "Time Management"
+        ],
+        "personalizedLearningPath": [
+          "Master JavaScript array methods (map, reduce, filter)",
+          "Practice recursive functions and stack data structures",
+          "Solve basic LeetCode/HackerRank problems daily",
+          "Review foundational Computer Science concepts",
+          "Practice timed aptitude and logical reasoning tests"
+        ],
+        "interviewReadiness": "Needs More Practice",
+        "finalRecommendation": "Retry OA Assessment"
+      },
+      "createdAt": "2026-07-19T12:48:35.498Z",
+      "updatedAt": "2026-07-19T12:54:04.258Z"
+    }
+  },
+  "aiSessions": {
+    "ai-session-51bc33og5": {
+      "id": "ai-session-51bc33og5",
+      "userId": "user-123",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scaleable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "status": "not_started",
+      "currentQuestionIndex": 0,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Hello! Welcome to your technical interview for the MERN Stack Developer position. Let's start with a foundational concept. Can you explain your understanding of React and describe a scenario where you implemented it in a production application?",
+          "evaluation": null
+        }
+      ],
+      "violations": [],
+      "timeline": [
+        {
+          "timestamp": "03:14 PM",
+          "label": "Introduction"
+        }
+      ],
+      "evaluation": null,
+      "report": null,
+      "createdAt": "2026-07-13T09:44:04.285Z",
+      "updatedAt": "2026-07-13T09:44:04.288Z"
+    },
+    "ai-session-rrs4k30b6": {
+      "id": "ai-session-rrs4k30b6",
+      "userId": "user-123",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scaleable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "status": "not_started",
+      "currentQuestionIndex": 2,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Hello! Welcome to your technical interview for the MERN Stack Developer position. Let's start with a foundational concept. Can you explain your understanding of React and describe a scenario where you implemented it in a production application?",
+          "evaluation": {
+            "technicalAccuracy": 7,
+            "communication": 8,
+            "problemSolving": 7,
+            "confidence": 8,
+            "completeness": 7,
+            "practicalKnowledge": 7,
+            "feedback": "Clear communication, though further depth in real-world optimizations would be beneficial.",
+            "score": 70
+          },
+          "answerText": "what's the fundamentals and fermented in this thing but react is water now"
+        },
+        {
+          "id": "q-2",
+          "questionText": "That makes sense. Moving on to another key area: TypeScript. Can you tell me about a time you encountered a major challenge with TypeScript and how you debugged or optimized it?",
+          "evaluation": {
+            "technicalAccuracy": 7,
+            "communication": 8,
+            "problemSolving": 7,
+            "confidence": 8,
+            "completeness": 7,
+            "practicalKnowledge": 7,
+            "feedback": "Clear communication, though further depth in real-world optimizations would be beneficial.",
+            "score": 70
+          },
+          "answerText": "no I don't want to say what I did I want to say this types it is a nice language"
+        },
+        {
+          "id": "q-3",
+          "questionText": "That makes sense. Moving on to another key area: Tailwind CSS. Can you tell me about a time you encountered a major challenge with Tailwind CSS and how you debugged or optimized it?",
+          "evaluation": null
+        }
+      ],
+      "violations": [
+        {
+          "type": "tab_switch",
+          "timestamp": "15:15:11"
+        }
+      ],
+      "timeline": [
+        {
+          "timestamp": "03:14 PM",
+          "label": "Introduction"
+        }
+      ],
+      "evaluation": null,
+      "report": null,
+      "createdAt": "2026-07-13T09:44:04.724Z",
+      "updatedAt": "2026-07-13T09:45:16.834Z"
+    },
+    "ai-session-z7bmzve78": {
+      "id": "ai-session-z7bmzve78",
+      "userId": "user-123",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scaleable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "status": "not_started",
+      "currentQuestionIndex": 0,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Hello! Welcome to your technical interview for the MERN Stack Developer position. Let's start with a foundational concept. Can you explain your understanding of React and describe a scenario where you implemented it in a production application?",
+          "evaluation": null
+        }
+      ],
+      "violations": [],
+      "timeline": [
+        {
+          "timestamp": "03:33 PM",
+          "label": "Introduction"
+        }
+      ],
+      "evaluation": null,
+      "report": null,
+      "createdAt": "2026-07-13T10:03:13.341Z",
+      "updatedAt": "2026-07-13T10:03:13.343Z"
+    },
+    "ai-session-8she2rds6": {
+      "id": "ai-session-8she2rds6",
+      "userId": "user-123",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scaleable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "status": "not_started",
+      "currentQuestionIndex": 0,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Hello! Welcome to your technical interview for the MERN Stack Developer position. Let's start with a foundational concept. Can you explain your understanding of React and describe a scenario where you implemented it in a production application?",
+          "evaluation": null
+        }
+      ],
+      "violations": [],
+      "timeline": [
+        {
+          "timestamp": "03:33 PM",
+          "label": "Introduction"
+        }
+      ],
+      "evaluation": null,
+      "report": null,
+      "createdAt": "2026-07-13T10:03:13.523Z",
+      "updatedAt": "2026-07-13T10:03:13.524Z"
+    },
+    "ai-session-ckbqa56vg": {
+      "id": "ai-session-ckbqa56vg",
+      "userId": "user-123",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "Full Stack Engineer (React / Next.js)",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "TypeScript",
+          "Tailwind CSS",
+          "GraphQL",
+          "Docker",
+          "AWS"
+        ],
+        "frameworks": [
+          "React",
+          "Next.js",
+          "Node.js",
+          "Express"
+        ],
+        "databases": [
+          "Appwrite"
+        ],
+        "projects": [],
+        "confidenceScore": 90,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "status": "not_started",
+      "currentQuestionIndex": 0,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Hi there! I'm glad to have you here today. Let's kick things off with Next.js: could you explain the main differences between Server Components and Client Components, and how you decide which one to use?",
+          "evaluation": null
+        }
+      ],
+      "violations": [],
+      "timeline": [
+        {
+          "timestamp": "04:09 PM",
+          "label": "Introduction"
+        }
+      ],
+      "evaluation": null,
+      "report": null,
+      "createdAt": "2026-07-13T10:39:28.079Z",
+      "updatedAt": "2026-07-13T10:39:28.079Z"
+    },
+    "ai-session-1s2zm61ac": {
+      "id": "ai-session-1s2zm61ac",
+      "userId": "user-123",
+      "blueprint": {
+        "candidateName": "Vercel Software Engineer Candidate",
+        "source": "jd",
+        "role": "Full Stack Engineer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "TypeScript",
+          "Tailwind CSS",
+          "GraphQL",
+          "Docker",
+          "AWS"
+        ],
+        "frameworks": [
+          "React",
+          "Next.js",
+          "Node.js",
+          "Express"
+        ],
+        "databases": [
+          "Appwrite"
+        ],
+        "projects": [],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "status": "not_started",
+      "currentQuestionIndex": 0,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Hi there, welcome to our technical interview! Let's kick things off with TypeScript: can you explain the key differences between an `interface` and a `type` alias, and how you decide which one to use in your daily development?",
+          "evaluation": null
+        }
+      ],
+      "violations": [],
+      "timeline": [
+        {
+          "timestamp": "04:09 PM",
+          "label": "Introduction"
+        }
+      ],
+      "evaluation": null,
+      "report": null,
+      "createdAt": "2026-07-13T10:39:31.148Z",
+      "updatedAt": "2026-07-13T10:39:31.148Z"
+    },
+    "ai-session-oo0s686l6": {
+      "id": "ai-session-oo0s686l6",
+      "userId": "user-123",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scaleable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "status": "not_started",
+      "currentQuestionIndex": 0,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Hi! I'm glad to be speaking with you today for our MERN Stack Developer role. To start things off, could you explain the key differences between Server-Side Rendering (SSR) in Next.js and standard Client-Side Rendering (CSR) in React?",
+          "evaluation": null
+        }
+      ],
+      "violations": [],
+      "timeline": [
+        {
+          "timestamp": "04:10 PM",
+          "label": "Introduction"
+        }
+      ],
+      "evaluation": null,
+      "report": null,
+      "createdAt": "2026-07-13T10:40:51.129Z",
+      "updatedAt": "2026-07-13T10:40:51.129Z"
+    },
+    "ai-session-mdrrybcga": {
+      "id": "ai-session-mdrrybcga",
+      "userId": "user-123",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scaleable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "status": "completed",
+      "currentQuestionIndex": 0,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Hi there, welcome to your technical interview! I'm excited to dive into your MERN stack experience today. To kick things off, could you explain the key differences between Server-Side Rendering in Next.js and Client-Side Rendering in standard React, and how you would decide which to use for an e-commerce platform?",
+          "evaluation": {
+            "technicalAccuracy": 0,
+            "communication": 0,
+            "problemSolving": 0,
+            "confidence": 0,
+            "completeness": 0,
+            "practicalKnowledge": 0,
+            "feedback": "The candidate exited the interview session prematurely, so no response was recorded. Consequently, we were unable to evaluate their technical knowledge or communication skills for this question.",
+            "score": 0
+          },
+          "answerText": "(Interview exited prematurely)"
+        }
+      ],
+      "violations": [
+        {
+          "type": "tab_switch",
+          "timestamp": "16:11:28"
+        }
+      ],
+      "timeline": [
+        {
+          "timestamp": "00:00",
+          "label": "Session started, candidate connected"
+        },
+        {
+          "timestamp": "00:05",
+          "label": "AI Analyst introduced Question 1"
+        },
+        {
+          "timestamp": "00:20",
+          "label": "Tab Switch violation detected"
+        },
+        {
+          "timestamp": "00:30",
+          "label": "Candidate disconnected abruptly"
+        },
+        {
+          "timestamp": "00:45",
+          "label": "Session closed automatically due to inactivity"
+        }
+      ],
+      "evaluation": {
+        "overallScore": 0,
+        "technicalScore": 0,
+        "communicationScore": 0,
+        "problemSolvingScore": 0,
+        "confidenceScore": 0,
+        "passed": false
+      },
+      "report": {
+        "candidateSummary": {
+          "overallScore": 0,
+          "technicalScore": 0,
+          "communicationScore": 0,
+          "problemSolvingScore": 0,
+          "confidenceScore": 0,
+          "duration": "00:45"
+        },
+        "questionFeedback": [
+          {
+            "question": "Hi there, welcome to your technical interview! I'm excited to dive into your MERN stack experience today. To kick things off, could you explain the key differences between Server-Side Rendering in Next.js and Client-Side Rendering in standard React, and how you would decide which to use for an e-commerce platform?",
+            "answer": "(Interview exited prematurely)",
+            "score": 0,
+            "feedback": "The candidate exited the interview session prematurely, so no response was recorded. Consequently, we were unable to evaluate their technical knowledge or communication skills for this question.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          }
+        ],
+        "strengths": [
+          "Punctual attendance at the start of the scheduled session.",
+          "System compatibility verified successfully during the initial setup phase.",
+          "No major screen-share or fullscreen violations recorded before the exit."
+        ],
+        "weaknesses": [
+          "Premature termination of the assessment process without providing answers.",
+          "Unresolved tab switch violation recorded shortly before disconnection.",
+          "Zero demonstration of MERN stack knowledge or communication capability."
+        ],
+        "recommendations": [
+          "Re-engage with HR to clarify if the termination was due to an unexpected technical failure.",
+          "Ensure a stable network connection and secure testing environment for future mock or official sessions.",
+          "Prepare a solid architectural comparison between Next.js SSR and standard React CSR for any rescheduled technical evaluation."
+        ],
+        "transcript": [
+          {
+            "speaker": "AI",
+            "text": "Hi there, welcome to your technical interview! I'm excited to dive into your MERN stack experience today. To kick things off, could you explain the key differences between Server-Side Rendering in Next.js and Client-Side Rendering in standard React, and how you would decide which to use for an e-commerce platform?",
+            "timestamp": "00:05"
+          },
+          {
+            "speaker": "Candidate",
+            "text": "(Interview exited prematurely)",
+            "timestamp": "00:30"
+          }
+        ],
+        "timeline": [
+          {
+            "timestamp": "00:00",
+            "label": "Session started, candidate connected"
+          },
+          {
+            "timestamp": "00:05",
+            "label": "AI Analyst introduced Question 1"
+          },
+          {
+            "timestamp": "00:20",
+            "label": "Tab Switch violation detected"
+          },
+          {
+            "timestamp": "00:30",
+            "label": "Candidate disconnected abruptly"
+          },
+          {
+            "timestamp": "00:45",
+            "label": "Session closed automatically due to inactivity"
+          }
+        ],
+        "proctoringSummary": {
+          "tabSwitches": 1,
+          "fullscreenExits": 0,
+          "screenShareInterruptions": 0,
+          "status": "Flagged"
+        }
+      },
+      "createdAt": "2026-07-13T10:41:02.601Z",
+      "updatedAt": "2026-07-13T10:42:15.710Z"
+    },
+    "ai-session-aozjyvj1z": {
+      "id": "ai-session-aozjyvj1z",
+      "userId": "user-123",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scaleable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "status": "not_started",
+      "currentQuestionIndex": 0,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Hello! Welcome to your technical interview for the MERN Stack Developer position. Let's start with a foundational concept. Can you explain your understanding of React and describe a scenario where you implemented it in a production application?",
+          "evaluation": null
+        }
+      ],
+      "violations": [],
+      "timeline": [
+        {
+          "timestamp": "05:08 PM",
+          "label": "Introduction"
+        }
+      ],
+      "evaluation": null,
+      "report": null,
+      "createdAt": "2026-07-13T11:38:40.322Z",
+      "updatedAt": "2026-07-13T11:38:40.323Z"
+    },
+    "ai-session-6071cd9je": {
+      "id": "ai-session-6071cd9je",
+      "userId": "user-123",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scaleable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "status": "not_started",
+      "currentQuestionIndex": 0,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Hello! Welcome to your technical interview for the MERN Stack Developer position. Let's start with a foundational concept. Can you explain your understanding of React and describe a scenario where you implemented it in a production application?",
+          "evaluation": null
+        }
+      ],
+      "violations": [],
+      "timeline": [
+        {
+          "timestamp": "05:08 PM",
+          "label": "Introduction"
+        }
+      ],
+      "evaluation": null,
+      "report": null,
+      "createdAt": "2026-07-13T11:38:40.500Z",
+      "updatedAt": "2026-07-13T11:38:40.501Z"
+    },
+    "ai-session-jxsp5snl9": {
+      "id": "ai-session-jxsp5snl9",
+      "userId": "user-123",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scaleable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "status": "not_started",
+      "currentQuestionIndex": 0,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Hello! Welcome to your technical interview for the MERN Stack Developer position. Let's start with a foundational concept. Can you explain your understanding of React and describe a scenario where you implemented it in a production application?",
+          "evaluation": null
+        }
+      ],
+      "violations": [],
+      "timeline": [
+        {
+          "timestamp": "10:49 PM",
+          "label": "Introduction"
+        }
+      ],
+      "evaluation": null,
+      "report": null,
+      "createdAt": "2026-07-13T17:19:30.978Z",
+      "updatedAt": "2026-07-13T17:19:30.978Z"
+    },
+    "ai-session-5wdfb6sv8": {
+      "id": "ai-session-5wdfb6sv8",
+      "userId": "user-123",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scaleable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "status": "not_started",
+      "currentQuestionIndex": 0,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Hello! Welcome to your technical interview for the MERN Stack Developer position. Let's start with a foundational concept. Can you explain your understanding of React and describe a scenario where you implemented it in a production application?",
+          "evaluation": null
+        }
+      ],
+      "violations": [],
+      "timeline": [
+        {
+          "timestamp": "10:49 PM",
+          "label": "Introduction"
+        }
+      ],
+      "evaluation": null,
+      "report": null,
+      "createdAt": "2026-07-13T17:19:30.902Z",
+      "updatedAt": "2026-07-13T17:19:30.902Z"
+    }
+  },
+  "audioSessions": {
+    "audio-session-krtdur52v": {
+      "id": "audio-session-krtdur52v",
+      "userId": "6a549333c82eb01b6c3f",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scaleable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "settings": {
+        "duration": 5,
+        "difficulty": "Adaptive",
+        "interviewType": "Technical",
+        "voice": "Female",
+        "accent": "American",
+        "practiceMode": "Deep Technical"
+      },
+      "status": "completed",
+      "currentQuestionIndex": 1,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Welcome to your voice mock interview for the MERN Stack Developer position. Let's start with a core concept. Can you explain your experience with React and how you typically apply it in your projects?",
+          "evaluation": {
+            "technicalAccuracy": 6,
+            "communication": 7,
+            "problemSolving": 6,
+            "confidence": 7,
+            "completeness": 6,
+            "practicalKnowledge": 6,
+            "feedback": "Your voice answer was received, but could benefit from more detailed technical elaboration.",
+            "score": 60
+          },
+          "answerText": "(Answered verbally - skipped text transcription)"
+        },
+        {
+          "id": "q-2",
+          "questionText": "Got it. Let's move on to the next topic: TypeScript. Can you tell me about the core differences between standard paradigms and alternatives in TypeScript?",
+          "evaluation": {
+            "technicalAccuracy": 6,
+            "communication": 7,
+            "problemSolving": 6,
+            "confidence": 7,
+            "completeness": 6,
+            "practicalKnowledge": 6,
+            "feedback": "Your voice answer was received, but could benefit from more detailed technical elaboration.",
+            "score": 60
+          },
+          "answerText": "(Answered verbally - skipped text transcription)"
+        }
+      ],
+      "violations": [],
+      "timeline": [
+        {
+          "timestamp": "00:00",
+          "label": "Introduction"
+        },
+        {
+          "timestamp": "02:00",
+          "label": "Voice Setup & Testing"
+        },
+        {
+          "timestamp": "05:00",
+          "label": "Technical QA Round"
+        },
+        {
+          "timestamp": "10:00",
+          "label": "Interview Concluded"
+        }
+      ],
+      "evaluation": {
+        "overallScore": 60,
+        "technicalScore": 60,
+        "communicationScore": 70,
+        "problemSolvingScore": 60,
+        "confidenceScore": 70,
+        "passed": true
+      },
+      "report": {
+        "candidateSummary": {
+          "overallScore": 60,
+          "technicalScore": 60,
+          "communicationScore": 70,
+          "problemSolvingScore": 60,
+          "confidenceScore": 70,
+          "duration": "1:30"
+        },
+        "questionFeedback": [
+          {
+            "question": "Welcome to your voice mock interview for the MERN Stack Developer position. Let's start with a core concept. Can you explain your experience with React and how you typically apply it in your projects?",
+            "answer": "(Answered verbally - skipped text transcription)",
+            "score": 60,
+            "feedback": "Your voice answer was received, but could benefit from more detailed technical elaboration.",
+            "metrics": {
+              "accuracy": 6,
+              "communication": 7,
+              "problemSolving": 6,
+              "confidence": 7
+            }
+          },
+          {
+            "question": "Got it. Let's move on to the next topic: TypeScript. Can you tell me about the core differences between standard paradigms and alternatives in TypeScript?",
+            "answer": "(Answered verbally - skipped text transcription)",
+            "score": 60,
+            "feedback": "Your voice answer was received, but could benefit from more detailed technical elaboration.",
+            "metrics": {
+              "accuracy": 6,
+              "communication": 7,
+              "problemSolving": 6,
+              "confidence": 7
+            }
+          }
+        ],
+        "strengths": [
+          "Clear and articulate vocal delivery.",
+          "Demonstrated firm grasp of foundational programming design patterns.",
+          "Responded calmly and structurally under mock scenario constraints."
+        ],
+        "weaknesses": [
+          "Could expand vocabulary depth when describing system-level scale.",
+          "Omitted key garbage collection or memory cleanup steps in verbal explanations."
+        ],
+        "recommendations": [
+          "Use standard terminology when describing database scaling operations.",
+          "Practice the STAR technique for behavioral conflict-resolution scenarios.",
+          "Explain project trade-offs explicitly from the start."
+        ],
+        "transcript": [
+          {
+            "speaker": "AI",
+            "text": "Welcome to your voice mock interview for the MERN Stack Developer position. Let's start with a core concept. Can you explain your experience with React and how you typically apply it in your projects?",
+            "timestamp": "0:00"
+          },
+          {
+            "speaker": "Candidate",
+            "text": "(Answered verbally - skipped text transcription)",
+            "timestamp": "1:10"
+          },
+          {
+            "speaker": "AI",
+            "text": "Got it. Let's move on to the next topic: TypeScript. Can you tell me about the core differences between standard paradigms and alternatives in TypeScript?",
+            "timestamp": "2:00"
+          },
+          {
+            "speaker": "Candidate",
+            "text": "(Answered verbally - skipped text transcription)",
+            "timestamp": "3:10"
+          }
+        ],
+        "timeline": [
+          {
+            "timestamp": "00:00",
+            "label": "Introduction"
+          },
+          {
+            "timestamp": "02:00",
+            "label": "Voice Setup & Testing"
+          },
+          {
+            "timestamp": "05:00",
+            "label": "Technical QA Round"
+          },
+          {
+            "timestamp": "10:00",
+            "label": "Interview Concluded"
+          }
+        ],
+        "proctoringSummary": {
+          "tabSwitches": 0,
+          "fullscreenExits": 0,
+          "screenShareInterruptions": 0,
+          "status": "Clean"
+        }
+      },
+      "createdAt": "2026-07-13T12:26:47.808Z",
+      "updatedAt": "2026-07-13T12:27:46.381Z"
+    },
+    "audio-session-vcoi16c2l": {
+      "id": "audio-session-vcoi16c2l",
+      "userId": "6a549333c82eb01b6c3f",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scaleable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "settings": {
+        "duration": 5,
+        "difficulty": "Easy",
+        "interviewType": "Technical",
+        "voice": "Male",
+        "accent": "Indian",
+        "practiceMode": "Deep Technical"
+      },
+      "status": "completed",
+      "currentQuestionIndex": 1,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Welcome to your voice mock interview for the MERN Stack Developer position. Let's start with a core concept. Can you explain your experience with React and how you typically apply it in your projects?",
+          "evaluation": {
+            "technicalAccuracy": 6,
+            "communication": 7,
+            "problemSolving": 6,
+            "confidence": 7,
+            "completeness": 6,
+            "practicalKnowledge": 6,
+            "feedback": "Your voice answer was received, but could benefit from more detailed technical elaboration.",
+            "score": 60
+          },
+          "answerText": "(Answered verbally - skipped text transcription)"
+        },
+        {
+          "id": "q-2",
+          "questionText": "Got it. Let's move on to the next topic: TypeScript. Can you tell me about the core differences between standard paradigms and alternatives in TypeScript?",
+          "evaluation": {
+            "technicalAccuracy": 6,
+            "communication": 7,
+            "problemSolving": 6,
+            "confidence": 7,
+            "completeness": 6,
+            "practicalKnowledge": 6,
+            "feedback": "Your voice answer was received, but could benefit from more detailed technical elaboration.",
+            "score": 60
+          },
+          "answerText": "(Answered verbally - skipped text transcription)"
+        }
+      ],
+      "violations": [],
+      "timeline": [
+        {
+          "timestamp": "00:00",
+          "label": "Introduction"
+        },
+        {
+          "timestamp": "02:00",
+          "label": "Voice Setup & Testing"
+        },
+        {
+          "timestamp": "05:00",
+          "label": "Technical QA Round"
+        },
+        {
+          "timestamp": "10:00",
+          "label": "Interview Concluded"
+        }
+      ],
+      "evaluation": {
+        "overallScore": 60,
+        "technicalScore": 60,
+        "communicationScore": 70,
+        "problemSolvingScore": 60,
+        "confidenceScore": 70,
+        "passed": true
+      },
+      "report": {
+        "candidateSummary": {
+          "overallScore": 60,
+          "technicalScore": 60,
+          "communicationScore": 70,
+          "problemSolvingScore": 60,
+          "confidenceScore": 70,
+          "duration": "1:30"
+        },
+        "questionFeedback": [
+          {
+            "question": "Welcome to your voice mock interview for the MERN Stack Developer position. Let's start with a core concept. Can you explain your experience with React and how you typically apply it in your projects?",
+            "answer": "(Answered verbally - skipped text transcription)",
+            "score": 60,
+            "feedback": "Your voice answer was received, but could benefit from more detailed technical elaboration.",
+            "metrics": {
+              "accuracy": 6,
+              "communication": 7,
+              "problemSolving": 6,
+              "confidence": 7
+            }
+          },
+          {
+            "question": "Got it. Let's move on to the next topic: TypeScript. Can you tell me about the core differences between standard paradigms and alternatives in TypeScript?",
+            "answer": "(Answered verbally - skipped text transcription)",
+            "score": 60,
+            "feedback": "Your voice answer was received, but could benefit from more detailed technical elaboration.",
+            "metrics": {
+              "accuracy": 6,
+              "communication": 7,
+              "problemSolving": 6,
+              "confidence": 7
+            }
+          }
+        ],
+        "strengths": [
+          "Clear and articulate vocal delivery.",
+          "Demonstrated firm grasp of foundational programming design patterns.",
+          "Responded calmly and structurally under mock scenario constraints."
+        ],
+        "weaknesses": [
+          "Could expand vocabulary depth when describing system-level scale.",
+          "Omitted key garbage collection or memory cleanup steps in verbal explanations."
+        ],
+        "recommendations": [
+          "Use standard terminology when describing database scaling operations.",
+          "Practice the STAR technique for behavioral conflict-resolution scenarios.",
+          "Explain project trade-offs explicitly from the start."
+        ],
+        "transcript": [
+          {
+            "speaker": "AI",
+            "text": "Welcome to your voice mock interview for the MERN Stack Developer position. Let's start with a core concept. Can you explain your experience with React and how you typically apply it in your projects?",
+            "timestamp": "0:00"
+          },
+          {
+            "speaker": "Candidate",
+            "text": "(Answered verbally - skipped text transcription)",
+            "timestamp": "1:10"
+          },
+          {
+            "speaker": "AI",
+            "text": "Got it. Let's move on to the next topic: TypeScript. Can you tell me about the core differences between standard paradigms and alternatives in TypeScript?",
+            "timestamp": "2:00"
+          },
+          {
+            "speaker": "Candidate",
+            "text": "(Answered verbally - skipped text transcription)",
+            "timestamp": "3:10"
+          }
+        ],
+        "timeline": [
+          {
+            "timestamp": "00:00",
+            "label": "Introduction"
+          },
+          {
+            "timestamp": "02:00",
+            "label": "Voice Setup & Testing"
+          },
+          {
+            "timestamp": "05:00",
+            "label": "Technical QA Round"
+          },
+          {
+            "timestamp": "10:00",
+            "label": "Interview Concluded"
+          }
+        ],
+        "proctoringSummary": {
+          "tabSwitches": 0,
+          "fullscreenExits": 0,
+          "screenShareInterruptions": 0,
+          "status": "Clean"
+        }
+      },
+      "createdAt": "2026-07-13T12:59:19.647Z",
+      "updatedAt": "2026-07-13T13:00:08.659Z"
+    }
+  },
+  "fullSessions": {
+    "full-session-zbcw1s412": {
+      "id": "full-session-zbcw1s412",
+      "userId": "6a4ca2be4c0f65e63ca9",
+      "blueprint": {
+        "candidateName": "Manideep Yelugam",
+        "source": "resume",
+        "role": "Full Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "JavaScript",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Zod"
+        ],
+        "frameworks": [
+          "React",
+          "Next.js"
+        ],
+        "databases": [
+          "PostgreSQL",
+          "Appwrite"
+        ],
+        "projects": [
+          {
+            "title": "AI Interview Practice Platform",
+            "description": "An interactive platform for practicing interviews using AI integration.",
+            "technologies": [
+              "Next.js 15",
+              "Appwrite",
+              "Tailwind CSS"
+            ]
+          },
+          {
+            "title": "Developer Portfolio Website",
+            "description": "A personal website showcasing professional skills and projects.",
+            "technologies": [
+              "React",
+              "Tailwind CSS"
+            ]
+          },
+          {
+            "title": "E-commerce SaaS Platform",
+            "description": "A software-as-a-service application for managing online commerce.",
+            "technologies": [
+              "Next.js",
+              "PostgreSQL",
+              "Node.js"
+            ]
+          }
+        ],
+        "confidenceScore": 95,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Startup"
+      },
+      "status": "in_progress",
+      "oaSessionId": null,
+      "aiSessionId": null,
+      "audioSessionId": null,
+      "currentRound": "oa",
+      "evaluation": null,
+      "report": null,
+      "createdAt": "2026-07-19T12:43:30.576Z",
+      "updatedAt": "2026-07-19T12:43:30.576Z"
     }
   }
 }

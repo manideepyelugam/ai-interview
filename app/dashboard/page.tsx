@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useAuth } from "@/src/components/providers/AuthProvider";
 import { StatCard } from "@/src/components/Dashboard/StatCard";
 import { RecentInterviews } from "@/src/components/Dashboard/RecentInterviews";
@@ -10,19 +11,57 @@ import {
   TrendingUp,
   Clock,
   Calendar,
+  Loader2
 } from "lucide-react";
-
 
 export default function DashboardPage() {
   const { user, loading } = useAuth();
+  const [interviews, setInterviews] = useState<any[]>([]);
+  const [statsLoading, setStatsLoading] = useState(true);
+
+  useEffect(() => {
+    if (!user) return;
+    const userId = user.$id;
+    async function fetchStats() {
+      try {
+        const res = await fetch(`/api/interviews?userId=${userId}`);
+        if (res.ok) {
+          const data = await res.json();
+          setInterviews(data.interviews || []);
+        }
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setStatsLoading(false);
+      }
+    }
+    fetchStats();
+  }, [user]);
 
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="w-6 h-6 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" />
+        <Loader2 className="w-6 h-6 text-blue-500 animate-spin" />
       </div>
     );
   }
+
+  // Calculations
+  const total = interviews.length;
+  const completed = interviews.filter(i => i.status === "completed");
+  const passed = completed.filter(i => i.score >= 50);
+  const successRate = completed.length > 0 ? Math.round((passed.length / completed.length) * 100) : 0;
+
+  const durationMap: Record<string, number> = { oa: 20, ai: 15, audio: 10, full: 45 };
+  const totalMinutes = completed.reduce((acc, curr) => acc + (durationMap[curr.interviewType] || 15), 0);
+  const hrs = Math.floor(totalMinutes / 60);
+  const mins = totalMinutes % 60;
+  const practiceTime = hrs > 0 ? `${hrs}h ${mins}m` : `${mins}m`;
+
+  const oneWeekAgo = new Date();
+  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+  const thisWeek = interviews.filter(i => new Date(i.updatedAt) >= oneWeekAgo).length;
+  const inProgress = interviews.filter(i => i.status === "in_progress").length;
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -39,32 +78,32 @@ export default function DashboardPage() {
       {/* Stats Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
         <StatCard
-          title="Total Interviews"
-          value="12"
-          subtitle="↑ 20% from last month"
-          subtitleColor="text-green-600"
-          icon={<Briefcase className="w-4 h-4 text-blue-400" />}
+          title="Total Assessments"
+          value={statsLoading ? "..." : String(total)}
+          subtitle={total > 0 ? "Started from dashboard" : "No assessments yet"}
+          subtitleColor="text-slate-500"
+          icon={<Briefcase className="w-4 h-4 text-blue-500" />}
         />
         <StatCard
           title="Success Rate"
-          value="68%"
-          subtitle="↑ 8% from last month"
-          subtitleColor="text-green-600"
-          icon={<TrendingUp className="w-4 h-4 text-blue-400" />}
+          value={statsLoading ? "..." : `${successRate}%`}
+          subtitle={completed.length > 0 ? `${passed.length} of ${completed.length} passed` : "No completed rounds"}
+          subtitleColor="text-slate-500"
+          icon={<TrendingUp className="w-4 h-4 text-emerald-500" />}
         />
         <StatCard
           title="Total Practice Time"
-          value="14h 32m"
-          subtitle="↑ 15% from last month"
-          subtitleColor="text-green-600"
-          icon={<Clock className="w-4 h-4 text-blue-400" />}
+          value={statsLoading ? "..." : practiceTime}
+          subtitle="Mock session duration sum"
+          subtitleColor="text-slate-500"
+          icon={<Clock className="w-4 h-4 text-indigo-500" />}
         />
         <StatCard
-          title="Interviews This Week"
-          value="3"
-          subtitle="2 upcoming"
-          subtitleColor="text-blue-600"
-          icon={<Calendar className="w-4 h-4 text-blue-400" />}
+          title="Updated This Week"
+          value={statsLoading ? "..." : String(thisWeek)}
+          subtitle={`${inProgress} in progress`}
+          subtitleColor="text-blue-500 font-medium"
+          icon={<Calendar className="w-4 h-4 text-orange-500" />}
         />
       </div>
 

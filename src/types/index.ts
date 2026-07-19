@@ -28,7 +28,7 @@ export interface JDDocument {
   status: JDStatus;
 }
 
-export type InterviewType = "full" | "oa" | "ai";
+export type InterviewType = "full" | "oa" | "ai" | "audio";
 
 export type JDStatus = "uploaded";
 
@@ -227,5 +227,128 @@ export interface InterviewSession {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface AIQuestion {
+  id: string;
+  questionText: string;
+  answerText?: string;
+  evaluation?: {
+    technicalAccuracy: number; // 0-10
+    communication: number; // 0-10
+    problemSolving: number; // 0-10
+    confidence: number; // 0-10
+    completeness: number; // 0-10
+    practicalKnowledge: number; // 0-10
+    feedback: string;
+    score: number; // 0-100 overall
+  } | null;
+}
+
+export interface AIInterviewReport {
+  candidateSummary: {
+    overallScore: number;
+    technicalScore: number;
+    communicationScore: number;
+    problemSolvingScore: number;
+    confidenceScore: number;
+    duration: string;
+  };
+  questionFeedback: {
+    question: string;
+    answer: string;
+    score: number;
+    feedback: string;
+    metrics: {
+      accuracy: number;
+      communication: number;
+      problemSolving: number;
+      confidence: number;
+    };
+  }[];
+  strengths: string[];
+  weaknesses: string[];
+  recommendations: string[];
+  transcript: { speaker: "AI" | "Candidate"; text: string; timestamp: string }[];
+  timeline: { timestamp: string; label: string }[];
+  proctoringSummary: {
+    tabSwitches: number;
+    fullscreenExits: number;
+    screenShareInterruptions: number;
+    status: "Clean" | "Flagged" | "Suspicious";
+  };
+}
+
+export interface AIInterviewSession {
+  id: string;
+  userId: string;
+  blueprint: InterviewBlueprint;
+  status: "not_started" | "setup" | "permissions" | "lobby" | "in_progress" | "completed";
+  currentQuestionIndex: number;
+  questions: AIQuestion[];
+  violations: { type: string; timestamp: string }[];
+  timeline: { timestamp: string; label: string }[];
+  evaluation: {
+    overallScore: number;
+    technicalScore: number;
+    communicationScore: number;
+    problemSolvingScore: number;
+    confidenceScore: number;
+    passed: boolean;
+  } | null;
+  report: AIInterviewReport | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AudioInterviewSettings {
+  duration: number; // in minutes: 5 | 10 | 20 | 30
+  difficulty: "Easy" | "Medium" | "Hard" | "Adaptive";
+  interviewType: "Technical" | "Behavioral" | "HR" | "Mixed" | "Project Discussion" | "System Design";
+  voice: "Male" | "Female";
+  accent: "American" | "Indian" | "British";
+  practiceMode: "Rapid Fire" | "Deep Technical" | "Behavioral Practice" | "Project Discussion" | "HR Round" | "System Design";
+}
+
+export interface AudioInterviewSession {
+  id: string;
+  userId: string;
+  blueprint: InterviewBlueprint;
+  settings: AudioInterviewSettings;
+  status: "not_started" | "in_progress" | "completed";
+  currentQuestionIndex: number;
+  questions: AIQuestion[];
+  violations: { type: string; timestamp: string }[];
+  timeline: { timestamp: string; label: string }[];
+  evaluation: {
+    overallScore: number;
+    technicalScore: number;
+    communicationScore: number;
+    problemSolvingScore: number;
+    confidenceScore: number;
+    passed: boolean;
+  } | null;
+  report: AIInterviewReport | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface FullInterviewSession {
+  id: string;
+  userId: string;
+  blueprint: InterviewBlueprint;
+  status: "not_started" | "in_progress" | "completed";
+  oaSessionId: string | null;
+  aiSessionId: string | null;
+  audioSessionId: string | null;
+  currentRound: "oa" | "ai" | "audio" | "completed";
+  evaluation: {
+    overallScore: number;
+    passed: boolean;
+  } | null;
+  report: AIInterviewReport | null; // Unified report structure or custom
+  createdAt: string;
+  updatedAt: string;
+}
+
 
 

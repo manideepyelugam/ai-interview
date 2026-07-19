@@ -35,49 +35,63 @@ export class GeminiProvider implements AIProvider {
       return fallbackGenerator();
     }
 
-    try {
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            contents: [
-              {
-                parts: [
-                  {
-                    text: prompt,
-                  },
-                ],
-              },
-            ],
-            generationConfig: {
-              responseMimeType: "application/json",
+    const models = [
+      "gemini-3.1-flash-lite",
+      "gemini-2.0-flash-lite",
+      "gemini-3.5-flash",
+      "gemini-2.5-flash",
+      "gemini-pro-latest"
+    ];
+
+    for (const model of models) {
+      try {
+        console.log(`Querying Gemini API with model: ${model}`);
+        const response = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
             },
-          }),
+            body: JSON.stringify({
+              contents: [
+                {
+                  parts: [
+                    {
+                      text: prompt,
+                    },
+                  ],
+                },
+              ],
+              generationConfig: {
+                responseMimeType: "application/json",
+              },
+            }),
+          }
+        );
+
+        if (!response.ok) {
+          const errText = await response.text();
+          console.warn(`Gemini API error with model ${model}:`, response.status, errText);
+          continue;
         }
-      );
 
-      if (!response.ok) {
-        const errText = await response.text();
-        console.error("Gemini API error:", response.status, errText);
-        throw new Error(`Gemini API error: ${response.statusText}`);
+        const data = await response.json();
+        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (!text) {
+          console.warn(`Empty response from model ${model}`);
+          continue;
+        }
+
+        // Parse JSON
+        return JSON.parse(text) as T;
+      } catch (error: any) {
+        console.warn(`Failed to query model ${model}:`, error.message);
       }
-
-      const data = await response.json();
-      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (!text) {
-        throw new Error("Empty response from Gemini API");
-      }
-
-      // Parse JSON
-      return JSON.parse(text) as T;
-    } catch (error) {
-      console.error("Failed to query Gemini API. Using fallback generator.", error);
-      return fallbackGenerator();
     }
+
+    console.error("All Gemini models failed. Using offline fallback generator.");
+    return fallbackGenerator();
   }
 
   // ─── Blueprint Generation ──────────────────────────────────────────
@@ -91,18 +105,18 @@ export class GeminiProvider implements AIProvider {
       const frameworks = context.jd?.preferredSkills || ["React", "Express", "Next.js"];
       const databases = ["MongoDB", "PostgreSQL"];
       const experienceLevel = context.jd?.experience?.includes("5") || (context.resume?.skills?.length ?? 0) > 8 ? "Mid" : "Junior";
-      
+
       const projects: Project[] = context.resume?.projects.map(p => ({
         title: p.split("(")[0].trim(),
         description: p,
         technologies: skills.slice(0, 3)
       })) || [
-        {
-          title: "E-Commerce System",
-          description: "A scaleable shopping platform built with React and Node.",
-          technologies: ["React", "Node.js", "MongoDB"]
-        }
-      ];
+          {
+            title: "E-Commerce System",
+            description: "A scaleable shopping platform built with React and Node.",
+            technologies: ["React", "Node.js", "MongoDB"]
+          }
+        ];
 
       return {
         candidateName,
@@ -491,5 +505,9 @@ export class GeminiProvider implements AIProvider {
         finalRecommendation: evalData.passed ? "Proceed to AI Interview" : "Retry OA Assessment"
       };
     });
+  }
+
+  async generateJSON<T>(prompt: string, fallbackGenerator: () => T): Promise<T> {
+    return this.callGemini<T>(prompt, fallbackGenerator);
   }
 }

@@ -18,6 +18,7 @@ import {
   ChevronRight,
   Gift,
   MoreVertical,
+  Volume2,
 } from "lucide-react";
 
 const iconMap = {
@@ -25,6 +26,7 @@ const iconMap = {
   Mic,
   Code2,
   Bot,
+  Volume2,
 } as const;
 
 function SidebarContent({ onItemClick }: { onItemClick?: () => void }) {

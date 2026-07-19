@@ -44,6 +44,7 @@ import { Button } from "@/components/ui/button";
 
 interface InterviewConfigurationProps {
   interviewType: InterviewType;
+  onConfigurationComplete?: () => void;
 }
 
 const ROLES_LIST = [
@@ -64,7 +65,7 @@ const STAGES = [
   { index: 3, label: "Completed" },
 ];
 
-export function InterviewConfiguration({ interviewType }: InterviewConfigurationProps) {
+export function InterviewConfiguration({ interviewType, onConfigurationComplete }: InterviewConfigurationProps) {
   const [step, setStep] = useState<"select-method" | "upload" | "role-select" | "parsing" | "preview" | "saved">("select-method");
   const [source, setSource] = useState<"jd" | "resume" | "role" | null>(null);
   const [file, setFile] = useState<File | null>(null);
@@ -166,6 +167,14 @@ export function InterviewConfiguration({ interviewType }: InterviewConfiguration
     localStorage.setItem(`interview_context_${interviewType}`, JSON.stringify(context));
     setStep("saved");
     toast.success("Interview configuration saved successfully!");
+  };
+
+  const handleGoToTest = () => {
+    if (onConfigurationComplete) {
+      onConfigurationComplete();
+    } else {
+      window.location.reload();
+    }
   };
 
   const handleReset = () => {
@@ -583,13 +592,13 @@ export function InterviewConfiguration({ interviewType }: InterviewConfiguration
                           </div>
                         ))}
                         <Dialog>
-                          <DialogTrigger >
-                            <button
+                          <DialogTrigger>
+                            <span
                               className="flex items-center gap-1 text-xs text-blue-500 font-medium px-2.5 py-0.5 rounded-full border border-dashed border-blue-200 hover:border-blue-300 transition-colors cursor-pointer"
                             >
                               <Plus className="w-3 h-3" />
                               Add
-                            </button>
+                            </span>
                           </DialogTrigger>
 
                           <DialogContent className="sm:max-w-md">
@@ -854,7 +863,16 @@ export function InterviewConfiguration({ interviewType }: InterviewConfiguration
             </div>
           )}
 
-          <div className="pt-4 border-t border-[#ECECEC] flex flex-wrap items-center justify-center gap-3">
+          {/* Take Me to Test CTA */}
+          <button
+            onClick={handleGoToTest}
+            className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white text-[14px] font-semibold rounded-xl flex items-center gap-2.5 mx-auto transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer group"
+          >
+            Take Me to Test
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+          </button>
+
+          <div className="pt-3 border-t border-[#ECECEC] flex flex-wrap items-center justify-center gap-3">
             <button
               onClick={() => setStep("preview")}
               className="px-4 py-1.5 border border-[#ECECEC] hover:border-[#D4D4D4] bg-white text-[13px] font-medium rounded-lg text-[#6B7280] hover:text-[#111111] transition-all duration-150 cursor-pointer"
@@ -867,12 +885,6 @@ export function InterviewConfiguration({ interviewType }: InterviewConfiguration
             >
               Reset Context
             </button>
-          </div>
-
-          <div className="pt-2">
-            <p className="text-[11px] text-[#9CA3AF] italic">
-              Note: Full AI interview question generation will be supported in the next implementation phase.
-            </p>
           </div>
         </div>
       )}

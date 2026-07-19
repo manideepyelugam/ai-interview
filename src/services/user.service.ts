@@ -17,21 +17,37 @@ interface CreateUserParams {
  */
 export async function createUserDocument(params: CreateUserParams): Promise<UserDocument> {
   const now = new Date().toISOString();
-  const doc = await databases.createDocument(
-    APPWRITE_CONFIG.databaseId,
-    APPWRITE_CONFIG.usersCollectionId,
-    ID.unique(),
-    {
-      userId: params.userId,
-      name: params.name,
-      email: params.email,
-      avatar: params.avatar,
-      provider: params.provider,
-      createdAt: now,
-      updatedAt: now,
+  const attemptData: any = {
+    userId: params.userId,
+    name: params.name,
+    email: params.email,
+    avatar: params.avatar,
+    provider: params.provider,
+    createdAt: now,
+    updatedAt: now,
+  };
+
+  while (true) {
+    try {
+      const doc = await databases.createDocument(
+        APPWRITE_CONFIG.databaseId,
+        APPWRITE_CONFIG.usersCollectionId,
+        ID.unique(),
+        attemptData
+      );
+      return doc as unknown as UserDocument;
+    } catch (err: any) {
+      const match = err.message && err.message.match(/Unknown attribute:\s*"([^"]+)"/i);
+      if (match && match[1]) {
+        const attribute = match[1];
+        if (attribute in attemptData) {
+          delete attemptData[attribute];
+          continue;
+        }
+      }
+      throw err;
     }
-  );
-  return doc as unknown as UserDocument;
+  }
 }
 
 /**

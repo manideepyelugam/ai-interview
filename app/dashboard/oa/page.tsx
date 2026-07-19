@@ -60,6 +60,7 @@ export default function OARoundPage() {
   const [view, setView] = useState<ViewState>("setup");
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [session, setSession] = useState<InterviewSession | null>(null);
+  const [contextReady, setContextReady] = useState(false);
 
   // Question lists (retrieved from backend)
   const [mcqQuestions, setMCQQuestions] = useState<MCQQuestion[]>([]);
@@ -109,6 +110,44 @@ export default function OARoundPage() {
 
   // Load session from storage if existing
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const querySessionId = params.get("sessionId");
+      if (querySessionId) {
+        setSessionId(querySessionId);
+        loadSession(querySessionId);
+        return;
+      }
+
+      const queryFullId = params.get("fullSessionId");
+      if (queryFullId) {
+        fetch(`/api/interview/session?sessionId=${queryFullId}`)
+          .then(res => res.json())
+          .then(data => {
+            if (data.session) {
+              const fullSess = data.session;
+              if (fullSess.oaSessionId) {
+                window.location.href = `/dashboard/oa?sessionId=${fullSess.oaSessionId}&fullSessionId=${queryFullId}`;
+              } else {
+                const ctx = {
+                  source: "role",
+                  role: fullSess.blueprint.role,
+                  jd: {
+                    experience: "Mid level",
+                    requiredSkills: fullSess.blueprint.skills || [],
+                    preferredSkills: []
+                  }
+                };
+                localStorage.setItem("interview_context_oa", JSON.stringify(ctx));
+                setView("setup");
+              }
+            }
+          })
+          .catch(err => console.error(err));
+        return;
+      }
+    }
+
     const savedSessionId = localStorage.getItem("active_oa_session_id");
     if (savedSessionId) {
       setSessionId(savedSessionId);
@@ -117,6 +156,7 @@ export default function OARoundPage() {
       // Check if context exists
       const savedContext = localStorage.getItem("interview_context_oa");
       if (savedContext) {
+        setContextReady(true);
         setView("setup");
       }
     }
@@ -520,6 +560,29 @@ export default function OARoundPage() {
       
       // Load completed session results
       await loadSession(sessionId);
+
+      // If full interview, link and redirect immediately
+      if (typeof window !== "undefined") {
+        const params = new URLSearchParams(window.location.search);
+        const fId = params.get("fullSessionId");
+        if (fId) {
+          toast.info("Saving results to Full End-to-End Interview...");
+          await fetch("/api/interview/link-round", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              fullSessionId: fId,
+              roundType: "oa",
+              roundSessionId: sessionId
+            })
+          });
+          localStorage.removeItem("active_oa_session_id");
+          localStorage.removeItem("interview_context_oa");
+          setTimeout(() => {
+            window.location.href = `/dashboard/interview?sessionId=${fId}`;
+          }, 1500);
+        }
+      }
     } catch (err) {
       console.error(err);
       toast.error("Failed to submit Aptitude round answers.");
@@ -529,6 +592,14 @@ export default function OARoundPage() {
   };
 
   const handleResetAll = () => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const fId = params.get("fullSessionId");
+      if (fId) {
+        window.location.href = `/dashboard/interview?sessionId=${fId}`;
+        return;
+      }
+    }
     localStorage.removeItem("active_oa_session_id");
     localStorage.removeItem("interview_context_oa");
     setSessionId(null);
@@ -583,8 +654,13 @@ export default function OARoundPage() {
             </p>
           </div>
 
-          {!localStorage.getItem("interview_context_oa") ? (
-            <InterviewConfiguration interviewType="oa" />
+          {!contextReady ? (
+            <InterviewConfiguration
+              interviewType="oa"
+              onConfigurationComplete={() => {
+                setContextReady(true);
+              }}
+            />
           ) : (
             <div className="bg-white rounded-lg border border-[#ECECEC] p-8 flex flex-col items-center justify-center text-center space-y-6">
               <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center animate-pulse">
@@ -601,7 +677,7 @@ export default function OARoundPage() {
                 <button
                   onClick={() => {
                     localStorage.removeItem("interview_context_oa");
-                    window.location.reload();
+                    setContextReady(false);
                   }}
                   className="px-4 py-2 border border-[#ECECEC] text-[13px] font-medium text-[#6B7280] rounded-lg hover:bg-gray-50 transition"
                 >
@@ -1933,12 +2009,20 @@ export default function OARoundPage() {
                     {session.evaluation?.passed ? (
                       <button
                         onClick={() => {
+                          if (typeof window !== "undefined") {
+                            const params = new URLSearchParams(window.location.search);
+                            const fId = params.get("fullSessionId");
+                            if (fId) {
+                              window.location.href = `/dashboard/interview?sessionId=${fId}`;
+                              return;
+                            }
+                          }
                           toast.success("Redirecting to AI Interview Round...");
                           window.location.href = "/dashboard/ai";
                         }}
                         className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg transition flex items-center gap-1.5 cursor-pointer"
                       >
-                        Proceed to AI Interview <ChevronRight className="w-4 h-4" />
+                        {typeof window !== "undefined" && new URLSearchParams(window.location.search).get("fullSessionId") ? "Return to Full Interview" : "Proceed to AI Interview"} <ChevronRight className="w-4 h-4" />
                       </button>
                     ) : (
                       <button

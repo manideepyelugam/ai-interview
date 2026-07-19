@@ -20,4 +20,5 @@ export interface AIProvider {
     testRunResults: { passed: number; total: number; compilerOutput?: string }
   ): Promise<{ complexity: string; codeQuality: string; optimization: string; suggestions: string }>;
   generateReport(session: InterviewSession): Promise<OAReport>;
+  generateJSON<T>(prompt: string, fallbackGenerator: () => T): Promise<T>;
 }
