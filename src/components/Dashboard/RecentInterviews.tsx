@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { ChevronRight, Briefcase, Code2, Bot, Volume2, Loader2 } from "lucide-react";
+import Link from "next/link";
+import { ChevronRight, Briefcase, Code2, Bot, Volume2, Loader2, ArrowRight } from "lucide-react";
 import { useAuth } from "@/src/components/providers/AuthProvider";
 
 export function RecentInterviews() {
@@ -29,6 +30,10 @@ export function RecentInterviews() {
   }, [user]);
 
   const handleItemClick = (interview: any) => {
+    if (interview.status === "completed") {
+      window.location.href = `/dashboard/report?sessionId=${interview.id}&type=${interview.interviewType}`;
+      return;
+    }
     if (interview.interviewType === "oa") {
       window.location.href = `/dashboard/oa?sessionId=${interview.id}`;
     } else if (interview.interviewType === "ai") {
@@ -135,6 +140,21 @@ export function RecentInterviews() {
           </div>
         )}
       </div>
+
+      {/* Show More Redirect Button */}
+      <div className="pt-4 mt-3 border-t border-[#ECECEC] flex items-center justify-between">
+        <span className="text-xs text-[#9CA3AF]">
+          Showing recent {Math.min(5, interviews.length)} of {interviews.length}
+        </span>
+        <Link
+          href="/dashboard/assignments"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-600 font-semibold text-xs rounded-md transition-all group"
+        >
+          Show More
+          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+        </Link>
+      </div>
     </div>
   );
 }
+

@@ -41,10 +41,10 @@ export default function FullInterviewPage() {
         setSessionId(sId);
         fetchSession(sId);
       } else {
-        const savedContext = localStorage.getItem("interview_context_full");
-        if (savedContext) {
-          setContext(JSON.parse(savedContext));
-        }
+        localStorage.removeItem("interview_context_full");
+        setContext(null);
+        setSessionId(null);
+        setSession(null);
         setLoading(false);
       }
     }
@@ -126,12 +126,7 @@ export default function FullInterviewPage() {
               Provide a JD, Resume, or select a role to configure your comprehensive multi-round practice loop.
             </p>
           </div>
-          <button
-            onClick={() => window.location.href = "/dashboard"}
-            className="flex items-center gap-1.5 text-xs text-slate-700 font-semibold border border-slate-200 bg-white hover:bg-slate-50 px-4 py-2 rounded-xl transition shadow-sm"
-          >
-            <LogOut className="w-3.5 h-3.5 text-slate-500" /> Exit to Dashboard
-          </button>
+       
         </div>
         <InterviewConfiguration
           interviewType="full"

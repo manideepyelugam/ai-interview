@@ -28,7 +28,7 @@ const interviewTypes = [
 
 export function StartNewInterview() {
   return (
-    <div className="mt-8">
+    <div className="mt-22">
       <div className="mb-4">
         <h3 className="text-[16px] font-medium text-[#111111]">
           Start a New Interview

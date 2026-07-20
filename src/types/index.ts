@@ -350,5 +350,74 @@ export interface FullInterviewSession {
   updatedAt: string;
 }
 
+// ─── Standardized Unified Report Format ──────────────────────────────────
+export interface UnifiedReportSection {
+  id: string;
+  title: string;
+  type: "mcq" | "coding" | "aptitude" | "qa" | "round_summary";
+  score: number;
+  maxScore: number;
+  summary?: string;
+  items?: {
+    question: string;
+    answer?: string;
+    userCode?: string;
+    language?: string;
+    score?: number;
+    feedback?: string;
+    correctAnswer?: string;
+    explanation?: string;
+    status?: string;
+    testCasesPassed?: number;
+    totalTestCases?: number;
+    metrics?: {
+      accuracy?: number;
+      communication?: number;
+      problemSolving?: number;
+      confidence?: number;
+    };
+  }[];
+}
+
+export interface UnifiedAssignmentReport {
+  id: string;
+  sessionId: string;
+  userId: string;
+  interviewType: "oa" | "ai" | "audio" | "full";
+  role: string;
+  candidateName: string;
+  status: "completed" | "in_progress";
+  createdAt: string;
+  updatedAt: string;
+  durationMinutes: number;
+
+  overallScore: number;
+  passed: boolean;
+
+  metrics: {
+    technicalScore: number;
+    communicationScore: number;
+    problemSolvingScore: number;
+    confidenceScore: number;
+    aptitudeScore: number;
+  };
+
+  strengths: string[];
+  weaknesses: string[];
+  recommendations: string[];
+  finalVerdict: string;
+
+  proctoring: {
+    tabSwitches: number;
+    fullscreenExits: number;
+    violationsCount: number;
+    status: "Clean" | "Flagged" | "Suspicious";
+  };
+
+  sections: UnifiedReportSection[];
+  transcript?: { speaker: "AI" | "Candidate"; text: string; timestamp: string }[];
+}
+
+
 
 

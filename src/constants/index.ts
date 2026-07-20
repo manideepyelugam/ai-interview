@@ -8,6 +8,11 @@ export const NAV_ITEMS = [
     iconName: "Home" as const,
   },
   {
+    label: "Past Assignments",
+    href: "/dashboard/assignments",
+    iconName: "FileText" as const,
+  },
+  {
     label: "Full End-to-End Interview",
     href: "/dashboard/interview",
     iconName: "Mic" as const,
@@ -53,6 +58,7 @@ export const ACCEPTED_FILE_EXTENSIONS = [".pdf"];
 export const ROUTES = {
   LOGIN: "/login",
   DASHBOARD: "/dashboard",
+  ASSIGNMENTS: "/dashboard/assignments",
   INTERVIEW: "/dashboard/interview",
   OA: "/dashboard/oa",
   AI: "/dashboard/ai",

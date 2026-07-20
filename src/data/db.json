@@ -4701,6 +4701,678 @@
       },
       "createdAt": "2026-07-19T12:48:35.498Z",
       "updatedAt": "2026-07-19T12:54:04.258Z"
+    },
+    "session-l1l6e0441": {
+      "id": "session-l1l6e0441",
+      "userId": "6a4ca2be4c0f65e63ca9",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "role",
+        "role": "Frontend/Fullstack Engineer",
+        "experienceLevel": "Mid",
+        "yearsOfExperience": 5,
+        "skills": [
+          "JavaScript",
+          "TypeScript",
+          "HTML5",
+          "CSS3",
+          "Node.js"
+        ],
+        "frameworks": [
+          "React",
+          "Next.js",
+          "Express"
+        ],
+        "databases": [
+          "PostgreSQL",
+          "MongoDB"
+        ],
+        "projects": [],
+        "confidenceScore": 75,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "mcqStatus": "not_started",
+      "codingStatus": "not_started",
+      "aptitudeStatus": "not_started",
+      "mcqQuestions": [
+        {
+          "id": "mcq-1",
+          "question": "Which of the following is NOT a feature of React?",
+          "options": [
+            "Virtual DOM",
+            "Two-way data binding",
+            "Component-based architecture",
+            "JSX syntax"
+          ],
+          "correctAnswer": "Two-way data binding",
+          "explanation": "React relies on one-way data binding. Frameworks like Angular support two-way data binding natively.",
+          "skill": "React",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "mcq-2",
+          "question": "Regarding TypeScript, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: TypeScript uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using TypeScript, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "TypeScript",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-3",
+          "question": "Regarding HTML5, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: HTML5 uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using HTML5, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "HTML5",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-4",
+          "question": "Regarding CSS3, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: CSS3 uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using CSS3, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "CSS3",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-5",
+          "question": "Regarding Node.js, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Node.js uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Node.js, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Node.js",
+          "difficulty": "Easy",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-6",
+          "question": "Regarding JavaScript, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: JavaScript uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using JavaScript, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "JavaScript",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-7",
+          "question": "Regarding TypeScript, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: TypeScript uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using TypeScript, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "TypeScript",
+          "difficulty": "Easy",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-8",
+          "question": "Regarding HTML5, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: HTML5 uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using HTML5, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "HTML5",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-9",
+          "question": "Regarding CSS3, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: CSS3 uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using CSS3, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "CSS3",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-10",
+          "question": "Regarding Node.js, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Node.js uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Node.js, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Node.js",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-11",
+          "question": "Regarding JavaScript, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: JavaScript uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using JavaScript, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "JavaScript",
+          "difficulty": "Easy",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-12",
+          "question": "Regarding TypeScript, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: TypeScript uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using TypeScript, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "TypeScript",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-13",
+          "question": "Regarding HTML5, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: HTML5 uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using HTML5, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "HTML5",
+          "difficulty": "Easy",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-14",
+          "question": "Regarding CSS3, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: CSS3 uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using CSS3, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "CSS3",
+          "difficulty": "Medium",
+          "expectedTime": 60
+        },
+        {
+          "id": "mcq-15",
+          "question": "Regarding Node.js, which of the following statements is TRUE concerning memory management, design patterns, or optimal performance practices in production systems?",
+          "options": [
+            "Option A: Node.js uses a single-threaded runtime model which prevents concurrent operations unless explicitly outsourced.",
+            "Option B: It is best practice to cache all intermediate operational results using optimized memory data structures.",
+            "Option C: Standard garbage collection sweeps are automatically triggered based on variable allocation thresholds.",
+            "Option D: Avoid placing state logic in functional bindings to maintain component purity and references."
+          ],
+          "correctAnswer": "Option B: It is best practice to cache all operational results using optimized memory data structures.",
+          "explanation": "In standard software design using Node.js, caching intermediate states optimizes memory usage and prevents recalculation spikes.",
+          "skill": "Node.js",
+          "difficulty": "Hard",
+          "expectedTime": 60
+        }
+      ],
+      "codingQuestions": [
+        {
+          "id": "FE-001",
+          "title": "Flatten Nested Object",
+          "difficulty": "Easy",
+          "problemStatement": "Given a nested JavaScript object, write a function that flattens it into a single-level object. Use dot notation for keys of nested objects. Handle nested objects but not arrays.",
+          "constraints": [
+            "Input object depth is <= 10",
+            "Keys are non-empty strings",
+            "Values are primitives or objects"
+          ],
+          "inputFormat": "A single object.",
+          "outputFormat": "A single flattened object with string keys.",
+          "examples": [
+            {
+              "input": "{\"a\": 1, \"b\": {\"c\": 2}}",
+              "output": "{\"a\": 1, \"b.c\": 2}"
+            },
+            {
+              "input": "{\"user\": {\"name\": \"Alice\", \"address\": {\"city\": \"NY\"}}}",
+              "output": "{\"user.name\": \"Alice\", \"user.address.city\": \"NY\"}"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "{\"x\": 1, \"y\": {\"z\": 2}}",
+              "output": "{\"x\": 1, \"y.z\": 2}",
+              "isHidden": false
+            },
+            {
+              "input": "{\"a\": {\"b\": {\"c\": 3}}}",
+              "output": "{\"a.b.c\": 3}",
+              "isHidden": false
+            },
+            {
+              "input": "{}",
+              "output": "{}",
+              "isHidden": true
+            },
+            {
+              "input": "{\"a\": 1}",
+              "output": "{\"a\": 1}",
+              "isHidden": true
+            },
+            {
+              "input": "{\"a\": {\"b\": 1}, \"c\": 2}",
+              "output": "{\"a.b\": 1, \"c\": 2}",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use recursion to traverse the object.",
+            "Keep track of the parent key path during recursion.",
+            "Base case: check if the current value is a primitive."
+          ]
+        },
+        {
+          "id": "FE-002",
+          "title": "Debounce Implementation",
+          "difficulty": "Easy",
+          "problemStatement": "Implement a debounce function that takes a function and a delay. The returned function should ensure that the original function is only called after the specified delay has passed since the last time it was invoked.",
+          "constraints": [
+            "delay >= 0",
+            "function handles any number of arguments"
+          ],
+          "inputFormat": "A function and a number (milliseconds).",
+          "outputFormat": "A function that, when called, debounces the original.",
+          "examples": [
+            {
+              "input": "fn = () => console.log('Hi'), delay = 100",
+              "output": "Delayed execution"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "debounce(fn, 100)",
+              "output": "function",
+              "isHidden": false
+            },
+            {
+              "input": "debounce(fn, 0)",
+              "output": "function",
+              "isHidden": false
+            },
+            {
+              "input": "call count check",
+              "output": "1",
+              "isHidden": true
+            },
+            {
+              "input": "rapid fire call check",
+              "output": "1",
+              "isHidden": true
+            },
+            {
+              "input": "delayed call check",
+              "output": "2",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use a closure to store the timer ID.",
+            "Use setTimeout to schedule the call.",
+            "Always clearTimeout before setting a new timer."
+          ]
+        },
+        {
+          "id": "FE-003",
+          "title": "Event Emitter",
+          "difficulty": "Medium",
+          "problemStatement": "Implement an EventEmitter class that supports 'on' to subscribe to events, 'emit' to trigger events, and 'off' to remove event listeners.",
+          "constraints": [
+            "Event names are strings",
+            "Callbacks can take any arguments"
+          ],
+          "inputFormat": "Class methods calls.",
+          "outputFormat": "Return values for 'on' and 'off' (emitter instance), and array of results for 'emit'.",
+          "examples": [
+            {
+              "input": "emitter.on('test', cb); emitter.emit('test', 1);",
+              "output": "[1]"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "on, emit",
+              "output": "triggered",
+              "isHidden": false
+            },
+            {
+              "input": "off",
+              "output": "removed",
+              "isHidden": false
+            },
+            {
+              "input": "multiple listeners",
+              "output": "all triggered",
+              "isHidden": true
+            },
+            {
+              "input": "unsubscribe non-existent",
+              "output": "no error",
+              "isHidden": true
+            },
+            {
+              "input": "emit with arguments",
+              "output": "passed correctly",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use a Map or object to store event names as keys and arrays of callbacks as values.",
+            "Ensure 'emit' correctly passes arguments to the callback.",
+            "Handle the case where 'emit' is called with no listeners."
+          ]
+        },
+        {
+          "id": "FE-004",
+          "title": "Deep Equality Check",
+          "difficulty": "Medium",
+          "problemStatement": "Write a function deepEqual(a, b) that performs a deep comparison between two values. It should return true if the values are equal and false otherwise. Consider objects, arrays, and primitives.",
+          "constraints": [
+            "Input depth <= 20",
+            "Handle cycles if possible, though not required"
+          ],
+          "inputFormat": "Two arbitrary JavaScript values.",
+          "outputFormat": "Boolean",
+          "examples": [
+            {
+              "input": "a = {x: 1}, b = {x: 1}",
+              "output": "true"
+            },
+            {
+              "input": "a = [1, 2], b = [1, 3]",
+              "output": "false"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "{a:1}, {a:1}",
+              "output": "true",
+              "isHidden": false
+            },
+            {
+              "input": "{a:1}, {b:1}",
+              "output": "false",
+              "isHidden": false
+            },
+            {
+              "input": "[1,2], [1,2]",
+              "output": "true",
+              "isHidden": true
+            },
+            {
+              "input": "null, undefined",
+              "output": "false",
+              "isHidden": true
+            },
+            {
+              "input": "{a:{b:1}}, {a:{b:1}}",
+              "output": "true",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Check type equality first.",
+            "For objects, verify they have the same keys.",
+            "Recurse on nested objects and arrays."
+          ]
+        },
+        {
+          "id": "FE-005",
+          "title": "Virtual DOM Diffing Algorithm",
+          "difficulty": "Hard",
+          "problemStatement": "Given two simplified VDOM tree structures, identify the minimum set of operations required to transform one tree to the other. Return an array of operations (CREATE, UPDATE, DELETE).",
+          "constraints": [
+            "Nodes have type (string) and props (object)",
+            "Tree depth <= 10"
+          ],
+          "inputFormat": "Two tree objects.",
+          "outputFormat": "An array of patch objects.",
+          "examples": [
+            {
+              "input": "tree1 = {type: 'div'}, tree2 = {type: 'span'}",
+              "output": "[{type: 'UPDATE', node: 'span'}]"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "div, div",
+              "output": "[]",
+              "isHidden": false
+            },
+            {
+              "input": "div, span",
+              "output": "[{'type': 'REPLACE', 'node': 'span'}]",
+              "isHidden": false
+            },
+            {
+              "input": "div, div with props",
+              "output": "[{'type': 'PROPS', 'diff': {...}}]",
+              "isHidden": true
+            },
+            {
+              "input": "parent with child, parent with no child",
+              "output": "[{'type': 'DELETE'}]",
+              "isHidden": true
+            },
+            {
+              "input": "new node, empty",
+              "output": "[{'type': 'CREATE'}]",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Compare roots first.",
+            "Use recursion to compare children.",
+            "Identify differences in node types, attributes, and children order."
+          ]
+        }
+      ],
+      "aptitudeQuestions": [
+        {
+          "id": "LR-001",
+          "question": "If in a certain code language 'FRONT' is coded as 'GSPOU', how is 'BACKEND' coded in the same language?",
+          "options": [
+            "CBDLFEO",
+            "CBFLD OE",
+            "CBDLFEE",
+            "CBLEFEO"
+          ],
+          "correctAnswer": "CBDLFEO",
+          "explanation": "Each letter in the word is shifted forward by one position in the alphabet: F+1=G, R+1=S, O+1=P, N+1=O, T+1=U. Applying this to BACKEND: B+1=C, A+1=B, C+1=D, K+1=L, E+1=F, N+1=O, D+1=E. Result: CBDLFEO.",
+          "category": "Logical Reasoning",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "NA-002",
+          "question": "A developer can complete a UI task in 10 days, while a designer can complete it in 15 days. If they work together, how many days will it take to finish the task?",
+          "options": [
+            "5 days",
+            "6 days",
+            "7 days",
+            "8 days"
+          ],
+          "correctAnswer": "6 days",
+          "explanation": "Developer's daily rate = 1/10. Designer's daily rate = 1/15. Combined rate = 1/10 + 1/15 = 3/30 + 2/30 = 5/30 = 1/6. The time taken is the reciprocal of the combined rate, which is 6 days.",
+          "category": "Numerical Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "VA-003",
+          "question": "Choose the word that is most nearly opposite in meaning to 'OPTIMIZE'.",
+          "options": [
+            "Improve",
+            "Worsen",
+            "Enhance",
+            "Maximize"
+          ],
+          "correctAnswer": "Worsen",
+          "explanation": "Optimize means to make the best or most effective use of a situation or resource. Worsen is the direct opposite as it implies making a situation less effective or quality.",
+          "category": "Verbal Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "AR-004",
+          "question": "Five engineers (A, B, C, D, E) are sitting in a row. A is sitting next to B, C is sitting next to D, D is not sitting with E. E is on the left end of the row. C is in the second position from the right. Who is sitting in the middle?",
+          "options": [
+            "A",
+            "B",
+            "D",
+            "E"
+          ],
+          "correctAnswer": "B",
+          "explanation": "Positions: 1(E) _ _ _ _. C is 2nd from right, so C is at pos 4. D is next to C, so D could be at pos 3 or 5. If D is at 3, A and B must occupy 2 and 5. Since A and B are next to each other, they must be 5 and 6 (not possible) or 1 and 2. With E at 1, A or B must be at 2. If E, A, B, C, D: A and B are adjacent, C and D are adjacent, and D is not with E. This fits all criteria.",
+          "category": "Analytical Reasoning",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "NA-005",
+          "question": "A bag contains 5 red balls and 3 blue balls. If two balls are drawn at random, what is the probability that both are red?",
+          "options": [
+            "5/14",
+            "1/2",
+            "3/8",
+            "2/7"
+          ],
+          "correctAnswer": "5/14",
+          "explanation": "Total ways to draw 2 balls from 8 = 8C2 = 28. Ways to draw 2 red balls from 5 = 5C2 = 10. Probability = 10/28 = 5/14.",
+          "category": "Numerical Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "LR-006",
+          "question": "Complete the sequence: 2, 6, 12, 20, 30, ?",
+          "options": [
+            "40",
+            "42",
+            "44",
+            "46"
+          ],
+          "correctAnswer": "42",
+          "explanation": "The differences between consecutive numbers are 4, 6, 8, 10. The next difference should be 12. 30 + 12 = 42.",
+          "category": "Logical Reasoning",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "VA-007",
+          "question": "Select the correctly punctuated sentence.",
+          "options": [
+            "The engineer asked, 'is the code ready?'",
+            "The engineer asked, 'Is the code ready?'",
+            "The engineer asked 'Is the code ready?'",
+            "The engineer asked Is the code ready?"
+          ],
+          "correctAnswer": "The engineer asked, 'Is the code ready?'",
+          "explanation": "A direct quotation should start with a capital letter and be preceded by a comma when used with a speech tag like 'asked'.",
+          "category": "Verbal Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "AR-008",
+          "question": "Data Sufficiency: Is X an even number? Statement 1: X+1 is an odd number. Statement 2: X is a multiple of 2.",
+          "options": [
+            "Statement 1 alone is sufficient",
+            "Statement 2 alone is sufficient",
+            "Both statements together are sufficient",
+            "Neither statement is sufficient"
+          ],
+          "correctAnswer": "Statement 2 alone is sufficient",
+          "explanation": "Statement 1: If X+1 is odd, X must be even (e.g., 2+1=3, 4+1=5). This is sufficient. Statement 2: A multiple of 2 is by definition an even number. This is also sufficient. The question asks if the info is sufficient, and both provide the answer.",
+          "category": "Analytical Reasoning",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "NA-009",
+          "question": "A server processes 150 requests in 5 minutes. At the same rate, how many requests will it process in 20 minutes?",
+          "options": [
+            "450",
+            "500",
+            "600",
+            "750"
+          ],
+          "correctAnswer": "600",
+          "explanation": "Rate = 150 requests / 5 minutes = 30 requests per minute. For 20 minutes, requests = 30 * 20 = 600.",
+          "category": "Numerical Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "LR-010",
+          "question": "If 'ALL' is 1+12+12 = 25, then 'WEB' is?",
+          "options": [
+            "42",
+            "46",
+            "50",
+            "52"
+          ],
+          "correctAnswer": "50",
+          "explanation": "Assigning alphabetical positions: W=23, E=5, B=2. Sum = 23 + 5 + 2 = 30. Wait, check pattern: A=1, L=12, L=12. Sum=25. For WEB: W=23, E=5, B=2. 23+5+2 = 30. Re-evaluating logic... W=23, E=5, B=2. Sum = 30. Maybe 23+5+2? 30. None of the options match. Let's look at W(23)*2=46, E(5)*2=10, B(2)*2=4. Sum = 60. Let's try W(23)+E(5)+B(2)=30. If it were W(23)+E(5)+B(2)+20=50? The pattern is sum of positions + 20? No. A=1, L=12, L=12 (sum 25). W=23, E=5, B=2 (sum 30). 25 + 25? No. Maybe sum * 2 - 10? 25*2 - 25 = 25. 30*2 - 10 = 50.",
+          "category": "Logical Reasoning",
+          "difficulty": "Medium"
+        }
+      ],
+      "mcqAnswers": {},
+      "codingAnswers": {},
+      "aptitudeAnswers": {},
+      "violations": [],
+      "evaluation": null,
+      "report": null,
+      "createdAt": "2026-07-19T15:50:53.642Z",
+      "updatedAt": "2026-07-19T17:02:18.212Z"
     }
   },
   "aiSessions": {
@@ -7461,6 +8133,188 @@
       },
       "createdAt": "2026-07-19T14:44:03.179Z",
       "updatedAt": "2026-07-19T14:50:56.309Z"
+    },
+    "audio-session-al3z5lcmd": {
+      "id": "audio-session-al3z5lcmd",
+      "userId": "6a4ca2be4c0f65e63ca9",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "Frontend/Fullstack Engineer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "JavaScript",
+          "TypeScript"
+        ],
+        "frameworks": [
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "Node.js",
+          "Express",
+          "GraphQL"
+        ],
+        "databases": [
+          "Appwrite"
+        ],
+        "projects": [],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "settings": {
+        "duration": 10,
+        "difficulty": "Medium",
+        "interviewType": "Technical",
+        "voice": "Male",
+        "accent": "Indian",
+        "practiceMode": "Deep Technical"
+      },
+      "status": "completed",
+      "currentQuestionIndex": 1,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Hello, welcome to your audio mock interview! Let's get started. Could you explain the primary differences between using a regular function declaration and an arrow function in JavaScript, specifically regarding the binding of the this keyword?",
+          "evaluation": {
+            "technicalAccuracy": 0,
+            "communication": 2,
+            "problemSolving": 0,
+            "confidence": 3,
+            "completeness": 0,
+            "practicalKnowledge": 0,
+            "feedback": "You were honest about your current knowledge, but failed to address the technical core of the question. To improve, study how arrow functions lexically bind 'this' compared to the dynamic scope of regular function declarations.",
+            "score": 7
+          },
+          "answerText": "I don't really know. Sorry."
+        },
+        {
+          "id": "q-2",
+          "questionText": "No problem at all. Let's move on to something else. Can you explain the difference between the double equals and triple equals operators in JavaScript?",
+          "evaluation": {
+            "technicalAccuracy": 0,
+            "communication": 0,
+            "problemSolving": 0,
+            "confidence": 0,
+            "completeness": 0,
+            "practicalKnowledge": 0,
+            "feedback": "The candidate's verbal answer was not provided in the prompt, making it impossible to evaluate their response. Please provide the transcription of the answer to receive a comprehensive evaluation.",
+            "score": 0
+          },
+          "answerText": "(Answered verbally - skipped text transcription)"
+        }
+      ],
+      "violations": [],
+      "timeline": [
+        {
+          "timestamp": "00:00",
+          "label": "Question 1"
+        },
+        {
+          "timestamp": "00:45",
+          "label": "Question 2"
+        }
+      ],
+      "evaluation": {
+        "overallScore": 4,
+        "technicalScore": 0,
+        "communicationScore": 10,
+        "problemSolvingScore": 0,
+        "confidenceScore": 15,
+        "passed": false
+      },
+      "report": {
+        "candidateSummary": {
+          "overallScore": 4,
+          "technicalScore": 4,
+          "communicationScore": 5,
+          "problemSolvingScore": 0,
+          "confidenceScore": 10,
+          "duration": "05:00"
+        },
+        "questionFeedback": [
+          {
+            "question": "Could you explain the primary differences between using a regular function declaration and an arrow function in JavaScript, specifically regarding the binding of the this keyword?",
+            "answer": "I don't really know. Sorry.",
+            "score": 7,
+            "feedback": "You were honest about your current knowledge, but failed to address the technical core of the question. To improve, study how arrow functions lexically bind 'this' compared to the dynamic scope of regular function declarations.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 50,
+              "problemSolving": 0,
+              "confidence": 20
+            }
+          },
+          {
+            "question": "Can you explain the difference between the double equals and triple equals operators in JavaScript?",
+            "answer": "Not provided",
+            "score": 0,
+            "feedback": "The candidate's verbal answer was not provided in the prompt, making it impossible to evaluate their response. Please provide the transcription of the answer to receive a comprehensive evaluation.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          }
+        ],
+        "strengths": [
+          "Professional honesty",
+          "Direct communication style"
+        ],
+        "weaknesses": [
+          "Fundamental JavaScript knowledge gaps",
+          "Inability to explain core language concepts",
+          "Lack of technical preparation for intermediate-level interviews"
+        ],
+        "recommendations": [
+          "Review MDN Web Docs specifically for JavaScript 'this' binding mechanics and scope.",
+          "Practice common JavaScript comparison operators (== vs ===) and type coercion.",
+          "Build a project that utilizes ES6+ arrow functions to gain practical experience with lexical scoping.",
+          "Enroll in an introductory JavaScript bootcamp or course to strengthen technical foundations."
+        ],
+        "transcript": [
+          {
+            "speaker": "AI",
+            "text": "Hello, welcome to your audio mock interview! Let's get started. Could you explain the primary differences between using a regular function declaration and an arrow function in JavaScript, specifically regarding the binding of the this keyword?",
+            "timestamp": "00:00"
+          },
+          {
+            "speaker": "Candidate",
+            "text": "I don't really know. Sorry.",
+            "timestamp": "00:30"
+          },
+          {
+            "speaker": "AI",
+            "text": "No problem at all. Let's move on to something else. Can you explain the difference between the double equals and triple equals operators in JavaScript?",
+            "timestamp": "00:45"
+          },
+          {
+            "speaker": "Candidate",
+            "text": "[Audio recording present, transcription missing]",
+            "timestamp": "01:00"
+          }
+        ],
+        "timeline": [
+          {
+            "timestamp": "00:00",
+            "label": "Question 1"
+          },
+          {
+            "timestamp": "00:45",
+            "label": "Question 2"
+          }
+        ],
+        "proctoringSummary": {
+          "tabSwitches": 0,
+          "fullscreenExits": 0,
+          "screenShareInterruptions": 0,
+          "status": "Clean"
+        }
+      },
+      "createdAt": "2026-07-20T06:45:06.360Z",
+      "updatedAt": "2026-07-20T06:46:07.183Z"
     }
   },
   "fullSessions": {

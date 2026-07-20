@@ -113,10 +113,17 @@ export default function OARoundPage() {
     const activeViews = ["mcq", "mcq_review", "coding_list", "coding_editor", "aptitude", "aptitude_review"];
     if (activeViews.includes(view)) {
       const confirmExit = window.confirm(
-        "Are you sure you want to exit the assessment? Your current progress in this round will be saved, but the session timer will continue to run."
+        "Are you sure you want to exit the assessment? Your current session progress will be cleared and reset."
       );
       if (!confirmExit) return;
     }
+    localStorage.removeItem("active_oa_session_id");
+    localStorage.removeItem("interview_context_oa");
+    setSessionId(null);
+    setSession(null);
+    setContextReady(false);
+    setView("setup");
+
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       const fId = params.get("fullSessionId");
@@ -159,6 +166,7 @@ export default function OARoundPage() {
                   }
                 };
                 localStorage.setItem("interview_context_oa", JSON.stringify(ctx));
+                setContextReady(true);
                 setView("setup");
               }
             }
@@ -168,18 +176,13 @@ export default function OARoundPage() {
       }
     }
 
-    const savedSessionId = localStorage.getItem("active_oa_session_id");
-    if (savedSessionId) {
-      setSessionId(savedSessionId);
-      loadSession(savedSessionId);
-    } else {
-      // Check if context exists
-      const savedContext = localStorage.getItem("interview_context_oa");
-      if (savedContext) {
-        setContextReady(true);
-        setView("setup");
-      }
-    }
+    // Direct access without sessionId or fullSessionId: start a fresh new interview
+    localStorage.removeItem("active_oa_session_id");
+    localStorage.removeItem("interview_context_oa");
+    setSessionId(null);
+    setSession(null);
+    setContextReady(false);
+    setView("setup");
   }, []);
 
   // Anti-cheating window focus listeners
@@ -293,7 +296,7 @@ export default function OARoundPage() {
       const res = await fetch(`/api/oa/questions?sessionId=${id}`);
       if (!res.ok) throw new Error("Session loading failed.");
       const data = await res.json();
-      
+
       setMCQQuestions(data.mcqQuestions || []);
       setCodingQuestions(data.codingQuestions || []);
       setAptitudeQuestions(data.aptitudeQuestions || []);
@@ -312,7 +315,7 @@ export default function OARoundPage() {
           // Restore progress states
           setMCQAnswers(activeSession.mcqAnswers || {});
           setAptitudeAnswers(activeSession.aptitudeAnswers || {});
-          
+
           // Determine where the user left off based on round status
           if (activeSession.aptitudeStatus === "completed") {
             setView("results");
@@ -332,7 +335,7 @@ export default function OARoundPage() {
           return;
         }
       }
-      
+
       setView("overview");
     } catch (err) {
       console.error(err);
@@ -406,7 +409,7 @@ export default function OARoundPage() {
       });
 
       if (!res.ok) throw new Error("Submission failed.");
-      
+
       // Clear local violations cache after syncing to session
       setViolations([]);
       toast.success(isAuto ? "Time limit exceeded. MCQ section auto-submitted." : "MCQ section submitted successfully!");
@@ -577,7 +580,7 @@ export default function OARoundPage() {
 
       setViolations([]);
       toast.success(isAuto ? "Time limit exceeded. Aptitude auto-submitted." : "Assessment completed successfully!");
-      
+
       // Load completed session results
       await loadSession(sessionId);
 
@@ -674,12 +677,7 @@ export default function OARoundPage() {
                 Configure your profile context using your Resume, a Job Description, or a Target Role, then generate the assessment.
               </p>
             </div>
-            <button
-              onClick={handleExit}
-              className="flex items-center gap-1.5 text-xs text-slate-700 font-semibold border border-slate-200 bg-white hover:bg-slate-50 px-4 py-2 rounded-xl transition shadow-sm"
-            >
-              <LogOut className="w-3.5 h-3.5 text-slate-500" /> Exit Assessment
-            </button>
+
           </div>
 
           {!contextReady ? (
@@ -1086,7 +1084,7 @@ export default function OARoundPage() {
               const submission = session?.codingAnswers?.[q.id];
               let statusText = "Not Started";
               let statusColor = "text-gray-400 bg-gray-50";
-              
+
               if (submission) {
                 if (submission.passedCount === submission.totalCount) {
                   statusText = "Solved";
@@ -1320,7 +1318,7 @@ export default function OARoundPage() {
                           <Sparkles className="w-4 h-4" />
                           <span>Gemini Code Analysis</span>
                         </div>
-                        
+
                         <div className="space-y-3 mt-2 text-xs">
                           <div>
                             <span className="font-bold text-[#111111] block">Estimated Complexity:</span>
@@ -1884,7 +1882,7 @@ export default function OARoundPage() {
             >
               Recommendations
             </button>
-            
+
             <div className="border-t border-[#ECECEC] pt-4 mt-4 text-center space-y-2">
               <button
                 onClick={() => setView("results")}

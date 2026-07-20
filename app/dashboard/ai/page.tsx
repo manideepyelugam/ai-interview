@@ -119,19 +119,13 @@ export default function AIInterviewPage() {
       }
     }
 
-    const savedContext = localStorage.getItem("interview_context_ai") || localStorage.getItem("interview_context_oa");
-    if (savedContext) {
-      setContext(JSON.parse(savedContext) as InterviewContext);
-      setView("setup");
-    } else {
-      setView("config");
-    }
-
-    // Recover ongoing session if any
-    const activeId = localStorage.getItem("active_ai_interview_id");
-    if (activeId) {
-      recoverSession(activeId);
-    }
+    // Direct access without sessionId or fullSessionId: start fresh interview configuration
+    localStorage.removeItem("active_ai_interview_id");
+    localStorage.removeItem("interview_context_ai");
+    setSessionId(null);
+    setSession(null);
+    setContext(null);
+    setView("config");
   }, []);
 
   // Cleanup streams on unmount
@@ -155,13 +149,13 @@ export default function AIInterviewPage() {
       try {
         deepgramSocketRef.current.onclose = null;
         deepgramSocketRef.current.close();
-      } catch (e) {}
+      } catch (e) { }
       deepgramSocketRef.current = null;
     }
     if (deepgramRecorderRef.current) {
       try {
         deepgramRecorderRef.current.stop();
-      } catch (e) {}
+      } catch (e) { }
       deepgramRecorderRef.current = null;
     }
     if (ttsAudioRef.current) {
@@ -174,25 +168,25 @@ export default function AIInterviewPage() {
     const activeViews = ["permissions", "lobby", "in_progress"];
     if (activeViews.includes(view)) {
       const confirmExit = window.confirm(
-        "Are you sure you want to exit the interview? Your progress in this round will be saved."
+        "Are you sure you want to exit the interview? Your current session progress will be cleared and reset."
       );
       if (!confirmExit) return;
     }
 
     try {
       if (recorder) recorder.stop();
-    } catch (e) {}
+    } catch (e) { }
     try {
       if (speechRecognitionRef.current) {
         speechRecognitionRef.current.stop();
       }
-    } catch (e) {}
+    } catch (e) { }
 
     try {
       if (cameraStream) cameraStream.getTracks().forEach(t => t.stop());
       if (micStream) micStream.getTracks().forEach(t => t.stop());
       if (screenStream) screenStream.getTracks().forEach(t => t.stop());
-    } catch (e) {}
+    } catch (e) { }
     stopStreams();
 
     if (document.fullscreenElement) {
@@ -200,6 +194,13 @@ export default function AIInterviewPage() {
         console.error("Error exiting fullscreen:", err);
       });
     }
+
+    localStorage.removeItem("active_ai_interview_id");
+    localStorage.removeItem("interview_context_ai");
+    setSessionId(null);
+    setSession(null);
+    setContext(null);
+    setView("config");
 
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
@@ -495,13 +496,13 @@ export default function AIInterviewPage() {
       try {
         deepgramSocketRef.current.onclose = null;
         deepgramSocketRef.current.close();
-      } catch (e) {}
+      } catch (e) { }
       deepgramSocketRef.current = null;
     }
     if (deepgramRecorderRef.current) {
       try {
         deepgramRecorderRef.current.stop();
-      } catch (e) {}
+      } catch (e) { }
       deepgramRecorderRef.current = null;
     }
   };
@@ -510,7 +511,7 @@ export default function AIInterviewPage() {
   const triggerAIVoice = async (text: string) => {
     setAvatarState("speaking");
     setIsListening(false);
-    
+
     stopListening();
 
     if (typeof window !== "undefined" && window.speechSynthesis) {
@@ -532,7 +533,7 @@ export default function AIInterviewPage() {
         const audioUrl = URL.createObjectURL(blob);
         const audio = new Audio(audioUrl);
         ttsAudioRef.current = audio;
-        
+
         audio.onended = () => {
           setAvatarState("listening");
           startListening();
@@ -541,7 +542,7 @@ export default function AIInterviewPage() {
           setAvatarState("listening");
           startListening();
         };
-        
+
         await audio.play();
         return;
       }
@@ -605,11 +606,11 @@ export default function AIInterviewPage() {
     setIsListening(true);
     finalizedTranscriptRef.current = "";
     setLiveTranscript("");
-    
+
     // First try Deepgram
     startDeepgramRecognition().then(success => {
       if (success) return;
-      
+
       // Fallback to Web Speech API
       if (speechRecognitionRef.current) {
         try {
@@ -623,7 +624,7 @@ export default function AIInterviewPage() {
 
   const stopListening = () => {
     setIsListening(false);
-    
+
     stopDeepgramRecognition();
 
     if (speechRecognitionRef.current) {
@@ -1014,12 +1015,7 @@ export default function AIInterviewPage() {
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <button
-              onClick={handleExit}
-              className="flex items-center gap-1.5 text-xs text-slate-700 font-semibold border border-slate-200 bg-white hover:bg-slate-50 px-4 py-2 rounded-xl transition shadow-sm"
-            >
-              <LogOut className="w-3.5 h-3.5 text-slate-500" /> Exit
-            </button>
+
             {view !== "config" && (
               <button
                 onClick={handleResetAll}

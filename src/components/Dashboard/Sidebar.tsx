@@ -19,10 +19,12 @@ import {
   Gift,
   MoreVertical,
   Volume2,
+  FileText,
 } from "lucide-react";
 
 const iconMap = {
   Home,
+  FileText,
   Mic,
   Code2,
   Bot,

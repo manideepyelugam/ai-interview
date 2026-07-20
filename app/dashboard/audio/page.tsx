@@ -314,19 +314,13 @@ export default function AudioRoundPage() {
       }
     }
 
-    const savedContext = localStorage.getItem("interview_context_audio");
-    if (savedContext) {
-      setContext(JSON.parse(savedContext));
-      setView("setup");
-    } else {
-      setView("config");
-    }
-
-    const savedSessionId = localStorage.getItem("active_audio_session_id");
-    if (savedSessionId) {
-      setSessionId(savedSessionId);
-      loadSession(savedSessionId);
-    }
+    // Direct access without sessionId or fullSessionId: start fresh interview configuration
+    localStorage.removeItem("active_audio_session_id");
+    localStorage.removeItem("interview_context_audio");
+    setSessionId(null);
+    setSession(null);
+    setContext(null);
+    setView("config");
   }, []);
 
   // Tip slider
@@ -503,13 +497,13 @@ export default function AudioRoundPage() {
       try {
         deepgramSocketRef.current.onclose = null;
         deepgramSocketRef.current.close();
-      } catch (e) {}
+      } catch (e) { }
       deepgramSocketRef.current = null;
     }
     if (deepgramRecorderRef.current) {
       try {
         deepgramRecorderRef.current.stop();
-      } catch (e) {}
+      } catch (e) { }
       deepgramRecorderRef.current = null;
     }
   };
@@ -676,7 +670,7 @@ export default function AudioRoundPage() {
         recognitionRef.current.stop();
       } catch (e) { }
     }
-    
+
     if (typeof window !== "undefined" && window.speechSynthesis) {
       window.speechSynthesis.cancel();
     }
@@ -1038,11 +1032,18 @@ export default function AudioRoundPage() {
     const activeViews = ["permissions", "countdown", "in_progress"];
     if (activeViews.includes(view)) {
       const confirmExit = window.confirm(
-        "Are you sure you want to exit the interview? Your progress in this round will be saved."
+        "Are you sure you want to exit the interview? Your current session progress will be cleared and reset."
       );
       if (!confirmExit) return;
     }
     stopMicStream();
+    localStorage.removeItem("active_audio_session_id");
+    localStorage.removeItem("interview_context_audio");
+    setSessionId(null);
+    setSession(null);
+    setContext(null);
+    setView("config");
+
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       const fId = params.get("fullSessionId");
@@ -1056,6 +1057,17 @@ export default function AudioRoundPage() {
 
   // Configure new audio interview
   const handleResetAll = () => {
+    stopMicStream();
+    localStorage.removeItem("active_audio_session_id");
+    localStorage.removeItem("interview_context_audio");
+    setSessionId(null);
+    setSession(null);
+    setContext(null);
+    setCurrentQuestion(null);
+    finalizedTranscriptRef.current = "";
+    setTranscriptText("");
+    setView("config");
+
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       const fId = params.get("fullSessionId");
@@ -1064,15 +1076,6 @@ export default function AudioRoundPage() {
         return;
       }
     }
-    localStorage.removeItem("active_audio_session_id");
-    localStorage.removeItem("interview_context_audio");
-    stopMicStream();
-    setSession(null);
-    setSessionId(null);
-    setCurrentQuestion(null);
-    finalizedTranscriptRef.current = "";
-    setTranscriptText("");
-    setView("config");
   };
 
   // Start Targeted practice round
@@ -1189,12 +1192,7 @@ export default function AudioRoundPage() {
               Speak naturally and complete an adaptive voice mock interview. Powered by Gemini.
             </p>
           </div>
-          <button
-            onClick={handleExit}
-            className="flex items-center gap-1.5 text-xs text-slate-700 font-semibold border border-slate-200 bg-white hover:bg-slate-50 px-4 py-2 rounded-xl transition shadow-sm"
-          >
-            <LogOut className="w-3.5 h-3.5 text-slate-500" /> Exit Assessment
-          </button>
+
         </div>
       )}
 
