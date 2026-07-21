@@ -340,12 +340,23 @@ export interface FullInterviewSession {
   oaSessionId: string | null;
   aiSessionId: string | null;
   audioSessionId: string | null;
-  currentRound: "oa" | "ai" | "audio" | "completed";
+  currentRound: "oa" | "ai" | "audio" | "completed"; // audio kept for legacy sessions; E2E is OA → AI only
   evaluation: {
     overallScore: number;
     passed: boolean;
   } | null;
-  report: AIInterviewReport | null; // Unified report structure or custom
+  report: (AIInterviewReport & {
+    sections?: UnifiedReportSection[];
+    roundSummaries?: {
+      name: string;
+      attempted: number;
+      correct: number;
+      wrong: number;
+      skipped: number;
+      score: number;
+      improvements: string[];
+    }[];
+  }) | null;
   createdAt: string;
   updatedAt: string;
 }

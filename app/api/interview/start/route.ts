@@ -1,7 +1,48 @@
 import { NextResponse } from "next/server";
-import { aiService } from "@/src/services/ai.service";
 import { dbService } from "@/src/services/db.service";
-import type { FullInterviewSession, InterviewBlueprint } from "@/src/types";
+import type { FullInterviewSession, InterviewBlueprint, InterviewContext, Project } from "@/src/types";
+
+function buildFallbackBlueprint(context: InterviewContext): InterviewBlueprint {
+  const candidateName = context.resume?.name || "Candidate";
+  const role = context.role || "Full Stack Developer";
+  const skills =
+    context.resume?.skills ||
+    context.jd?.requiredSkills ||
+    ["JavaScript", "TypeScript", "React", "Node.js"];
+  const frameworks = context.jd?.preferredSkills || ["React", "Express", "Next.js"];
+  const experienceLevel: InterviewBlueprint["experienceLevel"] =
+    context.jd?.experience?.includes("5") || (context.resume?.skills?.length ?? 0) > 8
+      ? "Mid"
+      : "Junior";
+
+  const projects: Project[] =
+    context.resume?.projects?.map((p) => ({
+      title: p.split("(")[0].trim(),
+      description: p,
+      technologies: skills.slice(0, 3),
+    })) || [
+      {
+        title: "E-Commerce System",
+        description: "A scalable shopping platform built with React and Node.",
+        technologies: ["React", "Node.js", "MongoDB"],
+      },
+    ];
+
+  return {
+    candidateName,
+    source: context.source,
+    role,
+    experienceLevel,
+    yearsOfExperience: experienceLevel === "Mid" ? 4 : 2,
+    skills,
+    frameworks,
+    databases: ["MongoDB", "PostgreSQL"],
+    projects,
+    confidenceScore: 85,
+    suggestedDifficulty: "Medium",
+    estimatedCompanyLevel: "Product",
+  };
+}
 
 export async function POST(req: Request) {
   try {
@@ -14,10 +55,9 @@ export async function POST(req: Request) {
       );
     }
 
-    // 1. Generate Interview Blueprint
-    const blueprint: InterviewBlueprint = await aiService.generateBlueprint(context);
+    // Testing-friendly: local blueprint (no Gemini)
+    const blueprint = buildFallbackBlueprint(context as InterviewContext);
 
-    // 2. Initialize Session
     const sessionId = `full-session-${Math.random().toString(36).substr(2, 9)}`;
     const session: FullInterviewSession = {
       id: sessionId,
@@ -34,7 +74,6 @@ export async function POST(req: Request) {
       updatedAt: new Date().toISOString(),
     };
 
-    // 3. Save to database
     await dbService.saveFullSession(session);
 
     return NextResponse.json({

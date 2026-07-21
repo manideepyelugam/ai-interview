@@ -3,14 +3,39 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import {
-  Camera, CameraOff, Mic, MicOff, Monitor, CheckCircle2,
-  AlertTriangle, ArrowRight, ChevronDown, ChevronRight,
-  Download, RefreshCw, Clock, Volume2, Shield, Video,
-  AlertOctagon, Activity, LogOut, FileText, Loader2, Check, X
+  Video,
+  CameraOff,
+  Mic,
+  MicOff,
+  Monitor,
+  CheckCircle2,
+  AlertTriangle,
+  ArrowRight,
+  ChevronDown,
+  ChevronRight,
+  Download,
+  RefreshCw,
+  Clock,
+  Volume2,
+  Shield,
+  AlertOctagon,
+  Activity,
+  LogOut,
+  FileText,
+  Loader2,
+  Check,
+  X,
 } from "lucide-react";
 import { toast } from "sonner";
 import { InterviewConfiguration } from "@/src/components/Dashboard/InterviewConfiguration";
 import { useAuth } from "@/src/components/providers/AuthProvider";
+import { useProctoring } from "@/src/components/Interview/ProctoringProvider";
+import { ExamFullscreenGate } from "@/src/components/Interview/ExamFullscreenGate";
+import {
+  lockExamFullscreen,
+  setExamImmersive,
+  unlockExamFullscreen,
+} from "@/src/lib/exam-immersive";
 import type { InterviewContext, AIInterviewSession, AIQuestion, AIInterviewReport } from "@/src/types";
 
 type ViewType = "config" | "setup" | "permissions" | "lobby" | "in_progress" | "completed" | "report";
@@ -18,9 +43,12 @@ type InterviewerState = "idle" | "speaking" | "listening" | "thinking";
 
 export default function AIInterviewPage() {
   const { user: authUser } = useAuth();
+  const proctoring = useProctoring();
   const [view, setView] = useState<ViewType>("config");
   const [user, setUser] = useState<any>(null);
   const [context, setContext] = useState<InterviewContext | null>(null);
+  const e2eSkipPermsRef = useRef(false);
+  const autoLobbyStartedRef = useRef(false);
 
   // Session States
   const [sessionId, setSessionId] = useState<string | null>(null);
@@ -151,7 +179,7 @@ export default function AIInterviewPage() {
                 return;
               }
               if (fullSess.aiSessionId) {
-                window.location.href = `/dashboard/ai?sessionId=${fullSess.aiSessionId}&fullSessionId=${queryFullId}`;
+                window.location.href = `/dashboard/interview/ai?sessionId=${fullSess.aiSessionId}&fullSessionId=${queryFullId}`;
                 return;
               }
               const ctx: InterviewContext = {
@@ -165,8 +193,22 @@ export default function AIInterviewPage() {
               };
               localStorage.setItem("interview_context_ai", JSON.stringify(ctx));
               setContext(ctx);
-              // Skip review — go straight to device permissions for E2E continuity
-              setView("permissions");
+              setExamImmersive(true);
+              void lockExamFullscreen();
+
+              // Reuse cam/mic/screen from Full Interview — never ask again
+              if (proctoring.cameraStream) {
+                setCameraStream(proctoring.cameraStream);
+                setMicStream(proctoring.micStream);
+                micStreamRef.current = proctoring.micStream;
+                setScreenStream(proctoring.screenStream);
+                setPerms({ camera: true, mic: true, screen: true });
+                setSystemChecked(true);
+                e2eSkipPermsRef.current = true;
+                setView("lobby");
+              } else {
+                setView("permissions");
+              }
             }
           })
           .catch(err => console.error(err));
@@ -174,14 +216,20 @@ export default function AIInterviewPage() {
       }
     }
 
-    // Direct access without sessionId or fullSessionId: start fresh interview configuration
-    localStorage.removeItem("active_ai_interview_id");
-    localStorage.removeItem("interview_context_ai");
-    setSessionId(null);
-    setSession(null);
-    setContext(null);
-    setView("config");
+    // E2E AI module requires fullSessionId — send lone visitors to the hub
+    toast.error("Open Full Interview to start the AI round.");
+    window.location.href = "/dashboard/interview";
   }, []);
+
+  // Auto-start lobby countdown when E2E skips permissions
+  useEffect(() => {
+    if (view !== "lobby" || !e2eSkipPermsRef.current || autoLobbyStartedRef.current) return;
+    if (!context || !user) return;
+    autoLobbyStartedRef.current = true;
+    toast.success("Permissions already active — starting AI interview.");
+    startCountdown();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [view, context, user]);
 
   // Cleanup streams on unmount
   useEffect(() => {
@@ -192,9 +240,17 @@ export default function AIInterviewPage() {
   }, []);
 
   const stopStreams = () => {
-    if (cameraStream) cameraStream.getTracks().forEach(t => t.stop());
-    if (micStream) micStream.getTracks().forEach(t => t.stop());
-    if (screenStream) screenStream.getTracks().forEach(t => t.stop());
+    // Shared proctoring streams are owned by ProctoringProvider — do not stop mid-E2E.
+    // Only clear local refs; final end uses proctoring.stopAll().
+    const ownedByProctoring =
+      cameraStream === proctoring.cameraStream ||
+      micStream === proctoring.micStream ||
+      screenStream === proctoring.screenStream;
+    if (!ownedByProctoring) {
+      cameraStream?.getTracks().forEach((t) => t.stop());
+      micStream?.getTracks().forEach((t) => t.stop());
+      screenStream?.getTracks().forEach((t) => t.stop());
+    }
     setCameraStream(null);
     setMicStream(null);
     setScreenStream(null);
@@ -282,10 +338,20 @@ export default function AIInterviewPage() {
           if (activeSession.status === "completed") {
             setView("completed");
           } else if (activeSession.status === "in_progress" || activeSession.status === "not_started") {
-            // Restore question — re-run permissions so media tracks are fresh
             const lastQuestion = activeSession.questions[activeSession.questions.length - 1];
             setCurrentQuestion(lastQuestion);
-            setView("permissions");
+            if (proctoring.isReady && proctoring.cameraStream) {
+              setCameraStream(proctoring.cameraStream);
+              setMicStream(proctoring.micStream);
+              micStreamRef.current = proctoring.micStream;
+              setScreenStream(proctoring.screenStream);
+              setPerms({ camera: true, mic: true, screen: true });
+              setSystemChecked(true);
+              e2eSkipPermsRef.current = true;
+              setView("lobby");
+            } else {
+              setView("permissions");
+            }
           }
         }
       }
@@ -294,43 +360,42 @@ export default function AIInterviewPage() {
     }
   };
 
-  // Permissions requesting
+  // Permissions — prefer shared Full Interview streams; only prompt as fallback
   const requestDevices = async () => {
     try {
-      // 1. Camera & Mic request
-      const stream = await navigator.mediaDevices.getUserMedia({
-        video: { width: 640, height: 480 },
-        audio: true
-      });
-
-      setCameraStream(new MediaStream([stream.getVideoTracks()[0]]));
-      setMicStream(new MediaStream([stream.getAudioTracks()[0]]));
-      micStreamRef.current = new MediaStream([stream.getAudioTracks()[0]]);
-
-      setPerms(prev => ({ ...prev, camera: true, mic: true }));
-      toast.success("Camera and Microphone connected.");
+      if (proctoring.cameraStream && proctoring.micStream) {
+        setCameraStream(proctoring.cameraStream);
+        setMicStream(proctoring.micStream);
+        micStreamRef.current = proctoring.micStream;
+        setPerms((prev) => ({ ...prev, camera: true, mic: true }));
+        toast.success("Using camera & mic from interview setup.");
+        return;
+      }
+      const ok = await proctoring.requestDevices();
+      if (!ok) return;
+      setCameraStream(proctoring.cameraStream);
+      setMicStream(proctoring.micStream);
+      micStreamRef.current = proctoring.micStream;
+      setPerms((prev) => ({ ...prev, camera: true, mic: true }));
     } catch (err) {
       console.error("Device permission error:", err);
-      toast.error("Failed to access camera/microphone. Please allow browser permissions.");
+      toast.error("Failed to access camera/microphone.");
     }
   };
 
   const requestScreenShare = async () => {
     try {
-      const stream = await navigator.mediaDevices.getDisplayMedia({
-        video: true,
-        audio: false
-      });
-
-      setScreenStream(stream);
-      setPerms(prev => ({ ...prev, screen: true }));
-      toast.success("Screen sharing enabled.");
-
-      // Bind track ended event (Proctoring)
-      const videoTrack = stream.getVideoTracks()[0];
-      videoTrack.onended = () => {
-        handleScreenShareInterrupted();
-      };
+      if (proctoring.screenStream) {
+        setScreenStream(proctoring.screenStream);
+        setPerms((prev) => ({ ...prev, screen: true }));
+        toast.success("Using screen share from interview setup.");
+        return;
+      }
+      const ok = await proctoring.requestScreenShare();
+      if (!ok) return;
+      setScreenStream(proctoring.screenStream);
+      setPerms((prev) => ({ ...prev, screen: true }));
+      proctoring.setScreenEndedHandler(() => handleScreenShareInterrupted());
     } catch (err) {
       console.error("Screen share permission error:", err);
       toast.error("Screen share is required to proceed with the interview.");
@@ -376,14 +441,8 @@ export default function AIInterviewPage() {
 
   // Fullscreen implementation
   const enterFullscreenAndStart = async () => {
-    try {
-      const element = document.documentElement;
-      if (element.requestFullscreen) {
-        await element.requestFullscreen();
-      }
-    } catch (err) {
-      console.warn("Fullscreen request rejected:", err);
-    }
+    setExamImmersive(true);
+    await lockExamFullscreen();
 
     // Start session recording
     startRecording();
@@ -414,7 +473,7 @@ export default function AIInterviewPage() {
     startingSessionRef.current = true;
     try {
       setInterviewerState("thinking");
-      const res = await fetch("/api/ai-interview/start", {
+      const res = await fetch("/api/interview/e2e/ai/start", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -773,11 +832,15 @@ export default function AIInterviewPage() {
       } catch (e) { }
     }
     stopStreams();
+    // End of E2E AI — release shared devices + leave exam shell
+    if (typeof window !== "undefined" &&
+      new URLSearchParams(window.location.search).get("fullSessionId")) {
+      proctoring.stopAll();
+      setExamImmersive(false);
+      unlockExamFullscreen();
+    }
     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     if (screenGraceTimeoutRef.current) clearInterval(screenGraceTimeoutRef.current);
-    if (document.fullscreenElement) {
-      try { await document.exitFullscreen(); } catch (e) { }
-    }
     localStorage.removeItem("active_ai_interview_id");
   };
 
@@ -839,7 +902,7 @@ export default function AIInterviewPage() {
     updateLiveTranscript("");
 
     try {
-      const res = await fetch("/api/ai-interview/submit-answer", {
+      const res = await fetch("/api/interview/e2e/ai/submit-answer", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -965,21 +1028,16 @@ export default function AIInterviewPage() {
 
   const resumeScreenShare = async () => {
     try {
-      const stream = await navigator.mediaDevices.getDisplayMedia({
-        video: true,
-        audio: false
-      });
-
+      const ok = await proctoring.requestScreenShare();
+      if (!ok) {
+        toast.error("Entire screen share is required — tabs/windows are not allowed.");
+        return;
+      }
       if (screenGraceTimeoutRef.current) clearInterval(screenGraceTimeoutRef.current);
-      setScreenStream(stream);
+      setScreenStream(proctoring.screenStream);
       setWarningModal(null);
-      toast.success("Screen sharing restored successfully.");
-
-      // Re-bind track onended
-      const videoTrack = stream.getVideoTracks()[0];
-      videoTrack.onended = () => {
-        handleScreenShareInterrupted();
-      };
+      proctoring.setScreenEndedHandler(() => handleScreenShareInterrupted());
+      toast.success("Entire screen sharing restored.");
     } catch (err) {
       toast.error("Failed to re-share screen. Please try again.");
     }
@@ -1023,7 +1081,7 @@ export default function AIInterviewPage() {
 
     try {
       setIsSubmitting(true);
-      const res = await fetch("/api/ai-interview/submit-answer", {
+      const res = await fetch("/api/interview/e2e/ai/submit-answer", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -1147,7 +1205,11 @@ export default function AIInterviewPage() {
   };
 
   return (
-    <div className="max-w-full mx-auto pb-12">
+    <div className="fixed inset-0 z-50 w-screen h-screen overflow-auto bg-[#FAFAFA]">
+      <ExamFullscreenGate
+        active={view === "lobby" || view === "in_progress" || view === "permissions"}
+      />
+      <div className="max-w-full mx-auto px-4 py-4 pb-12 sm:px-6 lg:px-8 min-h-full">
       {/* HEADER SECTION */}
       {view !== "in_progress" && view !== "lobby" && (
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
@@ -1262,25 +1324,9 @@ export default function AIInterviewPage() {
       {/* VIEW: PERMISSIONS & SYSTEM DIAGNOSTICS */}
       {view === "permissions" && (
         <div className="max-w-4xl mx-auto space-y-4">
-          {typeof window !== "undefined" &&
-            new URLSearchParams(window.location.search).get("fullSessionId") && (
-              <div className="flex items-center justify-between bg-white border border-[#ECECEC] rounded-lg px-4 py-2.5">
-                <span className="text-xs font-semibold text-[#111111]">
-                  Full Interview · Round 2 (AI) — permissions
-                </span>
-                <button
-                  onClick={() => {
-                    const ok = window.confirm(
-                      "End the full interview now? Partial results will be finalized."
-                    );
-                    if (ok) void handleEndInterview(false);
-                  }}
-                  className="flex items-center gap-1.5 text-xs font-semibold text-rose-700 bg-rose-50 hover:bg-rose-100 border border-rose-100 px-3.5 py-1.5 rounded-lg"
-                >
-                  <LogOut className="w-3.5 h-3.5" /> End Test
-                </button>
-              </div>
-            )}
+          <p className="text-xs text-[#6B7280] bg-amber-50 border border-amber-100 rounded-lg px-4 py-2.5">
+            Fallback only — if you already granted permissions at interview start, go back and restart from Full Interview so streams are reused.
+          </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -1439,12 +1485,6 @@ export default function AIInterviewPage() {
         <div className="max-w-4xl mx-auto space-y-6 pt-8">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-bold text-slate-800">Interview Room Initializing</h2>
-            <button
-              onClick={handleExit}
-              className="flex items-center gap-1.5 text-xs text-rose-600 bg-rose-50 hover:bg-rose-100 px-3.5 py-1.5 rounded-lg transition font-semibold"
-            >
-              <LogOut className="w-3.5 h-3.5" /> Exit Setup
-            </button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/* Lobby Preview Feed */}
@@ -1523,25 +1563,16 @@ export default function AIInterviewPage() {
             </div>
 
             <div className="flex items-center gap-2.5">
-              {typeof window !== "undefined" &&
-                new URLSearchParams(window.location.search).get("fullSessionId") && (
-                <button
-                  onClick={() => {
-                    const ok = window.confirm(
-                      "End the full interview now? Your answers so far will be used for the report."
-                    );
-                    if (ok) void handleEndInterview(false);
-                  }}
-                  className="flex items-center gap-1.5 text-xs text-rose-700 bg-white hover:bg-rose-50 px-3 py-1.5 rounded-lg border border-rose-200 transition font-semibold"
-                >
-                  <LogOut className="w-3.5 h-3.5" /> End Test
-                </button>
-              )}
               <button
-                onClick={handleExit}
-                className="flex items-center gap-1.5 text-xs text-rose-600 bg-rose-50 hover:bg-rose-100 px-3 py-1.5 rounded-lg border border-rose-100 transition font-medium"
+                onClick={() => {
+                  const ok = window.confirm(
+                    "End the interview now? Your answers will be submitted and a detailed report will be generated."
+                  );
+                  if (ok) void handleEndInterview(false);
+                }}
+                className="flex items-center gap-1.5 text-xs text-rose-700 bg-white hover:bg-rose-50 px-3 py-1.5 rounded-lg border border-rose-200 transition font-semibold"
               >
-                <LogOut className="w-3.5 h-3.5" /> Exit
+                <LogOut className="w-3.5 h-3.5" /> End Test
               </button>
               <div className="flex items-center gap-1.5 text-[#6B7280] font-medium text-xs bg-[#F9FAFB] px-3 py-1.5 rounded-lg border border-[#ECECEC]">
                 <Clock className="w-3.5 h-3.5 text-red-500" />
@@ -1695,7 +1726,7 @@ export default function AIInterviewPage() {
                 className={`p-2.5 rounded-lg border transition ${isCamOff ? "bg-rose-50 border-rose-200 text-rose-600" : "bg-[#F9FAFB] border-[#ECECEC] text-[#374151] hover:bg-[#F3F4F6]"}`}
                 title={isCamOff ? "Turn camera on" : "Turn camera off"}
               >
-                {isCamOff ? <CameraOff className="w-4 h-4" /> : <Camera className="w-4 h-4" />}
+                {isCamOff ? <CameraOff className="w-4 h-4" /> : <Video className="w-4 h-4" />}
               </button>
 
               <div className="flex items-center gap-1.5 bg-[#F9FAFB] border border-[#ECECEC] px-3 py-2 rounded-lg text-[10px] font-medium text-[#6B7280]">
@@ -1704,17 +1735,6 @@ export default function AIInterviewPage() {
               </div>
             </div>
 
-            <button
-              onClick={() => {
-                if (confirm("Are you sure you want to leave? Your answers will be submitted for evaluation.")) {
-                  handleEndInterview(false);
-                }
-              }}
-              className="flex items-center gap-1.5 text-xs text-rose-600 bg-rose-50 border border-rose-100 hover:bg-rose-100 px-3.5 py-2 rounded-lg font-medium transition"
-            >
-              <LogOut className="w-3.5 h-3.5" />
-              Leave Interview
-            </button>
           </footer>
 
           {/* WARNING MODAL OVERLAYS (PROCTORING) */}
@@ -2207,6 +2227,7 @@ export default function AIInterviewPage() {
         </div>
       )}
 
+      </div>
     </div>
   );
 }

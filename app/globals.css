@@ -178,3 +178,28 @@
     transform: scaleY(1);
   }
 }
+
+/* Immersive E2E exam — only exam content, no page scroll chrome */
+html.exam-fullscreen,
+html.exam-fullscreen body {
+  overflow: hidden !important;
+  background: #fafafa !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+html.exam-fullscreen body > * {
+  max-width: 100vw;
+}
+
+/* Hide sonner toasts behind exam gate layer when needed — keep visible above exam UI */
+html.exam-fullscreen [data-sonner-toaster] {
+  z-index: 10000 !important;
+}
+
+:fullscreen,
+::backdrop {
+  background: #fafafa;
+}

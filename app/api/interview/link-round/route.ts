@@ -20,14 +20,12 @@ export async function POST(req: Request) {
       );
     }
 
+    // E2E is OA → AI only (audio removed)
     if (roundType === "oa") {
       session.oaSessionId = roundSessionId;
       session.currentRound = "ai";
     } else if (roundType === "ai") {
       session.aiSessionId = roundSessionId;
-      session.currentRound = "audio";
-    } else if (roundType === "audio") {
-      session.audioSessionId = roundSessionId;
       session.currentRound = "completed";
     }
 

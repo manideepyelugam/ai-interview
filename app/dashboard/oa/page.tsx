@@ -29,7 +29,10 @@ import {
   Minimize2,
   RefreshCw,
   Download,
-  LogOut
+  LogOut,
+  Camera,
+  Monitor,
+  Mic
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -99,8 +102,46 @@ export default function OARoundPage() {
   const aptitudeTimerRef = useRef<NodeJS.Timeout | null>(null);
   const codingTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Violation logging
+  // Violation logging + E2E proctoring
   const [violations, setViolations] = useState<{ type: string; timestamp: string }[]>([]);
+  const [endingTest, setEndingTest] = useState(false);
+  const autoStartedRef = useRef(false);
+  const [cameraStream, setCameraStream] = useState<MediaStream | null>(null);
+  const [micStream, setMicStream] = useState<MediaStream | null>(null);
+  const [screenStream, setScreenStream] = useState<MediaStream | null>(null);
+  const [proctorReady, setProctorReady] = useState(false);
+  const [warningModal, setWarningModal] = useState<{
+    type: "tab" | "fullscreen" | "screenshare";
+    count?: number;
+  } | null>(null);
+  const [screenGraceSeconds, setScreenGraceSeconds] = useState(0);
+  const lastTabViolationRef = useRef(0);
+  const screenGraceTimeoutRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const proctorVideoRef = useRef<HTMLVideoElement | null>(null);
+  const proctorStartedRef = useRef(false);
+  const cameraStreamRef = useRef<MediaStream | null>(null);
+  const micStreamRef = useRef<MediaStream | null>(null);
+  const screenStreamRef = useRef<MediaStream | null>(null);
+
+  const getFullSessionId = () => {
+    if (typeof window === "undefined") return null;
+    return new URLSearchParams(window.location.search).get("fullSessionId");
+  };
+  const isProctoredE2E = () => {
+    if (typeof window === "undefined") return false;
+    const params = new URLSearchParams(window.location.search);
+    return Boolean(params.get("fullSessionId"));
+  };
+  const isActiveExamView = (v: ViewState) =>
+    [
+      "overview",
+      "mcq",
+      "mcq_review",
+      "coding_list",
+      "coding_editor",
+      "aptitude",
+      "aptitude_review",
+    ].includes(v);
 
   // Loading indicator for generation/submission
   const [isGenerating, setIsGenerating] = useState(false);
@@ -153,22 +194,32 @@ export default function OARoundPage() {
           .then(data => {
             if (data.session) {
               const fullSess = data.session;
+              // OA already done → jump to AI round
+              if (fullSess.oaSessionId && !fullSess.aiSessionId) {
+                window.location.href = `/dashboard/ai?fullSessionId=${queryFullId}`;
+                return;
+              }
+              // Both done → results hub
+              if (fullSess.status === "completed" || (fullSess.oaSessionId && fullSess.aiSessionId)) {
+                window.location.href = `/dashboard/interview?sessionId=${queryFullId}`;
+                return;
+              }
               if (fullSess.oaSessionId) {
                 window.location.href = `/dashboard/oa?sessionId=${fullSess.oaSessionId}&fullSessionId=${queryFullId}`;
-              } else {
-                const ctx = {
-                  source: "role",
-                  role: fullSess.blueprint.role,
-                  jd: {
-                    experience: "Mid level",
-                    requiredSkills: fullSess.blueprint.skills || [],
-                    preferredSkills: []
-                  }
-                };
-                localStorage.setItem("interview_context_oa", JSON.stringify(ctx));
-                setContextReady(true);
-                setView("setup");
+                return;
               }
+              const ctx = {
+                source: "role" as const,
+                role: fullSess.blueprint.role,
+                jd: {
+                  experience: "Mid level",
+                  requiredSkills: fullSess.blueprint.skills || [],
+                  preferredSkills: []
+                }
+              };
+              localStorage.setItem("interview_context_oa", JSON.stringify(ctx));
+              setContextReady(true);
+              setView("setup");
             }
           })
           .catch(err => console.error(err));
@@ -185,44 +236,223 @@ export default function OARoundPage() {
     setView("setup");
   }, []);
 
-  // Anti-cheating window focus listeners
-  useEffect(() => {
-    if (
-      !sessionId ||
-      !["mcq", "coding_editor", "aptitude"].includes(view)
-    ) {
-      return;
+  const stopOAProctorStreams = () => {
+    cameraStreamRef.current?.getTracks().forEach((t) => t.stop());
+    micStreamRef.current?.getTracks().forEach((t) => t.stop());
+    screenStreamRef.current?.getTracks().forEach((t) => t.stop());
+    cameraStreamRef.current = null;
+    micStreamRef.current = null;
+    screenStreamRef.current = null;
+    setCameraStream(null);
+    setMicStream(null);
+    setScreenStream(null);
+    setProctorReady(false);
+    proctorStartedRef.current = false;
+    if (screenGraceTimeoutRef.current) {
+      clearInterval(screenGraceTimeoutRef.current);
+      screenGraceTimeoutRef.current = null;
+    }
+  };
+
+  const endFullTestRef = useRef<(force?: boolean) => Promise<void>>(async () => {});
+
+  const logOAViolation = (type: "tab_switch" | "fullscreen_exit" | "screen_share_interrupted") => {
+    if (type === "tab_switch") {
+      const now = Date.now();
+      if (now - lastTabViolationRef.current < 2000) return;
+      lastTabViolationRef.current = now;
     }
 
-    const handleBlur = () => {
-      const newViolation = {
-        type: "Tab Switch / Focus Loss",
-        timestamp: new Date().toISOString(),
-      };
-      setViolations((prev) => [...prev, newViolation]);
-      toast.warning("Warning: Tab switching/focus loss is monitored and logged.", {
-        icon: <AlertTriangle className="w-5 h-5 text-amber-500" />,
+    const newViolation = { type, timestamp: new Date().toLocaleTimeString() };
+    setViolations((prev) => {
+      const next = [...prev, newViolation];
+      const allPrev = session?.violations || [];
+      const total =
+        allPrev.filter((v) => v.type === type).length +
+        next.filter((v) => v.type === type).length;
+
+      if (type === "tab_switch") {
+        if (total >= 5 && isProctoredE2E()) {
+          toast.error("Assessment ended due to excessive tab-switch violations.");
+          void endFullTestRef.current(true);
+        } else {
+          setWarningModal({ type: "tab", count: total });
+          toast.warning(`Tab switch logged (${total}/5). Stay on this tab.`, {
+            icon: <AlertTriangle className="w-5 h-5 text-amber-500" />,
+          });
+        }
+      } else if (type === "fullscreen_exit") {
+        setWarningModal({ type: "fullscreen" });
+      } else {
+        setWarningModal({ type: "screenshare" });
+      }
+      return next;
+    });
+  };
+
+  const handleScreenShareInterrupted = () => {
+    logOAViolation("screen_share_interrupted");
+    setScreenGraceSeconds(30);
+    let remaining = 30;
+    if (screenGraceTimeoutRef.current) clearInterval(screenGraceTimeoutRef.current);
+    screenGraceTimeoutRef.current = setInterval(() => {
+      remaining -= 1;
+      setScreenGraceSeconds(remaining);
+      if (remaining <= 0) {
+        if (screenGraceTimeoutRef.current) clearInterval(screenGraceTimeoutRef.current);
+        toast.error("Screen sharing was not restored. Ending test.");
+        void endFullTestRef.current(true);
+      }
+    }, 1000);
+  };
+
+  const resumeScreenShare = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getDisplayMedia({
+        video: true,
+        audio: false,
       });
+      if (screenGraceTimeoutRef.current) clearInterval(screenGraceTimeoutRef.current);
+      screenStreamRef.current?.getTracks().forEach((t) => t.stop());
+      screenStreamRef.current = stream;
+      setScreenStream(stream);
+      setWarningModal(null);
+      toast.success("Screen sharing restored.");
+      stream.getVideoTracks()[0].onended = () => handleScreenShareInterrupted();
+    } catch {
+      toast.error("Failed to re-share screen. Please try again.");
+    }
+  };
+
+  const requestReFullscreen = async () => {
+    try {
+      await document.documentElement.requestFullscreen();
+      setWarningModal(null);
+    } catch {
+      toast.error("Click anywhere and allow fullscreen to continue.");
+    }
+  };
+
+  const startOAProctoring = async () => {
+    if (proctorStartedRef.current) return;
+    proctorStartedRef.current = true;
+    try {
+      try {
+        if (!document.fullscreenElement) {
+          await document.documentElement.requestFullscreen();
+        }
+      } catch {
+        console.warn("Fullscreen request deferred");
+      }
+
+      const media = await navigator.mediaDevices.getUserMedia({
+        video: { width: 640, height: 480 },
+        audio: true,
+      });
+      const cam = new MediaStream([media.getVideoTracks()[0]]);
+      const mic = new MediaStream([media.getAudioTracks()[0]]);
+      cameraStreamRef.current = cam;
+      micStreamRef.current = mic;
+      setCameraStream(cam);
+      setMicStream(mic);
+
+      const display = await navigator.mediaDevices.getDisplayMedia({
+        video: true,
+        audio: false,
+      });
+      screenStreamRef.current = display;
+      setScreenStream(display);
+      display.getVideoTracks()[0].onended = () => handleScreenShareInterrupted();
+
+      setProctorReady(true);
+      toast.success("Proctoring active: camera, mic, and screen share.");
+    } catch (err) {
+      stopOAProctorStreams();
+      toast.error("Camera, microphone, and screen share are required for this interview.");
+    }
+  };
+
+  // Bind cam preview
+  useEffect(() => {
+    if (proctorVideoRef.current && cameraStream) {
+      proctorVideoRef.current.srcObject = cameraStream;
+    }
+  }, [cameraStream]);
+
+  // E2E: start device proctoring once exam is active
+  useEffect(() => {
+    if (!isProctoredE2E() || !sessionId || !isActiveExamView(view)) return;
+    void startOAProctoring();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sessionId, view]);
+
+  // Proctoring listeners (E2E full suite; standalone OA keeps tab/copy alerts)
+  useEffect(() => {
+    if (!sessionId || !isActiveExamView(view)) return;
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "hidden") {
+        if (isProctoredE2E()) logOAViolation("tab_switch");
+        else {
+          setViolations((prev) => [
+            ...prev,
+            { type: "tab_switch", timestamp: new Date().toLocaleTimeString() },
+          ]);
+          toast.warning("Warning: Tab switching is monitored and logged.", {
+            icon: <AlertTriangle className="w-5 h-5 text-amber-500" />,
+          });
+        }
+      }
+    };
+
+    const handleBlur = () => {
+      if (isProctoredE2E()) logOAViolation("tab_switch");
+      else {
+        setViolations((prev) => [
+          ...prev,
+          { type: "tab_switch", timestamp: new Date().toLocaleTimeString() },
+        ]);
+        toast.warning("Warning: Focus loss is monitored and logged.", {
+          icon: <AlertTriangle className="w-5 h-5 text-amber-500" />,
+        });
+      }
+    };
+
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isProctoredE2E()) {
+        logOAViolation("fullscreen_exit");
+      }
     };
 
     const handleCopy = (e: ClipboardEvent) => {
-      const newViolation = {
-        type: "Copy Attempt",
-        timestamp: new Date().toISOString(),
-      };
-      setViolations((prev) => [...prev, newViolation]);
+      setViolations((prev) => [
+        ...prev,
+        { type: "copy_attempt", timestamp: new Date().toLocaleTimeString() },
+      ]);
       toast.error("Copying is disabled during the assessment.");
       e.preventDefault();
     };
 
+    document.addEventListener("visibilitychange", handleVisibilityChange);
     window.addEventListener("blur", handleBlur);
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
     document.addEventListener("copy", handleCopy);
 
     return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       window.removeEventListener("blur", handleBlur);
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
       document.removeEventListener("copy", handleCopy);
     };
-  }, [sessionId, view]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sessionId, view, session]);
+
+  useEffect(() => {
+    return () => {
+      stopOAProctorStreams();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Timer: MCQ
   useEffect(() => {
@@ -384,6 +614,15 @@ export default function OARoundPage() {
       const genData = await genRes.json();
 
       toast.success("Online Assessment generated successfully!");
+      if (isProctoredE2E()) {
+        try {
+          if (document.documentElement.requestFullscreen) {
+            await document.documentElement.requestFullscreen();
+          }
+        } catch (e) {
+          console.warn("Fullscreen rejected", e);
+        }
+      }
       await loadSession(newSessionId);
     } catch (err: any) {
       console.error(err);
@@ -392,6 +631,62 @@ export default function OARoundPage() {
       setIsGenerating(false);
     }
   };
+
+  // Auto-start OA when arriving from E2E proctored flow
+  useEffect(() => {
+    if (!contextReady || !user || authLoading || autoStartedRef.current) return;
+    if (!isProctoredE2E()) return;
+    if (sessionId) return;
+    autoStartedRef.current = true;
+    handleStartAssessment();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [contextReady, user, authLoading]);
+
+  const handleEndFullTest = async (force = false) => {
+    const fId = getFullSessionId();
+    if (!fId) {
+      handleExit();
+      return;
+    }
+    if (!force) {
+      const ok = window.confirm(
+        "End the full interview now? Your OA progress will be saved and you can view results."
+      );
+      if (!ok) return;
+    }
+    setEndingTest(true);
+    try {
+      // Link OA round if we have a session
+      if (sessionId) {
+        await fetch("/api/interview/link-round", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fullSessionId: fId,
+            roundType: "oa",
+            roundSessionId: sessionId,
+          }),
+        });
+      }
+      await fetch("/api/interview/finalize", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fullSessionId: fId }),
+      });
+      localStorage.removeItem("active_oa_session_id");
+      localStorage.removeItem("interview_context_oa");
+      stopOAProctorStreams();
+      if (document.fullscreenElement) {
+        try { await document.exitFullscreen(); } catch {}
+      }
+      toast.success("Test ended. Opening results...");
+      window.location.href = `/dashboard/interview?sessionId=${fId}`;
+    } catch (err) {
+      toast.error("Failed to end test.");
+      setEndingTest(false);
+    }
+  };
+  endFullTestRef.current = handleEndFullTest;
 
   // MCQ Round Submit
   const handleMCQSubmit = async (isAuto = false) => {
@@ -584,12 +879,11 @@ export default function OARoundPage() {
       // Load completed session results
       await loadSession(sessionId);
 
-      // If full interview, link and redirect immediately
+      // E2E: link OA and auto-enter AI interview round
       if (typeof window !== "undefined") {
-        const params = new URLSearchParams(window.location.search);
-        const fId = params.get("fullSessionId");
+        const fId = getFullSessionId();
         if (fId) {
-          toast.info("Saving results to Full End-to-End Interview...");
+          toast.info("OA complete. Starting live AI interview...");
           await fetch("/api/interview/link-round", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -601,9 +895,10 @@ export default function OARoundPage() {
           });
           localStorage.removeItem("active_oa_session_id");
           localStorage.removeItem("interview_context_oa");
+          stopOAProctorStreams();
           setTimeout(() => {
-            window.location.href = `/dashboard/interview?sessionId=${fId}`;
-          }, 1500);
+            window.location.href = `/dashboard/ai?fullSessionId=${fId}`;
+          }, 1200);
         }
       }
     } catch (err) {
@@ -665,8 +960,145 @@ export default function OARoundPage() {
     }
   };
 
+  const showE2EEndTest = isProctoredE2E() && [
+    "overview",
+    "mcq",
+    "mcq_review",
+    "coding_list",
+    "coding_editor",
+    "aptitude",
+    "aptitude_review",
+  ].includes(view);
+
   return (
     <div className="max-w-7xl mx-auto space-y-6">
+      {showE2EEndTest && (
+        <div className="sticky top-0 z-40 -mx-2 px-2">
+          <div className="flex items-center justify-between bg-white border border-[#ECECEC] rounded-lg px-4 py-2.5 shadow-sm">
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+              </span>
+              <span className="text-xs font-semibold text-[#111111]">
+                Full Interview · Round 1 (OA)
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              {isProctoredE2E() && (
+                <div className="hidden sm:flex items-center gap-2 text-[11px] text-[#6B7280] mr-1">
+                  <span className={cn("inline-flex items-center gap-1", cameraStream ? "text-green-600" : "text-amber-600")}>
+                    <Camera className="w-3 h-3" /> Cam
+                  </span>
+                  <span className={cn("inline-flex items-center gap-1", micStream ? "text-green-600" : "text-amber-600")}>
+                    <Mic className="w-3 h-3" /> Mic
+                  </span>
+                  <span className={cn("inline-flex items-center gap-1", screenStream ? "text-green-600" : "text-amber-600")}>
+                    <Monitor className="w-3 h-3" /> Screen
+                  </span>
+                </div>
+              )}
+              <button
+                onClick={() => void handleEndFullTest(false)}
+                disabled={endingTest}
+                className="flex items-center gap-1.5 text-xs font-semibold text-rose-700 bg-rose-50 hover:bg-rose-100 border border-rose-100 px-3.5 py-1.5 rounded-lg"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+                {endingTest ? "Ending..." : "End Test"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {isProctoredE2E() && cameraStream && isActiveExamView(view) && (
+        <div className="fixed bottom-4 right-4 z-50 w-36 rounded-lg overflow-hidden border border-[#ECECEC] shadow-lg bg-black">
+          <video
+            ref={proctorVideoRef}
+            autoPlay
+            playsInline
+            muted
+            className="w-full h-24 object-cover scale-x-[-1]"
+          />
+          <div className="px-2 py-1 bg-white text-[10px] font-semibold text-[#6B7280] flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+            Proctoring
+          </div>
+        </div>
+      )}
+
+      {warningModal && (
+        <div className="fixed inset-0 z-[60] bg-black/40 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg border border-[#ECECEC] max-w-md w-full p-6 space-y-4 shadow-xl">
+            <div className="flex items-center gap-2 text-amber-700">
+              <AlertTriangle className="w-5 h-5" />
+              <h3 className="text-sm font-bold text-[#111111]">Proctoring Alert</h3>
+            </div>
+            {warningModal.type === "tab" && (
+              <p className="text-sm text-[#6B7280]">
+                Tab switch detected ({warningModal.count || 1}/5). Leaving this tab again may end the test.
+              </p>
+            )}
+            {warningModal.type === "fullscreen" && (
+              <p className="text-sm text-[#6B7280]">
+                Fullscreen is required for this interview. Re-enter fullscreen to continue.
+              </p>
+            )}
+            {warningModal.type === "screenshare" && (
+              <p className="text-sm text-[#6B7280]">
+                Screen share stopped. Restore it within {screenGraceSeconds}s or the test will end.
+              </p>
+            )}
+            <div className="flex justify-end gap-2">
+              {warningModal.type === "fullscreen" && (
+                <button
+                  onClick={() => void requestReFullscreen()}
+                  className="px-4 py-2 text-xs font-semibold bg-blue-600 text-white rounded-lg"
+                >
+                  Re-enter Fullscreen
+                </button>
+              )}
+              {warningModal.type === "screenshare" && (
+                <button
+                  onClick={() => void resumeScreenShare()}
+                  className="px-4 py-2 text-xs font-semibold bg-blue-600 text-white rounded-lg"
+                >
+                  Restore Screen Share
+                </button>
+              )}
+              {warningModal.type === "tab" && (
+                <button
+                  onClick={() => setWarningModal(null)}
+                  className="px-4 py-2 text-xs font-semibold bg-blue-600 text-white rounded-lg"
+                >
+                  I Understand
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {!proctorReady && isProctoredE2E() && sessionId && isActiveExamView(view) && (
+        <div className="fixed inset-0 z-[55] bg-white/90 flex items-center justify-center p-4">
+          <div className="bg-white border border-[#ECECEC] rounded-lg p-6 max-w-md w-full space-y-4 text-center shadow-lg">
+            <h3 className="text-sm font-bold text-[#111111]">Enable proctoring to continue</h3>
+            <p className="text-xs text-[#6B7280]">
+              Allow camera, microphone, and screen share. The assessment stays in fullscreen with tab monitoring.
+            </p>
+            <button
+              onClick={() => {
+                proctorStartedRef.current = false;
+                void startOAProctoring();
+              }}
+              className="w-full py-2.5 text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
+            >
+              Grant Camera, Mic & Screen Share
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* ─── SETUP / CONFIGURATION SCREEN ─────────────────────────────────── */}
       {view === "setup" && (
         <div className="space-y-6 animate-in fade-in duration-200">
@@ -743,12 +1175,14 @@ export default function OARoundPage() {
                 <div className="flex items-center gap-1.5 text-xs text-[#6B7280]">
                   <Clock className="w-3.5 h-3.5" /> Total Time: <span className="font-semibold text-[#111111]">80 mins</span>
                 </div>
-                <button
-                  onClick={handleExit}
-                  className="flex items-center gap-1.5 text-xs text-rose-600 bg-rose-50 hover:bg-rose-100 px-3 py-1.5 rounded-lg transition font-semibold"
-                >
-                  <LogOut className="w-3.5 h-3.5" /> Exit Assessment
-                </button>
+                {!isProctoredE2E() && (
+                  <button
+                    onClick={handleExit}
+                    className="flex items-center gap-1.5 text-xs text-rose-600 bg-rose-50 hover:bg-rose-100 px-3 py-1.5 rounded-lg transition font-semibold"
+                  >
+                    <LogOut className="w-3.5 h-3.5" /> Exit Assessment
+                  </button>
+                )}
               </div>
             </div>
 
@@ -2086,23 +2520,21 @@ export default function OARoundPage() {
                       <span className="text-xs font-bold text-[#111111] mt-0.5 block">{session.report.finalRecommendation}</span>
                     </div>
 
-                    {session.evaluation?.passed ? (
+                    {session.evaluation?.passed || getFullSessionId() ? (
                       <button
                         onClick={() => {
-                          if (typeof window !== "undefined") {
-                            const params = new URLSearchParams(window.location.search);
-                            const fId = params.get("fullSessionId");
-                            if (fId) {
-                              window.location.href = `/dashboard/interview?sessionId=${fId}`;
-                              return;
-                            }
+                          const fId = getFullSessionId();
+                          if (fId) {
+                            toast.success("Starting AI Interview round...");
+                            window.location.href = `/dashboard/ai?fullSessionId=${fId}`;
+                            return;
                           }
                           toast.success("Redirecting to AI Interview Round...");
                           window.location.href = "/dashboard/ai";
                         }}
                         className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg transition flex items-center gap-1.5 cursor-pointer"
                       >
-                        {typeof window !== "undefined" && new URLSearchParams(window.location.search).get("fullSessionId") ? "Return to Full Interview" : "Proceed to AI Interview"} <ChevronRight className="w-4 h-4" />
+                        {getFullSessionId() ? "Continue to AI Interview" : "Proceed to AI Interview"} <ChevronRight className="w-4 h-4" />
                       </button>
                     ) : (
                       <button
