@@ -75,6 +75,7 @@ export default function AIInterviewPage() {
   const [isMuted, setIsMuted] = useState(false);
   const [isCamOff, setIsCamOff] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [endingExam, setEndingExam] = useState(false);
 
   // Speech & Interviewer States
   const [interviewerState, setInterviewerState] = useState<InterviewerState>("idle");
@@ -837,6 +838,7 @@ export default function AIInterviewPage() {
       new URLSearchParams(window.location.search).get("fullSessionId")) {
       proctoring.stopAll();
       setExamImmersive(false);
+      // Gate already suppressed via endingExam — safe to exit FS
       unlockExamFullscreen();
     }
     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
@@ -1057,6 +1059,7 @@ export default function AIInterviewPage() {
 
   // Ending the interview (leave early / violations) — always produce a report
   const handleEndInterview = async (blocked = false) => {
+    setEndingExam(true);
     const fId =
       typeof window !== "undefined"
         ? new URLSearchParams(window.location.search).get("fullSessionId")
@@ -1208,6 +1211,7 @@ export default function AIInterviewPage() {
     <div className="fixed inset-0 z-50 w-screen h-screen overflow-auto bg-[#FAFAFA]">
       <ExamFullscreenGate
         active={view === "lobby" || view === "in_progress" || view === "permissions"}
+        suppress={endingExam || isSubmitting}
       />
       <div className="max-w-full mx-auto px-4 py-4 pb-12 sm:px-6 lg:px-8 min-h-full">
       {/* HEADER SECTION */}
@@ -1563,17 +1567,19 @@ export default function AIInterviewPage() {
             </div>
 
             <div className="flex items-center gap-2.5">
-              <button
-                onClick={() => {
-                  const ok = window.confirm(
-                    "End the interview now? Your answers will be submitted and a detailed report will be generated."
-                  );
-                  if (ok) void handleEndInterview(false);
-                }}
-                className="flex items-center gap-1.5 text-xs text-rose-700 bg-white hover:bg-rose-50 px-3 py-1.5 rounded-lg border border-rose-200 transition font-semibold"
-              >
-                <LogOut className="w-3.5 h-3.5" /> End Test
-              </button>
+                <button
+                  onClick={() => {
+                    const ok = window.confirm(
+                      "End the interview now? Your answers will be submitted and a detailed report will be generated."
+                    );
+                    if (ok) void handleEndInterview(false);
+                  }}
+                  disabled={endingExam || isSubmitting}
+                  className="flex items-center gap-1.5 text-xs text-rose-700 bg-white hover:bg-rose-50 px-3 py-1.5 rounded-lg border border-rose-200 transition font-semibold disabled:opacity-60"
+                >
+                  <LogOut className="w-3.5 h-3.5" />
+                  {endingExam || isSubmitting ? "Finalizing..." : "End Test"}
+                </button>
               <div className="flex items-center gap-1.5 text-[#6B7280] font-medium text-xs bg-[#F9FAFB] px-3 py-1.5 rounded-lg border border-[#ECECEC]">
                 <Clock className="w-3.5 h-3.5 text-red-500" />
                 <span className="font-mono text-red-600">{formatTimer(interviewTime)}</span>

@@ -11330,6 +11330,670 @@
       "report": null,
       "createdAt": "2026-07-21T15:31:17.457Z",
       "updatedAt": "2026-07-21T15:31:17.457Z"
+    },
+    "e2e-oa-7wwgskxe5": {
+      "id": "e2e-oa-7wwgskxe5",
+      "userId": "6a4ca2be4c0f65e63ca9",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "role",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scalable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "mcqStatus": "completed",
+      "codingStatus": "completed",
+      "aptitudeStatus": "completed",
+      "mcqQuestions": [
+        {
+          "id": "e2e-mcq-1",
+          "question": "Which keyword creates a block-scoped variable that cannot be reassigned?",
+          "options": [
+            "var",
+            "let",
+            "const",
+            "static"
+          ],
+          "correctAnswer": "const",
+          "explanation": "`const` is block-scoped and cannot be reassigned after declaration.",
+          "skill": "React",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "e2e-mcq-2",
+          "question": "What does `===` check in JavaScript?",
+          "options": [
+            "Value only",
+            "Type only",
+            "Value and type",
+            "Reference identity only"
+          ],
+          "correctAnswer": "Value and type",
+          "explanation": "Strict equality compares both value and type without coercion.",
+          "skill": "React",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "e2e-mcq-3",
+          "question": "In React, which hook is used for side effects?",
+          "options": [
+            "useState",
+            "useMemo",
+            "useEffect",
+            "useRef"
+          ],
+          "correctAnswer": "useEffect",
+          "explanation": "`useEffect` runs side effects after render.",
+          "skill": "Next.js",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "e2e-mcq-4",
+          "question": "What is the correct HTTP status for a successful resource creation?",
+          "options": [
+            "200",
+            "201",
+            "204",
+            "302"
+          ],
+          "correctAnswer": "201",
+          "explanation": "201 Created indicates a new resource was created.",
+          "skill": "TypeScript",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "e2e-mcq-5",
+          "question": "Which data structure gives O(1) average lookup by key?",
+          "options": [
+            "Array",
+            "Linked List",
+            "Hash Map",
+            "Binary Tree"
+          ],
+          "correctAnswer": "Hash Map",
+          "explanation": "Hash maps provide average O(1) key lookups.",
+          "skill": "DSA",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "e2e-mcq-6",
+          "question": "What does REST stand for?",
+          "options": [
+            "Remote Execution State Transfer",
+            "Representational State Transfer",
+            "Reliable Encrypted Service Transport",
+            "Resource Endpoint Service Type"
+          ],
+          "correctAnswer": "Representational State Transfer",
+          "explanation": "REST is Representational State Transfer.",
+          "skill": "TypeScript",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "e2e-mcq-7",
+          "question": "Which React pattern avoids prop drilling for shared state?",
+          "options": [
+            "Fragments",
+            "Context API",
+            "Portals",
+            "Strict Mode"
+          ],
+          "correctAnswer": "Context API",
+          "explanation": "Context provides values deep in the tree without prop drilling.",
+          "skill": "Next.js",
+          "difficulty": "Medium",
+          "expectedTime": 50
+        },
+        {
+          "id": "e2e-mcq-8",
+          "question": "What is the purpose of `async/await`?",
+          "options": [
+            "To declare CSS animations",
+            "To write asynchronous code in a synchronous style",
+            "To compile TypeScript",
+            "To create Web Workers"
+          ],
+          "correctAnswer": "To write asynchronous code in a synchronous style",
+          "explanation": "`async/await` is syntactic sugar over Promises.",
+          "skill": "React",
+          "difficulty": "Medium",
+          "expectedTime": 50
+        },
+        {
+          "id": "e2e-mcq-9",
+          "question": "Which SQL clause filters groups after aggregation?",
+          "options": [
+            "WHERE",
+            "HAVING",
+            "ORDER BY",
+            "JOIN"
+          ],
+          "correctAnswer": "HAVING",
+          "explanation": "`HAVING` filters aggregated groups; `WHERE` filters rows.",
+          "skill": "SQL",
+          "difficulty": "Medium",
+          "expectedTime": 50
+        },
+        {
+          "id": "e2e-mcq-10",
+          "question": "What does CORS protect against by default?",
+          "options": [
+            "SQL injection",
+            "Cross-origin browser requests without permission",
+            "XSS in localStorage",
+            "CSRF on same-origin forms"
+          ],
+          "correctAnswer": "Cross-origin browser requests without permission",
+          "explanation": "CORS controls which origins may read responses in browsers.",
+          "skill": "TypeScript",
+          "difficulty": "Medium",
+          "expectedTime": 50
+        },
+        {
+          "id": "e2e-mcq-11",
+          "question": "In Big-O, which is generally fastest for large n?",
+          "options": [
+            "O(n²)",
+            "O(n log n)",
+            "O(2ⁿ)",
+            "O(n!)"
+          ],
+          "correctAnswer": "O(n log n)",
+          "explanation": "Among these, O(n log n) grows slowest.",
+          "skill": "DSA",
+          "difficulty": "Medium",
+          "expectedTime": 50
+        },
+        {
+          "id": "e2e-mcq-12",
+          "question": "What is the default HTTP method for fetching a resource in REST?",
+          "options": [
+            "POST",
+            "PUT",
+            "GET",
+            "PATCH"
+          ],
+          "correctAnswer": "GET",
+          "explanation": "GET retrieves a representation of a resource.",
+          "skill": "TypeScript",
+          "difficulty": "Easy",
+          "expectedTime": 40
+        },
+        {
+          "id": "e2e-mcq-13",
+          "question": "Which statement about `useState` is true?",
+          "options": [
+            "It mutates state in place",
+            "Updating state triggers a re-render",
+            "It only works in class components",
+            "It replaces Redux always"
+          ],
+          "correctAnswer": "Updating state triggers a re-render",
+          "explanation": "Calling the setter schedules a re-render with new state.",
+          "skill": "Next.js",
+          "difficulty": "Easy",
+          "expectedTime": 45
+        },
+        {
+          "id": "e2e-mcq-14",
+          "question": "What is JWT commonly used for?",
+          "options": [
+            "Image compression",
+            "Stateless authentication tokens",
+            "Database indexing",
+            "CSS preprocessing"
+          ],
+          "correctAnswer": "Stateless authentication tokens",
+          "explanation": "JWTs often carry claims for auth without server sessions.",
+          "skill": "TypeScript",
+          "difficulty": "Medium",
+          "expectedTime": 50
+        },
+        {
+          "id": "e2e-mcq-15",
+          "question": "Which tool manages Node.js package dependencies?",
+          "options": [
+            "Webpack only",
+            "npm / yarn / pnpm",
+            "Docker only",
+            "Nginx"
+          ],
+          "correctAnswer": "npm / yarn / pnpm",
+          "explanation": "Package managers install and lock JS dependencies.",
+          "skill": "React",
+          "difficulty": "Easy",
+          "expectedTime": 40
+        }
+      ],
+      "codingQuestions": [
+        {
+          "id": "e2e-cod-1",
+          "title": "Two Sum",
+          "difficulty": "Easy",
+          "problemStatement": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.\n\nYou may assume exactly one solution exists.",
+          "constraints": [
+            "2 <= nums.length <= 10^4",
+            "-10^9 <= nums[i] <= 10^9"
+          ],
+          "inputFormat": "First line: target. Second line: comma-separated nums.",
+          "outputFormat": "Two indices as comma-separated values, e.g. 0,1",
+          "examples": [
+            {
+              "input": "9\n2,7,11,15",
+              "output": "0,1",
+              "explanation": "nums[0] + nums[1] == 9"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "9\n2,7,11,15",
+              "output": "0,1",
+              "isHidden": false
+            },
+            {
+              "input": "6\n3,2,4",
+              "output": "1,2",
+              "isHidden": false
+            },
+            {
+              "input": "6\n3,3",
+              "output": "0,1",
+              "isHidden": true
+            },
+            {
+              "input": "10\n1,5,5,9",
+              "output": "1,2",
+              "isHidden": true
+            },
+            {
+              "input": "8\n4,1,2,4",
+              "output": "0,3",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use a hash map for O(n) lookup."
+          ]
+        },
+        {
+          "id": "e2e-cod-2",
+          "title": "Valid Parentheses",
+          "difficulty": "Easy",
+          "problemStatement": "Given a string `s` containing only '()[]{}', determine if the input string is valid.",
+          "constraints": [
+            "1 <= s.length <= 10^4"
+          ],
+          "inputFormat": "A single line containing the string.",
+          "outputFormat": "true or false",
+          "examples": [
+            {
+              "input": "()",
+              "output": "true"
+            },
+            {
+              "input": "(]",
+              "output": "false"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "()",
+              "output": "true",
+              "isHidden": false
+            },
+            {
+              "input": "()[]{}",
+              "output": "true",
+              "isHidden": false
+            },
+            {
+              "input": "(]",
+              "output": "false",
+              "isHidden": true
+            },
+            {
+              "input": "([)]",
+              "output": "false",
+              "isHidden": true
+            },
+            {
+              "input": "{[]}",
+              "output": "true",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Use a stack."
+          ]
+        },
+        {
+          "id": "e2e-cod-3",
+          "title": "Longest Substring Without Repeating Characters",
+          "difficulty": "Medium",
+          "problemStatement": "Given a string `s`, find the length of the longest substring without repeating characters.",
+          "constraints": [
+            "0 <= s.length <= 5 * 10^4"
+          ],
+          "inputFormat": "A single line containing the string.",
+          "outputFormat": "An integer length.",
+          "examples": [
+            {
+              "input": "abcabcbb",
+              "output": "3",
+              "explanation": "abc"
+            },
+            {
+              "input": "bbbbb",
+              "output": "1"
+            }
+          ],
+          "testCases": [
+            {
+              "input": "abcabcbb",
+              "output": "3",
+              "isHidden": false
+            },
+            {
+              "input": "bbbbb",
+              "output": "1",
+              "isHidden": false
+            },
+            {
+              "input": "pwwkew",
+              "output": "3",
+              "isHidden": true
+            },
+            {
+              "input": "",
+              "output": "0",
+              "isHidden": true
+            },
+            {
+              "input": "dvdf",
+              "output": "3",
+              "isHidden": true
+            }
+          ],
+          "hints": [
+            "Sliding window + last-seen map."
+          ]
+        }
+      ],
+      "aptitudeQuestions": [
+        {
+          "id": "e2e-apt-1",
+          "question": "A train 150 meters long runs at 54 km/hr. How long to cross a pole?",
+          "options": [
+            "8 seconds",
+            "9 seconds",
+            "10 seconds",
+            "12 seconds"
+          ],
+          "correctAnswer": "10 seconds",
+          "explanation": "54*(5/18)=15 m/s; 150/15=10s.",
+          "category": "Numerical Ability",
+          "difficulty": "Easy"
+        },
+        {
+          "id": "e2e-apt-2",
+          "question": "Find the missing number: 3, 7, 15, 31, 63, ...",
+          "options": [
+            "95",
+            "111",
+            "127",
+            "131"
+          ],
+          "correctAnswer": "127",
+          "explanation": "n*2+1 pattern → 127.",
+          "category": "Logical Reasoning",
+          "difficulty": "Easy"
+        },
+        {
+          "id": "e2e-apt-3",
+          "question": "A and B finish work in 8 days together. A alone takes 12 days. How long for B alone?",
+          "options": [
+            "16 days",
+            "18 days",
+            "20 days",
+            "24 days"
+          ],
+          "correctAnswer": "24 days",
+          "explanation": "1/8 - 1/12 = 1/24.",
+          "category": "Numerical Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "e2e-apt-4",
+          "question": "LION : PRIDE :: WOLF : ?",
+          "options": [
+            "PACK",
+            "FLOCK",
+            "HERD",
+            "SWARM"
+          ],
+          "correctAnswer": "PACK",
+          "explanation": "Group of wolves is a pack.",
+          "category": "Verbal Ability",
+          "difficulty": "Easy"
+        },
+        {
+          "id": "e2e-apt-5",
+          "question": "If all Bloops are Razzies and all Razzies are Lazzies, are all Bloops definitely Lazzies?",
+          "options": [
+            "Yes",
+            "No",
+            "Only sometimes",
+            "Cannot say"
+          ],
+          "correctAnswer": "Yes",
+          "explanation": "Transitive inclusion.",
+          "category": "Logical Reasoning",
+          "difficulty": "Easy"
+        },
+        {
+          "id": "e2e-apt-6",
+          "question": "What is 25% of 360?",
+          "options": [
+            "70",
+            "80",
+            "90",
+            "100"
+          ],
+          "correctAnswer": "90",
+          "explanation": "0.25 * 360 = 90.",
+          "category": "Numerical Ability",
+          "difficulty": "Easy"
+        },
+        {
+          "id": "e2e-apt-7",
+          "question": "A clock shows 3:15. What is the angle between hour and minute hands?",
+          "options": [
+            "0°",
+            "7.5°",
+            "15°",
+            "30°"
+          ],
+          "correctAnswer": "7.5°",
+          "explanation": "Minute at 90°, hour at 97.5° → 7.5°.",
+          "category": "Analytical Reasoning",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "e2e-apt-8",
+          "question": "Choose the odd one out: 2, 3, 5, 7, 9, 11",
+          "options": [
+            "2",
+            "9",
+            "11",
+            "3"
+          ],
+          "correctAnswer": "9",
+          "explanation": "9 is not prime.",
+          "category": "Logical Reasoning",
+          "difficulty": "Easy"
+        },
+        {
+          "id": "e2e-apt-9",
+          "question": "If CODING is written as DPEJOH, how is LOGIC written?",
+          "options": [
+            "MPHJD",
+            "KNFFB",
+            "LOGICAL",
+            "MNHJD"
+          ],
+          "correctAnswer": "MPHJD",
+          "explanation": "Each letter +1 → LOGIC → MPHJD.",
+          "category": "Verbal Ability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "e2e-apt-10",
+          "question": "A man walks 3 km north, 4 km east. Distance from start?",
+          "options": [
+            "5 km",
+            "6 km",
+            "7 km",
+            "12 km"
+          ],
+          "correctAnswer": "5 km",
+          "explanation": "3-4-5 triangle.",
+          "category": "Numerical Ability",
+          "difficulty": "Easy"
+        }
+      ],
+      "mcqAnswers": {
+        "e2e-mcq-15": "npm / yarn / pnpm"
+      },
+      "codingAnswers": {
+        "e2e-cod-1": {
+          "code": "function twoSum(input) {\n    // Write your code here\n    \n}",
+          "language": "javascript",
+          "passedCount": 0,
+          "totalCount": 5,
+          "status": "Runtime Error",
+          "feedback": {
+            "complexity": "Offline analysis (no Gemini)",
+            "codeQuality": "Some cases failed — review edge cases and I/O format.",
+            "optimization": "Aim for linear time where possible.",
+            "suggestions": "Re-run with custom inputs, then submit when green."
+          }
+        }
+      },
+      "aptitudeAnswers": {},
+      "violations": [],
+      "evaluation": {
+        "mcqScore": 7,
+        "codingScore": 0,
+        "aptitudeScore": 0,
+        "overallScore": 2,
+        "percentage": 2,
+        "passed": false,
+        "timeTaken": 78,
+        "accuracy": 50,
+        "mcqStats": {
+          "correct": 1,
+          "wrong": 0,
+          "skipped": 14,
+          "accuracy": 100
+        },
+        "codingStats": {
+          "problemsAttempted": 1,
+          "passed": 0,
+          "failed": 15,
+          "compilationStatus": "Failed cases"
+        },
+        "aptitudeStats": {
+          "correct": 0,
+          "wrong": 0,
+          "skipped": 10,
+          "accuracy": 0
+        }
+      },
+      "report": {
+        "candidateSummary": {
+          "name": "Candidate",
+          "role": "MERN Stack Developer",
+          "experience": "2 Years (Junior)",
+          "difficulty": "Medium",
+          "duration": "78 Mins",
+          "overallScore": 2
+        },
+        "technicalPerformance": {
+          "Problem Solving": 0,
+          "Logical Aptitude": 0,
+          "Core Technical MCQs": 7
+        },
+        "codingPerformance": {
+          "problemsAttempted": 1,
+          "passed": 0,
+          "failed": 15,
+          "codeQuality": "Offline evaluation based on submission completeness.",
+          "optimization": "Review Big-O and edge cases for stronger scores.",
+          "suggestions": "Practice Two Sum, stacks, and sliding window patterns."
+        },
+        "aptitudePerformance": {
+          "logical": 0,
+          "numerical": 0,
+          "verbal": 0,
+          "analytical": 0
+        },
+        "strongAreas": [
+          "React",
+          "Next.js",
+          "TypeScript"
+        ],
+        "weakAreas": [
+          "Core fundamentals",
+          "Timed problem solving"
+        ],
+        "personalizedLearningPath": [
+          "Revise JS/React fundamentals with timed quizzes.",
+          "Practice 2–3 coding problems daily (arrays, strings, stacks).",
+          "Work through aptitude mixed sets under a 15-minute timer."
+        ],
+        "interviewReadiness": "Needs More Practice",
+        "finalRecommendation": "Retry OA Assessment"
+      },
+      "createdAt": "2026-07-21T16:13:47.829Z",
+      "updatedAt": "2026-07-21T16:14:06.885Z"
     }
   },
   "aiSessions": {
@@ -14177,6 +14841,216 @@
       },
       "createdAt": "2026-07-21T15:30:02.869Z",
       "updatedAt": "2026-07-21T15:30:24.432Z"
+    },
+    "ai-session-l6z2sf2p6": {
+      "id": "ai-session-l6z2sf2p6",
+      "userId": "6a4ca2be4c0f65e63ca9",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "role",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scalable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "status": "completed",
+      "currentQuestionIndex": 1,
+      "questions": [
+        {
+          "id": "q-1",
+          "questionText": "Hello! Welcome to your technical interview for the MERN Stack Developer position. To kick things off, can you explain the difference between let, const, and var in JavaScript, and when you would prefer one over the others?",
+          "evaluation": {
+            "technicalAccuracy": 5,
+            "communication": 6,
+            "problemSolving": 5,
+            "confidence": 6,
+            "completeness": 5,
+            "practicalKnowledge": 5,
+            "feedback": "The answer was brief and lacked specific technical details.",
+            "score": 50
+          },
+          "answerText": "No."
+        },
+        {
+          "id": "q-2",
+          "questionText": "Great. Let's talk about Next.js. Can you walk me through how you would design a reusable component or module using Next.js in a production application?",
+          "evaluation": {
+            "technicalAccuracy": 5,
+            "communication": 6,
+            "problemSolving": 5,
+            "confidence": 6,
+            "completeness": 5,
+            "practicalKnowledge": 5,
+            "feedback": "The answer was brief and lacked specific technical details.",
+            "score": 50
+          },
+          "answerText": "(Interview ended early)"
+        }
+      ],
+      "violations": [
+        {
+          "type": "tab_switch",
+          "timestamp": "21:44:26"
+        }
+      ],
+      "timeline": [
+        {
+          "timestamp": "00:00",
+          "label": "Introduction"
+        },
+        {
+          "timestamp": "02:00",
+          "label": "Core Technical Concepts"
+        },
+        {
+          "timestamp": "06:00",
+          "label": "Project Architecture"
+        },
+        {
+          "timestamp": "12:00",
+          "label": "Behavioral & Scenarios"
+        },
+        {
+          "timestamp": "1:00",
+          "label": "Interview Completed"
+        }
+      ],
+      "evaluation": {
+        "overallScore": 50,
+        "technicalScore": 50,
+        "communicationScore": 60,
+        "problemSolvingScore": 50,
+        "confidenceScore": 60,
+        "passed": true
+      },
+      "report": {
+        "candidateSummary": {
+          "overallScore": 50,
+          "technicalScore": 50,
+          "communicationScore": 60,
+          "problemSolvingScore": 50,
+          "confidenceScore": 60,
+          "duration": "1:00"
+        },
+        "questionFeedback": [
+          {
+            "question": "Hello! Welcome to your technical interview for the MERN Stack Developer position. To kick things off, can you explain the difference between let, const, and var in JavaScript, and when you would prefer one over the others?",
+            "answer": "No.",
+            "score": 50,
+            "feedback": "The answer was brief and lacked specific technical details.",
+            "metrics": {
+              "accuracy": 5,
+              "communication": 6,
+              "problemSolving": 5,
+              "confidence": 6
+            }
+          },
+          {
+            "question": "Great. Let's talk about Next.js. Can you walk me through how you would design a reusable component or module using Next.js in a production application?",
+            "answer": "(Interview ended early)",
+            "score": 50,
+            "feedback": "The answer was brief and lacked specific technical details.",
+            "metrics": {
+              "accuracy": 5,
+              "communication": 6,
+              "problemSolving": 5,
+              "confidence": 6
+            }
+          }
+        ],
+        "strengths": [
+          "Demonstrated conceptual knowledge in key software engineering practices.",
+          "Communicated answers in a structured way.",
+          "Kept a steady tone during technical explanations."
+        ],
+        "weaknesses": [
+          "Could elaborate further on edge cases and trade-offs.",
+          "Some answers could include more production-level detail."
+        ],
+        "recommendations": [
+          "Practice explaining system design trade-offs out loud.",
+          "Add more concrete examples from past projects.",
+          "Review performance profiling and debugging techniques."
+        ],
+        "transcript": [
+          {
+            "speaker": "AI",
+            "text": "Hello! Welcome to your technical interview for the MERN Stack Developer position. To kick things off, can you explain the difference between let, const, and var in JavaScript, and when you would prefer one over the others?",
+            "timestamp": "0:00"
+          },
+          {
+            "speaker": "Candidate",
+            "text": "No.",
+            "timestamp": "1:15"
+          },
+          {
+            "speaker": "AI",
+            "text": "Great. Let's talk about Next.js. Can you walk me through how you would design a reusable component or module using Next.js in a production application?",
+            "timestamp": "2:00"
+          },
+          {
+            "speaker": "Candidate",
+            "text": "(Interview ended early)",
+            "timestamp": "3:15"
+          }
+        ],
+        "timeline": [
+          {
+            "timestamp": "00:00",
+            "label": "Introduction"
+          },
+          {
+            "timestamp": "02:00",
+            "label": "Core Technical Concepts"
+          },
+          {
+            "timestamp": "06:00",
+            "label": "Project Architecture"
+          },
+          {
+            "timestamp": "12:00",
+            "label": "Behavioral & Scenarios"
+          },
+          {
+            "timestamp": "1:00",
+            "label": "Interview Completed"
+          }
+        ],
+        "proctoringSummary": {
+          "tabSwitches": 1,
+          "fullscreenExits": 0,
+          "screenShareInterruptions": 0,
+          "status": "Flagged"
+        }
+      },
+      "createdAt": "2026-07-21T16:14:15.927Z",
+      "updatedAt": "2026-07-21T16:14:38.686Z"
     }
   },
   "audioSessions": {
@@ -20197,6 +21071,872 @@
       },
       "createdAt": "2026-07-21T15:31:15.888Z",
       "updatedAt": "2026-07-21T15:31:29.429Z"
+    },
+    "full-session-6jjkct5sm": {
+      "id": "full-session-6jjkct5sm",
+      "userId": "6a4ca2be4c0f65e63ca9",
+      "blueprint": {
+        "candidateName": "Candidate",
+        "source": "jd",
+        "role": "MERN Stack Developer",
+        "experienceLevel": "Junior",
+        "yearsOfExperience": 2,
+        "skills": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express"
+        ],
+        "frameworks": [
+          "GraphQL",
+          "Docker",
+          "AWS",
+          "Appwrite"
+        ],
+        "databases": [
+          "MongoDB",
+          "PostgreSQL"
+        ],
+        "projects": [
+          {
+            "title": "E-Commerce System",
+            "description": "A scalable shopping platform built with React and Node.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "MongoDB"
+            ]
+          }
+        ],
+        "confidenceScore": 85,
+        "suggestedDifficulty": "Medium",
+        "estimatedCompanyLevel": "Product"
+      },
+      "status": "completed",
+      "oaSessionId": "e2e-oa-7wwgskxe5",
+      "aiSessionId": "ai-session-l6z2sf2p6",
+      "audioSessionId": null,
+      "currentRound": "completed",
+      "evaluation": {
+        "overallScore": 26,
+        "passed": false
+      },
+      "report": {
+        "candidateSummary": {
+          "overallScore": 26,
+          "technicalScore": 25,
+          "communicationScore": 60,
+          "problemSolvingScore": 25,
+          "confidenceScore": 60,
+          "duration": "Full E2E"
+        },
+        "questionFeedback": [
+          {
+            "question": "[OA · MCQ Section] Which keyword creates a block-scoped variable that cannot be reassigned?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · MCQ Section] What does `===` check in JavaScript?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · MCQ Section] In React, which hook is used for side effects?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · MCQ Section] What is the correct HTTP status for a successful resource creation?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · MCQ Section] Which data structure gives O(1) average lookup by key?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · MCQ Section] What does REST stand for?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · MCQ Section] Which React pattern avoids prop drilling for shared state?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · MCQ Section] What is the purpose of `async/await`?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · MCQ Section] Which SQL clause filters groups after aggregation?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · MCQ Section] What does CORS protect against by default?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · MCQ Section] In Big-O, which is generally fastest for large n?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · MCQ Section] What is the default HTTP method for fetching a resource in REST?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · MCQ Section] Which statement about `useState` is true?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · MCQ Section] What is JWT commonly used for?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · MCQ Section] Which tool manages Node.js package dependencies?",
+            "answer": "npm / yarn / pnpm",
+            "score": 100,
+            "feedback": "Correct.",
+            "metrics": {
+              "accuracy": 100,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · Coding Section] Two Sum",
+            "answer": "function twoSum(input) {\n    // Write your code here\n    \n}",
+            "score": 0,
+            "feedback": "Some cases failed — review edge cases and I/O format. Re-run with custom inputs, then submit when green.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · Coding Section] Valid Parentheses",
+            "answer": "(No answer)",
+            "score": 0,
+            "feedback": "Problem not submitted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · Coding Section] Longest Substring Without Repeating Characters",
+            "answer": "(No answer)",
+            "score": 0,
+            "feedback": "Problem not submitted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · Aptitude Section] A train 150 meters long runs at 54 km/hr. How long to cross a pole?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · Aptitude Section] Find the missing number: 3, 7, 15, 31, 63, ...",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · Aptitude Section] A and B finish work in 8 days together. A alone takes 12 days. How long for B alone?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · Aptitude Section] LION : PRIDE :: WOLF : ?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · Aptitude Section] If all Bloops are Razzies and all Razzies are Lazzies, are all Bloops definitely Lazzies?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · Aptitude Section] What is 25% of 360?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · Aptitude Section] A clock shows 3:15. What is the angle between hour and minute hands?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · Aptitude Section] Choose the odd one out: 2, 3, 5, 7, 9, 11",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · Aptitude Section] If CODING is written as DPEJOH, how is LOGIC written?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[OA · Aptitude Section] A man walks 3 km north, 4 km east. Distance from start?",
+            "answer": "(Skipped)",
+            "score": 0,
+            "feedback": "Not attempted.",
+            "metrics": {
+              "accuracy": 0,
+              "communication": 0,
+              "problemSolving": 0,
+              "confidence": 0
+            }
+          },
+          {
+            "question": "[AI Interview] Hello! Welcome to your technical interview for the MERN Stack Developer position. To kick things off, can you explain the difference between let, const, and var in JavaScript, and when you would prefer one over the others?",
+            "answer": "No.",
+            "score": 50,
+            "feedback": "The answer was brief and lacked specific technical details.",
+            "metrics": {
+              "accuracy": 50,
+              "communication": 60,
+              "problemSolving": 50,
+              "confidence": 60
+            }
+          },
+          {
+            "question": "[AI Interview] Great. Let's talk about Next.js. Can you walk me through how you would design a reusable component or module using Next.js in a production application?",
+            "answer": "(Interview ended early)",
+            "score": 50,
+            "feedback": "The answer was brief and lacked specific technical details.",
+            "metrics": {
+              "accuracy": 50,
+              "communication": 60,
+              "problemSolving": 50,
+              "confidence": 60
+            }
+          }
+        ],
+        "strengths": [
+          "Demonstrated conceptual knowledge in key software engineering practices.",
+          "Communicated answers in a structured way.",
+          "Kept a steady tone during technical explanations."
+        ],
+        "weaknesses": [
+          "MCQ needs work — 0 wrong, 14 skipped (7%).",
+          "Coding score 0% — strengthen edge-case handling.",
+          "Aptitude accuracy low (0%).",
+          "Could elaborate further on edge cases and trade-offs.",
+          "Some answers could include more production-level detail."
+        ],
+        "recommendations": [
+          "Revise core JS/React/Node fundamentals with timed quizzes.",
+          "Review explanations for every wrong MCQ before the next attempt.",
+          "Practice arrays/strings/stacks with visible + hidden tests.",
+          "Always run custom edge cases before final submit.",
+          "Practice explaining system design trade-offs out loud.",
+          "Add more concrete examples from past projects.",
+          "Review performance profiling and debugging techniques."
+        ],
+        "transcript": [
+          {
+            "speaker": "AI",
+            "text": "Hello! Welcome to your technical interview for the MERN Stack Developer position. To kick things off, can you explain the difference between let, const, and var in JavaScript, and when you would prefer one over the others?",
+            "timestamp": "0:00"
+          },
+          {
+            "speaker": "Candidate",
+            "text": "No.",
+            "timestamp": "1:15"
+          },
+          {
+            "speaker": "AI",
+            "text": "Great. Let's talk about Next.js. Can you walk me through how you would design a reusable component or module using Next.js in a production application?",
+            "timestamp": "2:00"
+          },
+          {
+            "speaker": "Candidate",
+            "text": "(Interview ended early)",
+            "timestamp": "3:15"
+          }
+        ],
+        "timeline": [
+          {
+            "timestamp": "Start",
+            "label": "Full Interview Initialized"
+          },
+          {
+            "timestamp": "OA",
+            "label": "OA completed — overall 2%"
+          },
+          {
+            "timestamp": "AI",
+            "label": "AI Interview completed — overall 50%"
+          },
+          {
+            "timestamp": "End",
+            "label": "Detailed master report generated"
+          }
+        ],
+        "proctoringSummary": {
+          "tabSwitches": 1,
+          "fullscreenExits": 0,
+          "screenShareInterruptions": 0,
+          "status": "Flagged"
+        },
+        "sections": [
+          {
+            "id": "oa-mcq",
+            "title": "OA · MCQ Section",
+            "type": "mcq",
+            "score": 7,
+            "maxScore": 100,
+            "summary": "Attempted 1/15. Correct 1, Wrong 0, Skipped 14.",
+            "items": [
+              {
+                "question": "Which keyword creates a block-scoped variable that cannot be reassigned?",
+                "answer": "(Skipped)",
+                "correctAnswer": "const",
+                "explanation": "`const` is block-scoped and cannot be reassigned after declaration.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "What does `===` check in JavaScript?",
+                "answer": "(Skipped)",
+                "correctAnswer": "Value and type",
+                "explanation": "Strict equality compares both value and type without coercion.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "In React, which hook is used for side effects?",
+                "answer": "(Skipped)",
+                "correctAnswer": "useEffect",
+                "explanation": "`useEffect` runs side effects after render.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "What is the correct HTTP status for a successful resource creation?",
+                "answer": "(Skipped)",
+                "correctAnswer": "201",
+                "explanation": "201 Created indicates a new resource was created.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "Which data structure gives O(1) average lookup by key?",
+                "answer": "(Skipped)",
+                "correctAnswer": "Hash Map",
+                "explanation": "Hash maps provide average O(1) key lookups.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "What does REST stand for?",
+                "answer": "(Skipped)",
+                "correctAnswer": "Representational State Transfer",
+                "explanation": "REST is Representational State Transfer.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "Which React pattern avoids prop drilling for shared state?",
+                "answer": "(Skipped)",
+                "correctAnswer": "Context API",
+                "explanation": "Context provides values deep in the tree without prop drilling.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "What is the purpose of `async/await`?",
+                "answer": "(Skipped)",
+                "correctAnswer": "To write asynchronous code in a synchronous style",
+                "explanation": "`async/await` is syntactic sugar over Promises.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "Which SQL clause filters groups after aggregation?",
+                "answer": "(Skipped)",
+                "correctAnswer": "HAVING",
+                "explanation": "`HAVING` filters aggregated groups; `WHERE` filters rows.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "What does CORS protect against by default?",
+                "answer": "(Skipped)",
+                "correctAnswer": "Cross-origin browser requests without permission",
+                "explanation": "CORS controls which origins may read responses in browsers.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "In Big-O, which is generally fastest for large n?",
+                "answer": "(Skipped)",
+                "correctAnswer": "O(n log n)",
+                "explanation": "Among these, O(n log n) grows slowest.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "What is the default HTTP method for fetching a resource in REST?",
+                "answer": "(Skipped)",
+                "correctAnswer": "GET",
+                "explanation": "GET retrieves a representation of a resource.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "Which statement about `useState` is true?",
+                "answer": "(Skipped)",
+                "correctAnswer": "Updating state triggers a re-render",
+                "explanation": "Calling the setter schedules a re-render with new state.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "What is JWT commonly used for?",
+                "answer": "(Skipped)",
+                "correctAnswer": "Stateless authentication tokens",
+                "explanation": "JWTs often carry claims for auth without server sessions.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "Which tool manages Node.js package dependencies?",
+                "answer": "npm / yarn / pnpm",
+                "correctAnswer": "npm / yarn / pnpm",
+                "explanation": "Package managers install and lock JS dependencies.",
+                "status": "correct",
+                "score": 100,
+                "feedback": "Correct."
+              }
+            ]
+          },
+          {
+            "id": "oa-coding",
+            "title": "OA · Coding Section",
+            "type": "coding",
+            "score": 0,
+            "maxScore": 100,
+            "summary": "Problems attempted 1/3. Test cases passed 0/15.",
+            "items": [
+              {
+                "question": "Two Sum",
+                "userCode": "function twoSum(input) {\n    // Write your code here\n    \n}",
+                "language": "javascript",
+                "status": "wrong",
+                "testCasesPassed": 0,
+                "totalTestCases": 5,
+                "score": 0,
+                "feedback": "Some cases failed — review edge cases and I/O format. Re-run with custom inputs, then submit when green."
+              },
+              {
+                "question": "Valid Parentheses",
+                "userCode": "",
+                "language": "",
+                "status": "skipped",
+                "testCasesPassed": 0,
+                "totalTestCases": 5,
+                "score": 0,
+                "feedback": "Problem not submitted."
+              },
+              {
+                "question": "Longest Substring Without Repeating Characters",
+                "userCode": "",
+                "language": "",
+                "status": "skipped",
+                "testCasesPassed": 0,
+                "totalTestCases": 5,
+                "score": 0,
+                "feedback": "Problem not submitted."
+              }
+            ]
+          },
+          {
+            "id": "oa-aptitude",
+            "title": "OA · Aptitude Section",
+            "type": "aptitude",
+            "score": 0,
+            "maxScore": 100,
+            "summary": "Attempted 0/10. Correct 0, Wrong 0, Skipped 10.",
+            "items": [
+              {
+                "question": "A train 150 meters long runs at 54 km/hr. How long to cross a pole?",
+                "answer": "(Skipped)",
+                "correctAnswer": "10 seconds",
+                "explanation": "54*(5/18)=15 m/s; 150/15=10s.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "Find the missing number: 3, 7, 15, 31, 63, ...",
+                "answer": "(Skipped)",
+                "correctAnswer": "127",
+                "explanation": "n*2+1 pattern → 127.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "A and B finish work in 8 days together. A alone takes 12 days. How long for B alone?",
+                "answer": "(Skipped)",
+                "correctAnswer": "24 days",
+                "explanation": "1/8 - 1/12 = 1/24.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "LION : PRIDE :: WOLF : ?",
+                "answer": "(Skipped)",
+                "correctAnswer": "PACK",
+                "explanation": "Group of wolves is a pack.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "If all Bloops are Razzies and all Razzies are Lazzies, are all Bloops definitely Lazzies?",
+                "answer": "(Skipped)",
+                "correctAnswer": "Yes",
+                "explanation": "Transitive inclusion.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "What is 25% of 360?",
+                "answer": "(Skipped)",
+                "correctAnswer": "90",
+                "explanation": "0.25 * 360 = 90.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "A clock shows 3:15. What is the angle between hour and minute hands?",
+                "answer": "(Skipped)",
+                "correctAnswer": "7.5°",
+                "explanation": "Minute at 90°, hour at 97.5° → 7.5°.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "Choose the odd one out: 2, 3, 5, 7, 9, 11",
+                "answer": "(Skipped)",
+                "correctAnswer": "9",
+                "explanation": "9 is not prime.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "If CODING is written as DPEJOH, how is LOGIC written?",
+                "answer": "(Skipped)",
+                "correctAnswer": "MPHJD",
+                "explanation": "Each letter +1 → LOGIC → MPHJD.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              },
+              {
+                "question": "A man walks 3 km north, 4 km east. Distance from start?",
+                "answer": "(Skipped)",
+                "correctAnswer": "5 km",
+                "explanation": "3-4-5 triangle.",
+                "status": "skipped",
+                "score": 0,
+                "feedback": "Not attempted."
+              }
+            ]
+          },
+          {
+            "id": "ai-round",
+            "title": "Live AI Interview",
+            "type": "qa",
+            "score": 50,
+            "maxScore": 100,
+            "summary": "Answered 2 question(s). Overall AI score 50%.",
+            "items": [
+              {
+                "question": "Hello! Welcome to your technical interview for the MERN Stack Developer position. To kick things off, can you explain the difference between let, const, and var in JavaScript, and when you would prefer one over the others?",
+                "answer": "No.",
+                "score": 50,
+                "feedback": "The answer was brief and lacked specific technical details.",
+                "status": "average",
+                "metrics": {
+                  "accuracy": 5,
+                  "communication": 6,
+                  "problemSolving": 5,
+                  "confidence": 6
+                }
+              },
+              {
+                "question": "Great. Let's talk about Next.js. Can you walk me through how you would design a reusable component or module using Next.js in a production application?",
+                "answer": "(Interview ended early)",
+                "score": 50,
+                "feedback": "The answer was brief and lacked specific technical details.",
+                "status": "average",
+                "metrics": {
+                  "accuracy": 5,
+                  "communication": 6,
+                  "problemSolving": 5,
+                  "confidence": 6
+                }
+              }
+            ]
+          }
+        ],
+        "roundSummaries": [
+          {
+            "name": "MCQ",
+            "attempted": 1,
+            "correct": 1,
+            "wrong": 0,
+            "skipped": 14,
+            "score": 7,
+            "improvements": [
+              "Revise core JS/React/Node fundamentals with timed quizzes.",
+              "Review explanations for every wrong MCQ before the next attempt."
+            ]
+          },
+          {
+            "name": "Coding",
+            "attempted": 1,
+            "correct": 0,
+            "wrong": 1,
+            "skipped": 2,
+            "score": 0,
+            "improvements": [
+              "Practice arrays/strings/stacks with visible + hidden tests.",
+              "Always run custom edge cases before final submit."
+            ]
+          },
+          {
+            "name": "Aptitude",
+            "attempted": 0,
+            "correct": 0,
+            "wrong": 0,
+            "skipped": 10,
+            "score": 0,
+            "improvements": [
+              "Daily 15-minute mixed aptitude sets (numerical + logical).",
+              "Review ratio/percentage and series patterns."
+            ]
+          },
+          {
+            "name": "AI Interview",
+            "attempted": 2,
+            "correct": 0,
+            "wrong": 0,
+            "skipped": 8,
+            "score": 50,
+            "improvements": [
+              "Structure answers: approach → trade-offs → example.",
+              "Practice explaining debugging and system design out loud."
+            ]
+          }
+        ]
+      },
+      "createdAt": "2026-07-21T16:13:44.921Z",
+      "updatedAt": "2026-07-21T16:14:42.848Z"
     }
   }
 }

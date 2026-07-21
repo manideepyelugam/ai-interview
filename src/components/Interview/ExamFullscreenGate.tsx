@@ -7,17 +7,28 @@ import { useEffect, useState } from "react";
 /**
  * After route changes, browsers often drop fullscreen.
  * This full-viewport gate requires one click (user gesture) to lock exam mode.
+ * Pass `suppress` while ending/finalizing so exiting fullscreen does not flash this UI.
  */
-export function ExamFullscreenGate({ active }: { active: boolean }) {
+export function ExamFullscreenGate({
+  active,
+  suppress = false,
+}: {
+  active: boolean;
+  suppress?: boolean;
+}) {
   const [needsLock, setNeedsLock] = useState(false);
 
   useEffect(() => {
-    if (!active) {
+    if (!active || suppress) {
       setNeedsLock(false);
       return;
     }
 
     const sync = () => {
+      if (suppress) {
+        setNeedsLock(false);
+        return;
+      }
       const inFs = Boolean(document.fullscreenElement);
       setNeedsLock(!inFs);
       if (inFs) {
@@ -27,14 +38,13 @@ export function ExamFullscreenGate({ active }: { active: boolean }) {
     };
 
     sync();
-    // Try immediately (works if still in gesture chain)
     void lockExamFullscreen().then(sync);
 
     document.addEventListener("fullscreenchange", sync);
     return () => document.removeEventListener("fullscreenchange", sync);
-  }, [active]);
+  }, [active, suppress]);
 
-  if (!active || !needsLock) return null;
+  if (!active || suppress || !needsLock) return null;
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0a0a0a] p-6">

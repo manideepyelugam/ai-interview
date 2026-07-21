@@ -186,6 +186,7 @@ export default function E2EOAPage() {
         body: JSON.stringify({ fullSessionId }),
       });
       proctoring.stopAll();
+      // Clear immersive + exit FS only after finalize — gate stays suppressed via ending
       setExamImmersive(false);
       unlockExamFullscreen();
       router.push(`/dashboard/interview?sessionId=${fullSessionId}`);
@@ -293,6 +294,7 @@ export default function E2EOAPage() {
           codingStatus: "not_started",
           aptitudeStatus: "not_started",
         });
+        localStorage.removeItem("interview_context_full");
         setView("overview");
       } catch (e: any) {
         toast.error(e.message || "Failed to start OA round");
@@ -568,7 +570,7 @@ export default function E2EOAPage() {
 
   return (
     <div className="fixed inset-0 z-50 w-screen h-screen overflow-auto bg-[#FAFAFA]">
-      <ExamFullscreenGate active={view !== "transition"} />
+      <ExamFullscreenGate active={view !== "transition"} suppress={ending} />
       <div className="relative mx-auto max-w-7xl space-y-4 px-4 py-4 pb-28 sm:px-6 lg:px-8 min-h-full">
       <div className="sticky top-0 z-40 flex items-center justify-between rounded-lg border border-[#ECECEC] bg-white px-4 py-2.5 shadow-sm">
         <div className="flex items-center gap-3">
@@ -598,14 +600,14 @@ export default function E2EOAPage() {
               <Monitor className="h-3 w-3" /> Screen
             </span>
           </div>
-          <button
-            onClick={() => void handleEndTest(false)}
-            disabled={ending}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-rose-100 bg-rose-50 px-3.5 py-1.5 text-xs font-semibold text-rose-700"
-          >
-            <LogOut className="h-3.5 w-3.5" />
-            {ending ? "Ending..." : "End Test"}
-          </button>
+            <button
+              onClick={() => void handleEndTest(false)}
+              disabled={ending}
+              className="inline-flex items-center gap-1.5 rounded-lg border border-rose-100 bg-rose-50 px-3.5 py-1.5 text-xs font-semibold text-rose-700 disabled:opacity-60"
+            >
+              <LogOut className="h-3.5 w-3.5" />
+              {ending ? "Finalizing…" : "End Test"}
+            </button>
         </div>
       </div>
 

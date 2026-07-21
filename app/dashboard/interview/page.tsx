@@ -61,11 +61,21 @@ export default function FullInterviewPage() {
       setSessionId(sId);
       fetchSession(sId);
     } else {
-      localStorage.removeItem("interview_context_full");
-      setContext(null);
+      // Restore in-progress setup context — never flash empty config mid-launch
+      const saved = localStorage.getItem("interview_context_full");
+      if (saved) {
+        try {
+          setContext(JSON.parse(saved));
+          setGateView("rounds");
+        } catch {
+          setGateView("config");
+        }
+      } else {
+        setContext(null);
+        setGateView("config");
+      }
       setSessionId(null);
       setSession(null);
-      setGateView("config");
       setLoading(false);
     }
   }, []);
@@ -109,25 +119,10 @@ export default function FullInterviewPage() {
       toast.error("Grant camera, microphone, and screen share first.");
       return;
     }
-    // User gesture → lock fullscreen immediately before countdown/navigation
+    // Launch immediately — no lobby flash / no remount race with a 5s timer
     setExamImmersive(true);
     await lockExamFullscreen();
-    setGateView("lobby");
-    setCountdown(5);
-    startedRef.current = false;
-
-    let remaining = 5;
-    const interval = setInterval(() => {
-      remaining -= 1;
-      setCountdown(Math.max(remaining, 0));
-      if (remaining <= 0) {
-        clearInterval(interval);
-        if (!startedRef.current) {
-          startedRef.current = true;
-          launchFullInterview();
-        }
-      }
-    }, 1000);
+    await launchFullInterview();
   };
 
   const launchFullInterview = async () => {
@@ -143,6 +138,7 @@ export default function FullInterviewPage() {
     }
 
     setStarting(true);
+    setGateView("lobby");
     try {
       setExamImmersive(true);
       await lockExamFullscreen();
@@ -156,9 +152,13 @@ export default function FullInterviewPage() {
       });
       if (!res.ok) throw new Error("Failed to start Full E2E Interview.");
       const data = await res.json();
-      localStorage.removeItem("interview_context_full");
+      // Keep context until OA boots — clearing it earlier remounts as config page
+      localStorage.setItem(
+        "interview_context_full",
+        JSON.stringify(savedContext)
+      );
 
-      toast.success("Entering fullscreen assessment…");
+      toast.success("Entering assessment…");
       router.push(`/dashboard/interview/oa?fullSessionId=${data.sessionId}`);
     } catch (err: any) {
       toast.error(err.message || "Failed to start interview.");
@@ -511,23 +511,15 @@ export default function FullInterviewPage() {
     );
   }
 
-  // ─── LOBBY COUNTDOWN ───
-  if (!sessionId && gateView === "lobby") {
+  // ─── LAUNCHING (brief loading — not the config form) ───
+  if (!sessionId && (gateView === "lobby" || starting)) {
     return (
-      <div className="max-w-lg mx-auto py-20 text-center">
-        <div className="bg-white border border-[#ECECEC] rounded-lg p-10">
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-rose-500 mb-2">
-            Interview Starting
-          </p>
-          <h2 className="text-xl font-semibold text-[#111111] mb-6">
-            Locking into proctored mode
-          </h2>
-          <div className="relative w-28 h-28 mx-auto mb-6 flex items-center justify-center border-4 border-slate-100 rounded-full">
-            <div className="absolute inset-0 rounded-full border-4 border-blue-600 border-t-transparent animate-spin" />
-            <span className="text-4xl font-bold text-[#111111]">{countdown}</span>
-          </div>
+      <div className="fixed inset-0 flex items-center justify-center bg-[#FAFAFA]">
+        <div className="text-center space-y-4 px-6">
+          <div className="w-10 h-10 mx-auto border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
+          <h2 className="text-lg font-semibold text-[#111111]">Starting your assessment…</h2>
           <p className="text-xs text-[#6B7280]">
-            Round 1 (OA) opens next. After you finish OA, Round 2 (AI Interview) starts automatically.
+            Locking fullscreen and loading Round 1 (OA).
           </p>
         </div>
       </div>

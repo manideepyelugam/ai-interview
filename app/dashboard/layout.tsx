@@ -6,6 +6,7 @@ import { Sidebar } from "@/src/components/Dashboard/Sidebar";
 import { Navbar } from "@/src/components/Dashboard/Navbar";
 import { useAuth } from "@/src/components/providers/AuthProvider";
 import { isExamImmersive } from "@/src/lib/exam-immersive";
+import { cn } from "@/lib/utils";
 
 /** Full-interview exam rooms — no dashboard chrome. */
 function isImmersiveInterviewPath(pathname: string | null) {
@@ -45,17 +46,13 @@ export default function DashboardLayout({
     };
     sync();
     document.addEventListener("fullscreenchange", sync);
-    window.addEventListener("storage", sync);
-    // Poll briefly after navigations (sessionStorage is same-tab)
     const id = window.setInterval(() => setExamFlag(isExamImmersive()), 400);
     return () => {
       document.removeEventListener("fullscreenchange", sync);
-      window.removeEventListener("storage", sync);
       window.clearInterval(id);
     };
   }, [pathname]);
 
-  // Show loading spinner while checking auth
   if (loading || !checked) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-[#FAFAFA]">
@@ -70,20 +67,30 @@ export default function DashboardLayout({
   const hideChrome =
     isImmersiveInterviewPath(pathname) || isFullscreen || examFlag;
 
-  if (hideChrome) {
-    return (
-      <div className="fixed inset-0 z-50 w-screen h-screen overflow-auto bg-[#FAFAFA]">
-        <main className="min-h-full w-full p-0 m-0">{children}</main>
-      </div>
-    );
-  }
-
+  // Keep the same React tree always — only hide chrome with CSS.
+  // Switching between two return trees remounted children and flashed the config page.
   return (
-    <div className="flex min-h-screen bg-[#FAFAFA]">
-      <Sidebar />
-      <div className="flex-1 flex flex-col min-w-0">
-        <Navbar />
-        <main className="flex-1 p-6 lg:p-8">{children}</main>
+    <div
+      className={cn(
+        "flex min-h-screen bg-[#FAFAFA]",
+        hideChrome && "fixed inset-0 z-50 w-screen h-screen overflow-hidden"
+      )}
+    >
+      <div className={cn(hideChrome && "hidden")}>
+        <Sidebar />
+      </div>
+      <div className="flex-1 flex flex-col min-w-0 min-h-0">
+        <div className={cn(hideChrome && "hidden")}>
+          <Navbar />
+        </div>
+        <main
+          className={cn(
+            "flex-1 min-h-0",
+            hideChrome ? "overflow-auto p-0 m-0 w-full h-full" : "p-6 lg:p-8"
+          )}
+        >
+          {children}
+        </main>
       </div>
     </div>
   );
